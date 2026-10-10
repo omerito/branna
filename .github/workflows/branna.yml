@@ -1,0 +1,186 @@
+# Branna: test, build the web app, and publish it to GitHub Pages (https://omerito.github.io/branna).
+#
+# - Every push runs the tests and builds the web app. The built site goes to the `site-preview`
+#   branch, and each job's log goes to `ci-logs-<job>`, so a session without GitHub Actions access
+#   can read results with plain git.
+# - Pushes to main also publish the site to the `gh-pages` branch (what GitHub Pages serves), once
+#   PUBLISH_SITE is "true" and the tests pass. Until then gh-pages keeps the placeholder page.
+#
+# The inherited PdfCraft workflows (desktop releases, FreeBSD, Windows ARM, nightly fuzzing) are
+# removed in this fork; see BRANNA.md.
+name: Branna
+
+on:
+  push:
+    branches-ignore: [gh-pages, site-preview, "ci-logs-*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: branna-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: never
+  RUST_BACKTRACE: 1
+  # Flip to "true" when Branna is ready to replace the placeholder page.
+  PUBLISH_SITE: "false"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare logs
+        run: |
+          mkdir -p "$RUNNER_TEMP/logs"
+          echo "LOGS=$RUNNER_TEMP/logs" >> "$GITHUB_ENV"
+
+      # The Japanese fonts the test suite expects, pinned to the same commit as upstream PdfCraft.
+      - name: Check out craft-fonts
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          repository: storytold/craft-fonts
+          ref: abb83316d96aa59c1cf64784289e378fe9fa5695
+          path: craft-fonts
+
+      - name: Fonts (craft-fonts + Noto Sans Ethiopic)
+        run: |
+          packaging/branna/fonts.sh "$RUNNER_TEMP/branna-fonts" craft-fonts 2>&1 | tee "$LOGS/fonts.log"
+          echo "CRAFT_FONTS_DIR=$RUNNER_TEMP/branna-fonts" >> "$GITHUB_ENV"
+
+      - name: Install Linux system dependencies (egui/winit/rfd)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libxkbcommon-dev libwayland-dev libx11-dev libxrandr-dev libxi-dev \
+            libgl1-mesa-dev libgtk-3-dev
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: branna-test
+
+      - name: Format
+        run: cargo fmt --all -- --check 2>&1 | tee "$LOGS/fmt.log"
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings 2>&1 | tee "$LOGS/clippy.log"
+
+      - name: Test
+        env:
+          CRAFT_FONTS_REQUIRED: "1"
+        run: cargo test --workspace 2>&1 | tee "$LOGS/test.log"
+
+      - name: Assets (licences and attribution)
+        run: cargo xtask assets 2>&1 | tee "$LOGS/assets.log"
+
+      - name: Save logs
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JOB_STATUS: ${{ job.status }}
+        run: packaging/branna/save-logs.sh test
+
+  web:
+    name: Web build
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      TRUNK_VERSION: 0.21.14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare logs
+        run: |
+          mkdir -p "$RUNNER_TEMP/logs"
+          echo "LOGS=$RUNNER_TEMP/logs" >> "$GITHUB_ENV"
+
+      # Only the Ethiopic faces: the web app leaves the Japanese fonts out to stay small.
+      - name: Fonts (Noto Sans Ethiopic)
+        run: |
+          packaging/branna/fonts.sh "$RUNNER_TEMP/branna-fonts" 2>&1 | tee "$LOGS/fonts.log"
+          echo "CRAFT_FONTS_DIR=$RUNNER_TEMP/branna-fonts" >> "$GITHUB_ENV"
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: branna-web
+
+      - name: Install trunk
+        run: |
+          curl -fsSL "https://github.com/trunk-rs/trunk/releases/download/v${TRUNK_VERSION}/trunk-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar -xz -C "$HOME/.cargo/bin" trunk
+          trunk --version
+
+      - name: Build
+        env:
+          CRAFT_FONTS_REQUIRED: "1"
+        run: |
+          cd apps/pdfcraft-web
+          trunk build --release 2>&1 | tee "$LOGS/build.log"
+
+      - name: Sizes
+        run: |
+          cd dist/web
+          for f in *; do
+            printf '%s\t%s bytes\t%s bytes gzipped\n' "$f" "$(stat -c %s "$f")" "$(gzip -9c "$f" | wc -c)"
+          done | tee "$LOGS/sizes.log"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: dist/web
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Publish preview
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: packaging/branna/publish.sh dist/web site-preview "Preview of ${GITHUB_REF_NAME}"
+
+      - name: Save logs
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JOB_STATUS: ${{ job.status }}
+        run: packaging/branna/save-logs.sh web
+
+  publish:
+    name: Publish website
+    needs: [test, web]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        if: env.PUBLISH_SITE == 'true'
+        with:
+          name: site
+          path: site
+
+      - name: Publish to GitHub Pages
+        if: env.PUBLISH_SITE == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: packaging/branna/publish.sh site gh-pages "Branna website"
+
+      - name: Site not live yet
+        if: env.PUBLISH_SITE != 'true'
+        run: echo "PUBLISH_SITE is off, so gh-pages keeps the placeholder page."
