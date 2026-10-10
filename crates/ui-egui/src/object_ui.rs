@@ -341,7 +341,8 @@ pub(crate) fn move_error(error: &pdfcraft_engine::EditError) -> String {
 mod tests {
     #[test]
     fn selection_labels_and_refusals_are_translated_in_every_catalog() {
-        for language in crate::i18n::LANGUAGES.iter().filter(|l| !l.source.is_empty()) {
+        // Branna: English has a catalog here (en.tsv renames the app), so skip it by code.
+        for language in crate::i18n::LANGUAGES.iter().filter(|l| !l.source.is_empty() && l.code != "en") {
             let lang = crate::i18n::Lang::from_code(language.code).unwrap();
             for label in [
                 "Drag the selection to move it. Esc clears the selection.",
