@@ -44,6 +44,32 @@ builds everything (`.github/workflows/branna.yml`). Every push to any branch:
 Branches `gh-pages`, `site-preview` and `ci-logs-*` are rewritten as a single commit on every publish
 (`packaging/branna/publish.sh`), so build output never piles up in history.
 
+Reading results without Actions access (the `gh` CLI works; the Actions API may not):
+
+```sh
+gh api repos/omerito/branna/commits/<sha>/check-runs --jq '.check_runs[] | [.name, .status, .conclusion // "-"] | @tsv'
+git fetch -q --depth 1 origin "+refs/heads/ci-logs-test:refs/remotes/origin/ci-logs-test"
+git show origin/ci-logs-test:summary.txt; git show origin/ci-logs-test:test.log | grep -nE "panicked|FAILED|^error"
+git fetch -q --depth 1 origin "+refs/heads/site-preview:refs/remotes/origin/site-preview"
+git archive origin/site-preview | tar -x -C <empty dir>   # the built site, to serve and look at
+```
+
+**Download size:** GitHub Pages can't be told to compress the 35 MB WebAssembly file, so the web
+build ships a gzip copy (about 13 MB) and `packaging/branna/precompress.py` changes trunk's loader in
+the built `index.html` to fetch it and unpack it with the browser's `DecompressionStream` (falling
+back to the full file). Those dozen generated lines are Branna's only JavaScript; upstream's "no
+handwritten JS" rule otherwise holds.
+
+**Without cargo** (sessions that can't reach crates.io), two scripts stand in for the Rust checks;
+CI's real checks stay the authority:
+
+- `python3 packaging/branna/catalog.py` validates `am.tsv` like `catalog.rs` and lists what Amharic
+  lacks (entries Italian has, `tl!`/`bt!` literals).
+- `python3 packaging/branna/assets.py [--rehash] [--write]` is `cargo xtask assets [--write]`;
+  `--rehash` first updates the SHA-256 of `am.tsv`, `en.tsv` and `assets/branna/*` in
+  `ATTRIBUTION.toml`. Run it after every change to those files.
+- `rustfmt --edition 2024 --check <file.rs>` usually works locally.
+
 **Fonts:** `packaging/branna/fonts.sh` assembles the `CRAFT_FONTS_DIR` build input: Noto Sans Ethiopic
 Regular and SemiBold (v2.102, OFL-1.1, Monotype for the Noto project), plus craft-fonts' Japanese
 faces for the desktop app and tests. The web build carries only the Ethiopic faces.
@@ -53,13 +79,29 @@ in this fork. Desktop releases come back in Phase 3 if wanted.
 
 ## Keeping up with PdfCraft
 
-PdfCraft changes fast (often 50–150 commits a day, many touching UI strings). Weekly:
+PdfCraft changes fast (often 50–150 commits a day, many touching UI strings). A weekly scheduled
+task does this:
 
-1. `git fetch https://github.com/storytold/pdfcraft main` and merge it into a branch `sync/<date>`.
-2. Resolve conflicts. Files Branna replaces wholesale keep Branna's version; workflows upstream
-   edits that this fork deleted stay deleted.
-3. Translate new strings: the Amharic coverage tests list every untranslated `tl!` literal.
-4. Push the branch, wait for the Branna workflow to pass (read `ci-logs-*`), then merge to main.
+1. From `main`, make a branch `sync/<YYYY-MM-DD>`, `git fetch https://github.com/storytold/pdfcraft main`
+   and merge `FETCH_HEAD` into it.
+2. Resolve conflicts:
+   - What this fork deleted stays deleted (`git rm`): `.github/workflows/` except `branna.yml`,
+     `docs/brand/`, `docs/images/pdfcraft-tools.png`.
+   - `README.md` stays Branna's.
+   - Everywhere else (`NOTICE`, `ATTRIBUTION.toml`, `links.rs`, `index.html`, code) keep both
+     sides: upstream's change and Branna's lines (marked `// Branna:` in code). Leave out anything
+     that brings back the ArtCraft brand or the Discord and ArtCraft website links. Then regenerate
+     `ATTRIBUTION.md` (`assets.py --write`).
+   - A new upstream language goes after Amharic in `LANGUAGES` (and `DATE_LANGUAGES`; fix the array
+     lengths). If the web build has no font for its script, add it to `branna::offered`.
+3. Translate what's new: `catalog.py` lists it. Follow the style guide below, keep the meaning of
+   the English, and add the entries to `am.tsv` (anywhere; the end of the main section is fine).
+   An upstream English string that names PdfCraft also needs an `en.tsv` entry. Then
+   `assets.py --rehash`.
+4. Push the branch and wait for the Branna workflow (about 10 minutes). Fix what fails, then
+   fast-forward `main` to the branch and push; that publishes the site.
+5. If upstream breaks something Branna can't fix quickly, leave `main` alone, push the branch, and
+   open an issue saying what's wrong.
 
 Keep Branna's changes small and in as few upstream files as possible, so merges stay easy. Mark
 Branna-specific code with a `// Branna:` comment.
@@ -103,7 +145,19 @@ Branna-specific code with a `// Branna:` comment.
 - Known leftovers: saved PDFs still record PdfCraft as their Producer (the engine is PdfCraft's), and
   the desktop app icons in `assets/app-icon/` are still PdfCraft's (desktop builds are Phase 3).
 - After changing `am.tsv`, `en.tsv` or `assets/branna/*`, update their SHA-256 in `ATTRIBUTION.toml`
-  and regenerate `ATTRIBUTION.md` (`cargo xtask assets --write`).
+  (`python3 packaging/branna/assets.py --rehash`).
+
+Other Branna changes to upstream code, all marked `// Branna:`:
+
+- On the web the engine reads the browser's clock and time zone (`crates/engine/src/lib.rs`,
+  `js-sys`); upstream has no clock there, so its dates read 1970.
+- The language lists on the web offer only languages the bundled fonts can draw (`branna::offered`),
+  because the web build carries no Japanese, Chinese or Telugu faces.
+- The default comment author without a login name (the web) is translated ("Guest", `comments.rs`),
+  and the print dialog's Print / Save as PDF button goes through `tl!` (`print_ui.rs`).
+- Discord, the ArtCraft website and the ArtCraft logos are gone from the top bar, Help menu, Home and
+  About (`chrome.rs`, `commands.rs`, `home.rs`, `dialogs.rs`, `widgets.rs`); the update check and
+  links point to this repository (`links.rs`, `updates.rs`).
 
 ## Amharic style guide (for `am.tsv`)
 

@@ -328,7 +328,8 @@ fn login_name() -> String {
             return v;
         }
     }
-    "Guest".into()
+    // Branna: in the interface language (the web app has no login name, so this is its default).
+    bt!("Guest").into()
 }
 
 /// A drag in progress on a page.

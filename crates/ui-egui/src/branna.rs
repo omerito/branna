@@ -36,7 +36,11 @@ pub fn offered(code: &str) -> bool {
     if !cfg!(target_arch = "wasm32") {
         return true;
     }
-    let has = |script: &str| pdfcraft_fonts::CRAFT_FONTS.iter().any(|f| f.covers(script));
+    drawable_on_web(code, |script| pdfcraft_fonts::CRAFT_FONTS.iter().any(|f| f.covers(script)))
+}
+
+/// Whether the web build can draw language `code`, given which scripts its build-input faces cover.
+fn drawable_on_web(code: &str, has: impl Fn(&str) -> bool) -> bool {
     match code {
         "ja" => has("Jpan"),
         "zh-hans" | "zh-hant" => has("Hans") || has("Jpan"),
@@ -142,21 +146,39 @@ mod tests {
     /// Amharic translates every registered command and every All tools group, section and item.
     #[test]
     fn amharic_covers_commands_and_catalogue() {
+        let mut labels: Vec<&str> = Vec::new();
         for command in pdfcraft_engine::commands::COMMANDS {
-            assert!(has(am(), command.label), "missing command: {}", command.label);
-            if let Some(menu) = command.menu {
-                assert!(has(am(), menu), "missing menu: {menu}");
-            }
+            labels.push(command.label);
+            labels.extend(command.menu);
         }
         for group in pdfcraft_engine::catalog::TOOL_GROUPS {
-            assert!(has(am(), group.label), "missing group: {}", group.label);
+            labels.push(group.label);
             for section in group.sections {
-                assert!(has(am(), section.title), "missing section: {}", section.title);
-                for item in section.items {
-                    assert!(has(am(), item.label), "missing item: {}", item.label);
-                }
+                labels.push(section.title);
+                labels.extend(section.items.iter().map(|item| item.label));
             }
         }
+        let missing: std::collections::BTreeSet<&str> = labels.into_iter().filter(|label| !has(am(), label)).collect();
+        assert!(missing.is_empty(), "untranslated Amharic commands, menus and tools: {missing:#?}");
+    }
+
+    /// Amharic has every entry Italian has (a complete upstream catalog), so text upstream looks up
+    /// through variables, plurals and ids is translated too, not only `tl!` literals.
+    #[test]
+    fn amharic_has_every_italian_entry() {
+        fn keys(source: &str) -> std::collections::BTreeSet<(&str, &str)> {
+            source
+                .lines()
+                .filter(|line| !line.starts_with('#'))
+                .filter_map(|line| {
+                    let mut columns = line.split('\t');
+                    Some((columns.next()?, columns.next()?))
+                })
+                .collect()
+        }
+        let amharic = keys(include_str!("i18n/am.tsv"));
+        let missing: Vec<_> = keys(include_str!("i18n/it.tsv")).into_iter().filter(|key| !amharic.contains(key)).collect();
+        assert!(missing.is_empty(), "translate these (context, English) entries in i18n/am.tsv: {missing:#?}");
     }
 
     /// The English interface names Branna, never PdfCraft or ArtCraft, wherever upstream's English
@@ -200,7 +222,7 @@ mod tests {
             return;
         }
         let text = include_str!("i18n/am.tsv");
-        let labels: String = text
+        let chars: std::collections::BTreeSet<char> = text
             .lines()
             .filter(|l| !l.starts_with('#'))
             .filter_map(|l| l.split('\t').nth(2))
@@ -216,8 +238,30 @@ mod tests {
         for (build, defs) in [("all faces", crate::theme::font_definitions()), ("Ethiopic faces only", ethiopic_only)] {
             let mut fonts = Fonts::new(TextOptions::default(), defs);
             for id in [egui::FontId::proportional(13.0), egui::FontId::monospace(13.0), crate::theme::medium(13.0), crate::theme::semibold(17.0)] {
-                assert!(fonts.has_glyphs(&id, &labels), "{build}: {id:?} lacks an Amharic label glyph");
+                let lacking: Vec<char> = chars.iter().copied().filter(|c| !fonts.has_glyphs(&id, &c.to_string())).collect();
+                assert!(lacking.is_empty(), "{build}: {id:?} has no glyph for {lacking:?} (used in i18n/am.tsv)");
             }
+        }
+    }
+
+    /// Every language the web build offers can draw its own name with the web build's faces (the
+    /// Latin ones and Noto Sans Ethiopic), so a language upstream adds in another script must be
+    /// left out on the web in `drawable_on_web` (or get a font).
+    #[test]
+    fn web_languages_draw_their_names() {
+        if pdfcraft_fonts::ui_ethiopic_fonts().is_empty() {
+            eprintln!("skipping the web language check: build with CRAFT_FONTS_DIR from packaging/branna/fonts.sh");
+            return;
+        }
+        let mut web = crate::theme::font_definitions();
+        for family in web.families.values_mut() {
+            family.retain(|name| !pdfcraft_fonts::CRAFT_FONTS.iter().any(|face| face.name() == *name && !face.covers("Ethi")));
+        }
+        let mut fonts = egui::epaint::text::Fonts::new(egui::epaint::text::TextOptions::default(), web);
+        let offered: Vec<Lang> = Lang::all().filter(|l| super::drawable_on_web(l.code(), |script| script == "Ethi")).collect();
+        assert!(offered.iter().any(|l| l.code() == "am") && !offered.iter().any(|l| l.code() == "ja"), "{offered:?}");
+        for lang in offered {
+            assert!(fonts.has_glyphs(&egui::FontId::proportional(13.0), lang.name()), "the web build can't draw {:?}", lang.name());
         }
     }
 }
