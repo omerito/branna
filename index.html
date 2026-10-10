@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="am">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ብራና · Branna</title>
+    <meta name="description" content="ብራና — በአማርኛ ነጻ የፒዲኤፍ መሣሪያ። Branna: a free PDF workbench with an Amharic interface." />
+    
+<script type="module">
+import init, * as bindings from './pdfcraft-web-8f3647877c60c8bb.js';
+const wasm = await init({ module_or_path: (async () => {
+  // Branna: fetch the gzip copy and unpack it here (packaging/branna/precompress.py).
+  if (typeof DecompressionStream === 'function') {
+    try {
+      const r = await fetch('./pdfcraft-web-8f3647877c60c8bb_bg.wasm.gz');
+      if (r.ok) {
+        const body = r.headers.get('content-encoding') ? r.body : r.body.pipeThrough(new DecompressionStream('gzip'));
+        return new Response(body, { headers: { 'Content-Type': 'application/wasm' } });
+      }
+    } catch (e) {
+      console.warn('Branna: the compressed download failed; using the full file', e);
+    }
+  }
+  return fetch('./pdfcraft-web-8f3647877c60c8bb_bg.wasm');
+})() });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <link rel="icon" href="./branna-mark-f79969347feaf6e5.svg" integrity="sha384-hEDSyhUbUwd4rsJUg9gRw7VeUf0gyiBASTobL1qoi5XUeneL4V7+lXHsl47IqVMI"/>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #f1f1f3; }
+      canvas { position: relative; z-index: 1; width: 100%; height: 100%; display: block; outline: none; }
+      /* Branna: shown while the app downloads; the app paints over it when it starts (no script). */
+      #branna-loading {
+        position: fixed; inset: 0; z-index: 0; display: flex; flex-direction: column; align-items: center;
+        justify-content: center; gap: 6px; padding: 0 16px; text-align: center; color: #55555c;
+        font: 15px/1.6 "Noto Sans Ethiopic", "Nyala", "Ebrima", "Kefa", system-ui, sans-serif;
+      }
+      #branna-loading strong { font-size: 30px; color: #a32a1e; }
+      #branna-loading small { max-width: 30rem; color: #85858c; }
+      @media (prefers-color-scheme: dark) {
+        html, body { background: #19191c; }
+        #branna-loading { color: #b8b8bd; }
+        #branna-loading strong { color: #e0705f; }
+      }
+    </style>
+  <link rel="modulepreload" href="./pdfcraft-web-8f3647877c60c8bb.js" crossorigin="anonymous" integrity="sha384-WaC2ppc3nXH9ZunWrr+2rLz+GHMgvCUc8cezYTIKY8B+G7iPeG9xevKC0thYcdQu"></head>
+  <body>
+    <div id="branna-loading">
+      <strong>ብራና</strong>
+      <span>በመጫን ላይ… · Loading…</span>
+      <small>የመጀመሪያው ጭነት ወደ 13 MB ያወርዳል፤ በዝግተኛ ኢንተርኔት ጥቂት ደቂቃዎች ሊወስድ ይችላል። The first visit downloads about 13 MB.</small>
+    </div>
+    <canvas id="pdfcraft"></canvas>
+  </body>
+</html>
