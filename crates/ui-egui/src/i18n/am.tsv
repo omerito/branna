@@ -2141,6 +2141,25 @@ signature pad	Type	ተይብ
 	The field {name} no longer exists.	{name} የሚባለው መስክ ከእንግዲህ የለም።
 	A selected field has no widget on any page, so the fields can't be edited together.	አንድ የተመረጠ መስክ በየትኛውም ገጽ ላይ ተለይቶ የሚታይ አካል የለውም፤ ስለዚህ መስኮቹ በአንድ ላይ ሊታረሙ አይችሉም።
 	 ({n} at {dpi} dpi, the largest size they can be drawn at)	 ({n} በ{dpi} dpi፣ ሊሳሉበት የሚችሉት ትልቁ መጠን)
+	Document properties ({key})	የሰነድ ባሕሪያት ({key})
+	Import list…	ዝርዝር አስገባ…
+	Multiple words or phrases	ብዙ ቃላት ወይም ሐረጎች
+	New bookmark ({key})	አዲስ ዕልባት ({key})
+	New bookmarks from structure	ከመዋቅሩ አዲስ ዕልባቶች
+	Next ({key})	ቀጣይ ({key})
+	One word or phrase per line	በአንድ መስመር አንድ ቃል ወይም ሐረግ
+	Open a PDF ({key})	ፒዲኤፍ ክፈት ({key})
+	Previous ({key})	ቀዳሚ ({key})
+	Print ({key})	አትም ({key})
+	Redaction code:	የመሸፈኛ ኮድ:
+	Rotate view clockwise ({key})	እይታን በሰዓት አቅጣጫ አሽከርክር ({key})
+	Saved {place}: {before} → {after} (not smaller){detail}	{place} ተቀምጧል፦ {before} → {after} (አላነሰም){detail}
+	This file is already as small as it can be made ({size}). No copy was saved.	ይህ ፋይል ከዚህ በላይ ሊያንስ አይችልም ({size})። ቅጂ አልተቀመጠም።
+	Zoom in ({key})	አጉላ ({key})
+	Zoom in / out (also pinch or {key}-scroll)	አጉላ / አሳንስ (በሁለት ጣት ቆንጥጦ ወይም {key}-ማሸብለል)
+	Zoom out ({key})	አሳንስ ({key})
+	{name} is too large for a word list (at most 1 MB).	{name} ለቃላት ዝርዝር በጣም ትልቅ ነው (ቢበዛ 1 MB)።
+	{n} word(s) or phrase(s)	ቃላት ወይም ሐረጎች፦ {n}
 
 # Branna-only strings (bt! in branna.rs and its callers) and the app's name.
 	Branna	ብራና

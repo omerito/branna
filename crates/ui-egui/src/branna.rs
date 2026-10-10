@@ -29,7 +29,7 @@ pub fn rebrand(translation: String) -> String {
 }
 
 /// Whether Preferences offers the interface (and date) language `code`. The web build carries only
-/// the Ethiopic faces besides the Latin ones, so there Japanese, Chinese and Telugu, whose text
+/// the Ethiopic faces besides the Latin ones, so there Japanese, Chinese, Telugu and Arabic, whose text
 /// would draw as replacement boxes, are left out; the desktop app also falls back to a system
 /// font and offers every language.
 pub fn offered(code: &str) -> bool {
@@ -45,6 +45,7 @@ fn drawable_on_web(code: &str, has: impl Fn(&str) -> bool) -> bool {
         "ja" => has("Jpan"),
         "zh-hans" | "zh-hant" => has("Hans") || has("Jpan"),
         "te" => has("Telu"),
+        "ar" => has("Arab"),
         _ => true,
     }
 }

@@ -46,12 +46,13 @@ jobs:
           mkdir -p "$RUNNER_TEMP/logs"
           echo "LOGS=$RUNNER_TEMP/logs" >> "$GITHUB_ENV"
 
-      # The Japanese fonts the test suite expects, pinned to the same commit as upstream PdfCraft.
+      # craft-fonts (Japanese and Arabic faces) for the test suite, pinned to the commit upstream
+      # PdfCraft's ci.yml uses (update it with each sync).
       - name: Check out craft-fonts
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           repository: storytold/craft-fonts
-          ref: abb83316d96aa59c1cf64784289e378fe9fa5695
+          ref: 8dcdacd5153e64560d109541a47d806f26f048c0
           path: craft-fonts
 
       - name: Fonts (craft-fonts + Noto Sans Ethiopic)

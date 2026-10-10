@@ -94,6 +94,8 @@ task does this:
      `ATTRIBUTION.md` (`assets.py --write`).
    - A new upstream language goes after Amharic in `LANGUAGES` (and `DATE_LANGUAGES`; fix the array
      lengths). If the web build has no font for its script, leave it out in `branna::drawable_on_web`.
+   - The craft-fonts pin in `branna.yml` follows upstream's: `git show FETCH_HEAD:.github/workflows/ci.yml
+     | grep -A2 craft-fonts` shows its `ref:`.
    - `Cargo.lock`: take upstream's (`git checkout --theirs Cargo.lock`), then re-add Branna's one
      change, `"js-sys",` in the `dependencies` of `pdfcraft-engine`.
 3. Translate what's new: `catalog.py` lists it. Follow the style guide below, keep the meaning of
