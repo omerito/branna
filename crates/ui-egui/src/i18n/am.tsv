@@ -2160,6 +2160,43 @@ signature pad	Type	ተይብ
 	Zoom out ({key})	አሳንስ ({key})
 	{name} is too large for a word list (at most 1 MB).	{name} ለቃላት ዝርዝር በጣም ትልቅ ነው (ቢበዛ 1 MB)።
 	{n} word(s) or phrase(s)	ቃላት ወይም ሐረጎች፦ {n}
+	Auto ({percent}%)	ራስ-ሰር ({percent}%)
+	Auto follows the system's text size. Pages always render at the display's full resolution.	ራስ-ሰር የሥርዓቱን የጽሑፍ መጠን ይከተላል። ገጾች ሁልጊዜ በማሳያው ሙሉ ጥራት ይታያሉ።
+	Check the pages	ገጾቹን ያረጋግጡ
+	Collapse all	ሁሉንም ሰብስብ
+	Column select	በዓምድ ምረጥ
+	Drag the selection to move it. Esc clears the selection.	ምርጫውን ለማንቀሳቀስ ይጎትቱት። Esc ምርጫውን ያጸዳል።
+	Expand all	ሁሉንም ዘርጋ
+	Files are combined in the order shown. Drag them to change it.	ፋይሎቹ በሚታየው ቅደም ተከተል ይጣመራሉ። ቅደም ተከተሉን ለመለወጥ ይጎትቷቸው።
+	Fill colour	የሙሌት ቀለም
+	Fill colour: none	የሙሌት ቀለም፦ የለም
+	Finish or discard the text being edited before selecting several objects.	ብዙ ነገሮችን ከመምረጥዎ በፊት እየተስተካከለ ያለውን ጽሑፍ ይጨርሱ ወይም ይተዉት።
+	Grid view	የፍርግርግ እይታ
+	Interface size	የበይነገጽ መጠን
+	List view	የዝርዝር እይታ
+	Move object	ነገርን አንቀሳቅስ
+	Move objects	ነገሮችን አንቀሳቅስ
+	No fill	ሙሌት የለም
+	Pages: {k} of {n}	ገጾች፦ {k} ከ{n}
+	Preview unavailable: {e}	ቅድመ እይታ አይገኝም፦ {e}
+	Remove page	ገጹን አስወግድ
+	Remove {n} pages	{n} ገጾችን አስወግድ
+	Select at most 1000 objects at a time.	በአንድ ጊዜ ቢበዛ 1000 ነገሮችን ይምረጡ።
+	Shift-click to select several objects. Drag empty space to select an area.	ብዙ ነገሮችን ለመምረጥ Shift ይዘው ጠቅ ያድርጉ። አንድን አካባቢ ለመምረጥ ባዶ ቦታ ላይ ይጎትቱ።
+	Some bookmarks are not shown here: the panel lists a limited number, nested a limited depth.	አንዳንድ ዕልባቶች እዚህ አይታዩም፤ ፓነሉ የሚዘረዝረው የተወሰነ ቁጥር ብቻ ነው፣ እስከ የተወሰነ ጥልቀት ድረስ።
+	Switch to List view to change the pages it takes.	የሚወሰዱትን ገጾች ለመለወጥ ወደ ዝርዝር እይታ ይቀይሩ።
+	Text used as a clipping path cannot be moved with this selection.	እንደ መቁረጫ ዱካ የሚያገለግል ጽሑፍ በዚህ ምርጫ ሊንቀሳቀስ አይችልም።
+	These objects could not be moved. Select them again and try a smaller move.	እነዚህን ነገሮች ማንቀሳቀስ አልተቻለም። እንደገና ይምረጧቸውና ትንሽ እንቅስቃሴ ይሞክሩ።
+	This page contains objects that cannot be selected together.	ይህ ገጽ በአንድ ላይ ሊመረጡ የማይችሉ ነገሮችን ይዟል።
+	Vertical text cannot be moved with this selection.	ቀጥ ያለ ጽሑፍ በዚህ ምርጫ ሊንቀሳቀስ አይችልም።
+@plural	{n} object selected|{n} objects selected	{n} ነገር ተመርጧል|{n} ነገሮች ተመርጠዋል
+key	Ctrl	Ctrl
+key	Delete	Delete
+key	End	End
+key	Esc	Esc
+key	Home	Home
+key	Shift	Shift
+key	Space	Space
 
 # Branna-only strings (bt! in branna.rs and its callers) and the app's name.
 	Branna	ብራና
