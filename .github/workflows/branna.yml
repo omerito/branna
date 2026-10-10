@@ -142,6 +142,10 @@ jobs:
           copy_docs dist/web
           ls dist/web
 
+      # GitHub Pages can't compress the WebAssembly file: ship a gzip copy and unpack it in the page.
+      - name: Compressed download
+        run: python3 packaging/branna/precompress.py dist/web 2>&1 | tee "$LOGS/precompress.log"
+
       - name: Sizes
         run: |
           cd dist/web

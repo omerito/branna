@@ -718,7 +718,8 @@ pub(crate) fn body(
     ui.add_space(12.0);
     let (mut go, mut cancel) = (false, false);
     ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-        let label = if d.printer.is_some() { "Print" } else { "Save as PDF" };
+        // Branna: translated (upstream shows this button in English in every language).
+        let label = if d.printer.is_some() { tl!("Print") } else { tl!("Save as PDF") };
         if ui.add_enabled_ui(settings.is_ok() && !sheets.is_empty(), |ui| widgets::pill_button(ui, label, true)).inner.clicked() {
             go = true;
         }

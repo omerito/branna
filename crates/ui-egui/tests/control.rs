@@ -132,7 +132,8 @@ fn language_switch_preserves_document_and_command_ids() {
     let documents = ok(&mut h, &c, "ui.state", json!({}))["documents"].clone();
     assert_eq!(documents[0]["dirty"], true);
     let commands = ok(&mut h, &c, "ui.commands", json!({}));
-    for code in ["ja", "zh-hans", "fr", "de", "uk", "en"] {
+    // Branna: the Amharic menus too.
+    for code in ["ja", "am", "zh-hans", "fr", "de", "uk", "en"] {
         ok(&mut h, &c, "ui.set", json!({ "key": "language", "value": code }));
         h.run_steps(2);
         let state = ok(&mut h, &c, "ui.state", json!({}));
@@ -151,7 +152,8 @@ fn language_switch_preserves_document_and_command_ids() {
         h.run_steps(2);
     }
     let error = call(&mut h, &c, "ui.set", json!({ "key": "language", "value": "xx" })).unwrap_err();
-    assert!(error.contains("auto, en, ja"), "{error}");
+    // Branna: Amharic is listed second, after English.
+    assert!(error.contains("auto, en, am, ja"), "{error}");
     assert_eq!(ok(&mut h, &c, "ui.state", json!({}))["language"], "en");
 }
 

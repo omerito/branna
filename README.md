@@ -24,7 +24,7 @@
 - **ነጻና ክፍት ምንጭ ነው።** መለያ፣ ማስታወቂያ ወይም የአጠቃቀም ክትትል የለም።
 - ስሙ፣ ብራና፣ ጥንታዊ የኢትዮጵያ መጻሕፍት የተጻፉበት የቆዳ ወረቀት ነው።
 
-የመጀመሪያው ጭነት ወደ 14 MB ያወርዳል፤ በዝግተኛ ኢንተርኔት ጥቂት ደቂቃዎች ሊወስድ ይችላል።
+የመጀመሪያው ጭነት ወደ 13 MB ያወርዳል፤ በዝግተኛ ኢንተርኔት ጥቂት ደቂቃዎች ሊወስድ ይችላል።
 
 ## About Branna
 
@@ -35,7 +35,7 @@ whole interface in Amharic. English and the other languages are in Preferences.
 - **Free and open source.** No account, no ads, no tracking.
 - ብራና is the parchment Ethiopia's old manuscripts were written on.
 
-The first visit downloads about 14 MB, so it can take a few minutes on a slow connection.
+The first visit downloads about 13 MB, so it can take a few minutes on a slow connection.
 
 ### What's coming
 
