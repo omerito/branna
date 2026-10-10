@@ -66,6 +66,12 @@ pub fn ui_telugu_fonts() -> Vec<&'static CraftFont> {
     CRAFT_FONTS.iter().filter(|f| f.covers("Telu")).collect()
 }
 
+/// Branna: the `Ethi` faces for Amharic interface text (Noto Sans Ethiopic Regular, then
+/// SemiBold, from `packaging/branna/fonts.sh`), in manifest order. Empty when built without them.
+pub fn ui_ethiopic_fonts() -> Vec<&'static CraftFont> {
+    CRAFT_FONTS.iter().filter(|f| f.covers("Ethi")).collect()
+}
+
 /// Interface CJK faces in fallback order for the UI language: Simplified Chinese first when
 /// `prefer_hans`, otherwise Japanese first (the historical default).
 ///

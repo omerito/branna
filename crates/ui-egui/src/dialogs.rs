@@ -37,6 +37,8 @@ pub fn show(app: &mut PdfCraftApp, ctx: &egui::Context) {
     let mut number_now: Option<Edit> = None;
     let mut apply_number = false;
     let mut link_command: Option<&'static str> = None;
+    // Branna: an address from the About dialog's links.
+    let mut open_link: Option<&'static str> = None;
     let mut protect_now = false;
     let mut boxes_now = false;
     let mut marks_now = false;
@@ -1080,29 +1082,30 @@ pub fn show(app: &mut PdfCraftApp, ctx: &egui::Context) {
                     2 => crate::credits::models_ui(ui),
                     _ => {
                         ui.horizontal(|ui| {
-                            widgets::artcraft_mark(ui, 40.0);
+                            crate::branna::mark(ui, 40.0);
                             ui.vertical(|ui| {
-                                ui.label(egui::RichText::new("PdfCraft").font(theme::semibold(20.0)));
+                                ui.label(egui::RichText::new(crate::branna::name()).font(theme::semibold(20.0)));
                                 ui.label(crate::i18n::fmt(tl!("Version {v}"), &[("v", env!("CARGO_PKG_VERSION"))]));
                             });
                         });
                         ui.add_space(6.0);
                         ui.label(tl!("A clean-room, open-source PDF application written in Rust. MIT OR Apache-2.0."));
                         ui.label(
-                            egui::RichText::new(
-                                "Rendering: hayro (bootstrap) · UI: egui · Icons: Lucide (ISC) · Fonts: Inter, JetBrains Mono, Dancing Script (OFL)",
-                            )
+                            egui::RichText::new(bt!(
+                                "Rendering: hayro (bootstrap) · UI: egui · Icons: Lucide (ISC) · Fonts: Inter, JetBrains Mono, Dancing Script, Noto Sans Ethiopic (OFL)"
+                            ))
                             .color(t.text_muted)
                             .small(),
                         );
                         ui.add_space(12.0);
-                        ui.horizontal(|ui| {
-                            ui.label(egui::RichText::new(tl!("Part of")).color(t.text_muted));
-                            widgets::artcraft_logo(ui, 16.0);
-                        });
+                        // Branna: credit the project Branna is built on (its brand stays with it).
+                        ui.label(
+                            egui::RichText::new(crate::i18n::fmt(bt!("Based on {upstream} by the ArtCraft team."), &[("upstream", "PdfCraft")]))
+                                .color(t.text_muted),
+                        );
                         ui.add_space(6.0);
-                        if let Some(cmd) = widgets::community_links(ui) {
-                            link_command = Some(cmd);
+                        if let Some(url) = crate::branna::links(ui) {
+                            open_link = Some(url);
                         }
                     }
                 }
@@ -1293,6 +1296,9 @@ pub fn show(app: &mut PdfCraftApp, ctx: &egui::Context) {
     }
     if let Some(cmd) = link_command {
         app.execute(cmd);
+    }
+    if let Some(url) = open_link {
+        app.open_url(url);
     }
     if let Some(n) = open_revision {
         app.open_revision(n);

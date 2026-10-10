@@ -1,11 +1,14 @@
-PdfCraft
+Branna (ብራና)
+A modified version of PdfCraft (https://github.com/storytold/pdfcraft): Branna adds an Amharic
+interface, Ethiopic fonts and its own name and design, and removes the ArtCraft brand.
 Copyright (c) 2026 ArtCraft Team and the PdfCraft contributors.
+Copyright (c) 2026 the Branna contributors (changes since the fork; see BRANNA.md).
 Licensed under the MIT License or the Apache License, Version 2.0, at your option
 (LICENSE-MIT, LICENSE-APACHE).
 
-The ArtCraft name, wordmark and logos in docs/brand/ are trademarks of the ArtCraft Team. They are
-not open source and are not covered by the license above; their terms are in
-docs/brand/LICENSE-brand.txt.
+The ArtCraft name, wordmark and logos are trademarks of the ArtCraft Team. They are not open source,
+and PdfCraft's terms for them require forks to remove them, so Branna does not include them. Branna
+is not an ArtCraft product.
 
 Third-party material
 
@@ -22,6 +25,11 @@ list (author, source, license) is in ATTRIBUTION.md.
   https://github.com/storytold/craft-fonts/blob/main/ATTRIBUTION.md (BIZ UDPGothic, Shippori Mincho,
   BIZ UDMincho; the web build only BIZ UDPGothic Regular) under the SIL Open Font License 1.1. Those
   packages carry each font's licence as OFL-<family>.txt.
+- Noto Sans Ethiopic (Regular, SemiBold), Copyright 2022 The Noto Project Authors
+  (https://github.com/notofonts/ethiopic) — SIL Open Font License 1.1. Branna's build input
+  (packaging/branna/fonts.sh, CRAFT_FONTS_DIR) downloads it and checks its SHA-256; it is not part of
+  this repository. Builds made with it embed the fonts for Amharic interface text, and the packages
+  and the website carry the licence as OFL-noto-sans-ethiopic.txt.
 - hayro (rendering, via crates.io) — Apache-2.0 OR MIT. Its `embed-fonts` feature bundles the Foxit
   standard-14 Type 1 fonts under BSD-3-Clause ("Copyright 2014 PDFium Authors"), and hayro-cmap bundles
   Adobe CMap resources under BSD-3-Clause.

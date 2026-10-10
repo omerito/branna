@@ -158,6 +158,9 @@ pub fn installed_font_definitions(prefer_hans: bool) -> FontDefinitions {
     fonts
 }
 
+/// Branna: how much larger the Ethiopic faces draw than the nominal font size.
+pub const ETHIOPIC_SCALE: f32 = 1.1;
+
 /// The interface fonts: Inter (and JetBrains Mono for code) first, then egui's defaults, then
 /// the CJK, Arabic and Telugu faces of the optional craft-fonts build input as the last fallback
 /// in every family. Without craft-fonts there is no Japanese, Chinese, Arabic or Telugu face here.
@@ -205,9 +208,33 @@ pub fn font_definitions_for(prefer_hans: bool) -> FontDefinitions {
             }
         }
     }
+    // Branna: the Ethiopic faces (Amharic interface text) last, drawn a little larger than the
+    // Latin text around them: Ge'ez letters are detailed and need the extra size to stay legible.
+    let ethiopic = pdfcraft_fonts::ui_ethiopic_fonts();
+    for face in &ethiopic {
+        let name = face.name();
+        if !fonts.font_data.contains_key(&name) {
+            let tweak = egui::FontTweak { scale: ETHIOPIC_SCALE, ..Default::default() };
+            fonts.font_data.insert(name.clone(), Arc::new(FontData::from_static(face.bytes).tweak(tweak)));
+        }
+        if face.style == "Regular" {
+            for family in [FontFamily::Proportional, FontFamily::Monospace] {
+                let stack = fonts.families.entry(family).or_default();
+                if !stack.contains(&name) {
+                    stack.push(name.clone());
+                }
+            }
+        }
+    }
     let fallback: Vec<String> = fonts.families[&FontFamily::Proportional].clone();
     for (fam, primary) in [("medium", "Inter-Medium"), ("semibold", "Inter-SemiBold")] {
         let mut stack = vec![primary.to_owned()];
+        // Branna: bold Amharic in bold text (the regular Ethiopic face is in the fallbacks).
+        if fam == "semibold"
+            && let Some(bold) = ethiopic.iter().find(|f| f.style == "SemiBold")
+        {
+            stack.push(bold.name());
+        }
         stack.extend(fallback.iter().cloned());
         fonts.families.insert(FontFamily::Name(fam.into()), stack);
     }

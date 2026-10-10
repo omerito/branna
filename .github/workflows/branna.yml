@@ -135,6 +135,13 @@ jobs:
           cd apps/pdfcraft-web
           trunk build --release 2>&1 | tee "$LOGS/build.log"
 
+      # The licence texts the site must carry: README, LICENSE-*, NOTICE and the fonts' OFL.
+      - name: Licences
+        run: |
+          . packaging/env.sh
+          copy_docs dist/web
+          ls dist/web
+
       - name: Sizes
         run: |
           cd dist/web

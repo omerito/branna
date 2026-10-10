@@ -1,5 +1,5 @@
-//! Community links: the Discord button is one click away everywhere; Help menu, About dialog and
-//! home screen open the ArtCraft and PdfCraft pages.
+//! Branna's links: the feedback button is one click away everywhere; Help menu, About dialog and
+//! home screen open Branna's pages. The ArtCraft brand and community links are gone (BRANNA.md).
 
 use egui_kittest::Harness;
 use egui_kittest::kittest::Queryable;
@@ -18,28 +18,30 @@ fn harness(setup: impl FnOnce(&mut PdfCraftApp) + 'static) -> Harness<'static, P
 }
 
 #[test]
-fn discord_button_in_the_top_bar_opens_discord() {
+fn feedback_button_in_the_top_bar_opens_the_issue_tracker() {
     let mut h = harness(|_| {});
-    h.get_by_label("Discord").click();
+    h.get_by_label("Feedback").click();
     h.run_steps(2);
-    assert_eq!(h.state().last_opened_url.as_deref(), Some(links::DISCORD));
-    assert_eq!(links::DISCORD, "https://discord.gg/artcraft");
+    assert_eq!(h.state().last_opened_url.as_deref(), Some(links::FEEDBACK));
+    assert_eq!(links::FEEDBACK, "https://github.com/omerito/branna/issues");
 }
 
 #[test]
 fn home_screen_links() {
     for (label, url) in [
-        ("Join our Discord", links::DISCORD),
-        ("PdfCraft web page", "https://getartcraft.com/apps/pdfcraft"),
-        ("PdfCraft on GitHub", "https://github.com/storytold/pdfcraft"),
-        ("ArtCraft website", "https://getartcraft.com"),
+        ("Report a problem", links::FEEDBACK),
+        ("Branna web page", "https://omerito.github.io/branna"),
+        ("Branna on GitHub", "https://github.com/omerito/branna"),
     ] {
         let mut h = harness(|_| {});
-        h.get_by_label("Join the ArtCraft community");
+        h.get_by_label("Help make Branna better");
         h.get_by_label(label).click();
         h.run_steps(2);
         assert_eq!(h.state().last_opened_url.as_deref(), Some(url), "{label}");
     }
+    let h = harness(|_| {});
+    assert_eq!(h.query_all_by_label_contains("ArtCraft").count(), 0, "no ArtCraft brand on the home screen");
+    assert_eq!(h.query_all_by_label_contains("Discord").count(), 0);
 }
 
 #[test]
@@ -50,10 +52,11 @@ fn about_dialog_shows_the_brand_and_links() {
         app.open_bytes("one.pdf", None, pdf.to_vec()).unwrap();
         app.dialog = Some(Dialog::About);
     });
-    assert!(h.query_all_by_label("ArtCraft").count() >= 2, "the mark and the wordmark (alt text)");
-    h.get_by_label("Join our Discord").click();
+    assert!(h.query_all_by_label("Branna").count() >= 2, "the mark (alt text) and the name");
+    h.get_by_label("Based on PdfCraft by the ArtCraft team.");
+    h.get_by_label("Report a problem").click();
     h.run_steps(2);
-    assert_eq!(h.state().last_opened_url.as_deref(), Some(links::DISCORD));
+    assert_eq!(h.state().last_opened_url.as_deref(), Some(links::FEEDBACK));
 }
 
 #[test]

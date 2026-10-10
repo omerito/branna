@@ -1,0 +1,2152 @@
+# Amharic (am) catalog for Branna. Columns, separated by a TAB:  context <TAB> source <TAB> translation
+#
+#   context  empty                a plain UI string; `source` is the English text in the code
+#            @id                  a command id (e.g. file.saveAs): wins over the English text for
+#                                 that menu item, so one id can read differently from its twin
+#            @plural              `source` is "one|other" (English forms); the translation lists the
+#                                 language's forms separated by "|" (see `plural` in i18n/mod.rs).
+#                                 Amharic (CLDR `am`) uses the first form for 0 and 1.
+#            anything else        a disambiguating context passed to `tr_ctx`
+#   escapes  \n  \t  \\  inside a column. `{name}` placeholders must appear in both columns.
+#   lines starting with # and blank lines are ignored.
+#
+# Clean-room: every entry was written from the plain meaning of the English label using ordinary
+# Amharic computing vocabulary. No proprietary localisation resource, string table or product UI
+# (Acrobat's included) was consulted or copied; add entries the same way.
+# Style (BRANNA.md): commands and buttons use the short imperative (ክፈት, አስቀምጥ); sentences
+# addressed to the reader use the polite form (ይምረጡ, ፋይልዎ). The app's name is ብራና; "PDF" is
+# ፒዲኤፍ in running text; technical names (JavaScript, OCR, XFA, PDF/A, file extensions) stay in
+# Latin letters. Western digits. The trailing "…" of dialog commands is kept.
+
+	Menu	ምናሌ
+	File	ፋይል
+	Edit	አርትዕ
+	Pages	ገጾች
+	View	እይታ
+	Help	እገዛ
+	Preferences	ምርጫዎች
+	Preferences…	ምርጫዎች…
+	Interface language	የበይነገጽ ቋንቋ
+	Identity	ማንነት
+	Name on new comments	በአዲስ አስተያየቶች ላይ የሚታይ ስም
+	Open…	ክፈት…
+	Open Recent	የቅርብ ጊዜ ፋይሎች
+	Pin folder to Home…	አቃፊን በመነሻ ላይ ሰካ…
+	Folders	አቃፊዎች
+	Pin a folder…	አቃፊ ሰካ…
+	Pin a folder to Home	አቃፊን በመነሻ ላይ ሰካ
+	Pin a folder to list its newest PDFs here, such as where your scanner or a synced cloud drive saves them.	አዲሶቹ ፒዲኤፎቹ እዚህ እንዲዘረዘሩ አቃፊ ይሰኩ፤ ለምሳሌ ስካነርዎ ወይም የሚመሳሰል የደመና ማከማቻዎ ፋይሎችን የሚያስቀምጥበትን አቃፊ።
+	Unpin	ንቀል
+	Unpin {folder}	{folder}ን ንቀል
+	Looking for PDFs…	ፒዲኤፎችን በመፈለግ ላይ…
+	This folder isn't available right now. It may have moved, or its drive or cloud sync is offline.	ይህ አቃፊ አሁን አይገኝም። ተንቀሳቅሶ ሊሆን ይችላል፣ ወይም አንጻፊው ወይም የደመና ማመሳሰያው ከመስመር ውጭ ነው።
+	No PDFs in this folder yet	በዚህ አቃፊ ውስጥ እስካሁን ፒዲኤፍ የለም
+	Show less	ያነሰ አሳይ
+	Show {n} more	{n} ተጨማሪ አሳይ
+	The newest {n} of {total} PDFs	ከ{total} ፒዲኤፎች አዲሶቹ {n}
+	Pinned folders need the desktop app	የተሰኩ አቃፊዎች የዴስክቶፕ መተግበሪያውን ይፈልጋሉ
+	Choose a folder on this computer to pin	ለመሰካት በዚህ ኮምፒውተር ላይ ያለ አቃፊ ይምረጡ
+	{folder} is already pinned to Home	{folder} አስቀድሞ በመነሻ ላይ ተሰክቷል
+	You can pin up to {n} folders. Unpin one first.	እስከ {n} አቃፊዎች ድረስ መሰካት ይችላሉ። መጀመሪያ አንዱን ይንቀሉ።
+	Pinned {folder} to Home	{folder} በመነሻ ላይ ተሰክቷል
+	No recent files	የቅርብ ጊዜ ፋይሎች የሉም
+	New blank PDF	አዲስ ባዶ ፒዲኤፍ
+	Create PDF from file…	ከፋይል ፒዲኤፍ ፍጠር…
+	Create PDF from images…	ከምስሎች ፒዲኤፍ ፍጠር…
+	Create PDF from multiple files…	ከብዙ ፋይሎች ፒዲኤፍ ፍጠር…
+	Create PDF from clipboard	ከቅንጥብ ሰሌዳ ፒዲኤፍ ፍጠር
+	Combine files…	ፋይሎችን አዋህድ…
+	Save	አስቀምጥ
+	Save as…	በሌላ ስም አስቀምጥ…
+	Close file	ፋይሉን ዝጋ
+	Close all	ሁሉንም ዝጋ
+	Revert	ወደ ተቀመጠው መልስ
+	Print…	አትም…
+	Document properties…	የሰነድ ባሕሪያት…
+	Undo	ቀልብስ
+	Redo	ድገም
+	Find…	ፈልግ…
+	Advanced search…	የላቀ ፍለጋ…
+	Copy pages	ገጾችን ቅዳ
+	Cut pages	ገጾችን ቁረጥ
+	Paste pages	ገጾችን ለጥፍ
+	Fit visible	የሚታየውን አስማማ
+	Marquee zoom	በምርጫ ሳጥን አጉላ
+	Take a snapshot	ቅጽበታዊ ምስል አንሳ
+	Full screen mode	ሙሉ ማያ ገጽ
+	Read mode	የንባብ ሁነታ
+	Switch light / dark theme	ብሩህ / ጨለማ ገጽታ ቀይር
+	Comments panel	የአስተያየቶች ፓነል
+	Form fields panel	የቅጽ መስኮች ፓነል
+	Clear form	ቅጹን አጽዳ
+	Find tools and commands…	መሣሪያዎችንና ትዕዛዞችን ፈልግ…
+	Zoom	ማጉላት
+	Actual size	ትክክለኛ መጠን
+	Zoom to page level	ሙሉ ገጹን አሳይ
+	Fit to width	ከስፋት ጋር አስማማ
+	Display theme	የማሳያ ገጽታ
+	Side panels	የጎን ፓነሎች
+	Enable Acrobat JavaScript	Acrobat JavaScriptን አንቃ
+	OK	እሺ
+	Join our Discord	የDiscord ቡድናችንን ይቀላቀሉ
+	Close	ዝጋ
+	Next / previous match	ቀጣይ / ቀዳሚ ተዛማጅ
+	Copy selected text	የተመረጠውን ጽሑፍ ቅዳ
+	Double-click	ሁለቴ ጠቅ ማድረግ
+	Select a word	ቃል ምረጥ
+	Clear selection / close find	ምርጫን አጽዳ / ፍለጋን ዝጋ
+	Zoom in / out (also pinch or ⌘-scroll)	አጉላ / አሳንስ (በሁለት ጣት ቆንጥጦ ወይም ⌘-ማሸብለል)
+	Rotate view	እይታን አሽከርክር
+	First / last page	የመጀመሪያ / የመጨረሻ ገጽ
+	Previous / next page	ቀዳሚ / ቀጣይ ገጽ
+	Delete selected pages (Organize)	የተመረጡ ገጾችን ሰርዝ (አደራጅ)
+	Select all pages (Organize)	ሁሉንም ገጾች ምረጥ (አደራጅ)
+	Home	መነሻ
+	Open	ክፈት
+	Open a PDF (⌘O)	ፒዲኤፍ ክፈት (⌘O)
+	Dark gray theme	ጥቁር ግራጫ ገጽታ
+	Light theme	ብሩህ ገጽታ
+	All tools	ሁሉም መሣሪያዎች
+	Read	አንብብ
+	Convert	ቀይር
+	E-Sign	ኤሌክትሮኒክ ፊርማ
+	Print (⌘P)	አትም (⌘P)
+	Save (M4)	አስቀምጥ (M4)
+	Document properties (⌘D)	የሰነድ ባሕሪያት (⌘D)
+	Find tools and commands	መሣሪያዎችንና ትዕዛዞችን ፈልግ
+	Fit to height	ከቁመት ጋር አስማማ
+	Zoom in	አጉላ
+	Zoom out	አሳንስ
+	Rotate view clockwise	እይታን በሰዓት አቅጣጫ አሽከርክር
+	Rotate view counterclockwise	እይታን ከሰዓት አቅጣጫ በተቃራኒ አሽከርክር
+	Page navigation	የገጽ መዳሰሻ
+	Previous view	ቀዳሚ እይታ
+	Next view	ቀጣይ እይታ
+	Page display	የገጽ ማሳያ
+	Continuous scrolling	ተከታታይ ማሸብለል
+	Two-page view	ባለሁለት ገጽ እይታ
+	Single page	ነጠላ ገጽ
+	Show cover page in two-page view	በባለሁለት ገጽ እይታ የሽፋን ገጽ አሳይ
+	Use system setting	የሲስተሙን ቅንብር ተጠቀም
+	Light gray	ፈዛዛ ግራጫ
+	Dark gray	ጥቁር ግራጫ
+	Comments	አስተያየቶች
+	Bookmarks	ዕልባቶች
+	Fields	መስኮች
+	Layers	ንብርብሮች
+	Attachments	አባሪዎች
+	Signatures	ፊርማዎች
+	Accessibility Checker	የተደራሽነት ፈታሽ
+	Search	ፍለጋ
+	Compare	አወዳድር
+	Page thumbnails	የገጽ ድንክዬዎች
+	Form fields	የቅጽ መስኮች
+	Zoom out (⌘−)	አሳንስ (⌘−)
+	Zoom in (⌘+)	አጉላ (⌘+)
+	Rotate view clockwise (⇧⌘+)	እይታን በሰዓት አቅጣጫ አሽከርክር (⇧⌘+)
+	Toggle fit page / fit width	ገጽ አስማማ / ስፋት አስማማ ቀያይር
+	Next page	ቀጣይ ገጽ
+	Previous page	ቀዳሚ ገጽ
+	Current page — type a page number or label (such as iv) and press Enter	የአሁኑ ገጽ — የገጽ ቁጥር ወይም መለያ (ለምሳሌ iv) ይተይቡና Enter ይጫኑ
+	Welcome to PdfCraft	እንኳን ወደ ብራና በደህና መጡ
+	An open-source PDF workbench — local, private, and scriptable.	ክፍት ምንጭ የፒዲኤፍ መሥሪያ — በኮምፒውተርዎ ላይ የሚሠራ፣ ግላዊነትን የሚጠብቅ እና በስክሪፕት የሚታዘዝ።
+	Join the ArtCraft community	የArtCraft ማህበረሰብን ይቀላቀሉ
+	Get help, share feedback and follow development on Discord.	በDiscord ላይ እገዛ ያግኙ፣ አስተያየት ያጋሩ እና የልማት ሂደቱን ይከታተሉ።
+	Recommended tools	የሚመከሩ መሣሪያዎች
+	Use now	አሁን ተጠቀም
+	Open file	ፋይል ክፈት
+	Recent	የቅርብ ጊዜ
+	Files you open in PdfCraft appear here. Drop a PDF anywhere to open it.	በብራና የሚከፍቷቸው ፋይሎች እዚህ ይታያሉ። ለመክፈት ፒዲኤፍን የትም ቦታ ላይ ይጣሉት።
+	Privacy	ግላዊነት
+	PdfCraft works offline. No telemetry, no account, and no cloud processing unless you add a provider.	ብራና ያለ ኢንተርኔት ይሠራል። አቅራቢ ካልጨመሩ በስተቀር የአጠቃቀም መረጃ መሰብሰብ፣ መለያ ወይም የደመና ሂደት የለም።
+	Scripts run in a sandbox without file or network access. With JavaScript off, Acrobat's standard format, validate and calculate functions still work.	ስክሪፕቶች ፋይል ወይም አውታረ መረብ መድረስ በማይችሉበት ገለልተኛ አካባቢ ይሠራሉ። JavaScript ጠፍቶም ቢሆን የAcrobat መደበኛ የቅርጸት፣ የማረጋገጫ እና የስሌት ተግባራት ይሠራሉ።
+	Back to all tools	ወደ ሁሉም መሣሪያዎች ተመለስ
+	Close panel	ፓነሉን ዝጋ
+	View less	ያነሰ አሳይ
+	View more	ተጨማሪ አሳይ
+	Available	ይገኛል
+	Ready	ዝግጁ
+	Search tools and commands…	መሣሪያዎችንና ትዕዛዞችን ፈልግ…
+	No matching tools	የሚዛመድ መሣሪያ የለም
+	Tool	መሣሪያ
+	Command	ትዕዛዝ
+	Add a sticky note	ማስታወሻ አክል
+	Add a text box	የጽሑፍ ሳጥን አክል
+	Highlight text	ጽሑፍ አድምቅ
+	Underline text	ጽሑፍ አስምር
+	Strikethrough text	ጽሑፍን በመስመር ሰርዝ
+	Squiggly underline text	ጽሑፍን በሞገድ መስመር አስምር
+	Draw freehand	በነጻ እጅ ሳል
+	Draw a line	መስመር ሳል
+	Draw an arrow	ቀስት ሳል
+	Draw a rectangle	አራት ማዕዘን ሳል
+	Draw an oval	ሞላላ ሳል
+	Draw a polygon	ባለብዙ ጎን ሳል
+	Draw connected lines	የተያያዙ መስመሮችን ሳል
+	Draw a cloud	ደመና ሳል
+	Add a callout	የማብራሪያ ሳጥን አክል
+	Insert text	ጽሑፍ አስገባ
+	Replace text	ጽሑፍ ተካ
+	Attach a file	ፋይል አያይዝ
+	Erase drawings	ስዕሎችን አጥፋ
+	Flatten comments	አስተያየቶችን ከገጹ ጋር አዋህድ
+	Import comments…	አስተያየቶችን አስመጣ…
+	Add a stamp	ማህተም አክል
+	Export all comments to data file…	ሁሉንም አስተያየቶች እንደ ውሂብ ፋይል ወደ ውጪ ላክ…
+	Hide all comments	ሁሉንም አስተያየቶች ደብቅ
+	Summarize comments	አስተያየቶችን አጠቃልል
+	Import form data…	የቅጽ ውሂብ አስመጣ…
+	Export form data…	የቅጽ ውሂብ ወደ ውጪ ላክ…
+	PDF/A…	PDF/A…
+	Action Wizard…	የእርምጃ አዋቂ…
+	Prepare for distribution…	ለማሰራጨት አዘጋጅ…
+	Optimize scanned documents…	የተቃኙ ሰነዶችን አመቻች…
+	Compare files…	ፋይሎችን አወዳድር…
+	Detect form fields	የቅጽ መስኮችን ለይ
+	Merge data files into spreadsheet…	የውሂብ ፋይሎችን ወደ የተመን ሉህ አዋህድ…
+	Flatten form fields	የቅጽ መስኮችን ከገጹ ጋር አዋህድ
+	Prepare a form	ቅጽ አዘጋጅ
+	Tab order: by rows	የTab ቅደም ተከተል: በረድፍ
+	Tab order: by columns	የTab ቅደም ተከተል: በዓምድ
+	Tab order: by document structure	የTab ቅደም ተከተል: በሰነዱ መዋቅር
+	Add text	ጽሑፍ አክል
+	Edit text & images	ጽሑፍና ምስሎችን አርትዕ
+	Add or edit links	አገናኞችን አክል ወይም አርትዕ
+	Create links from URLs	ከድረ-ገጽ አድራሻዎች አገናኞችን ፍጠር
+	Remove all links	ሁሉንም አገናኞች አስወግድ
+	Add Bates numbering…	የBates ቁጥር አሰጣጥ አክል…
+	Add image…	ምስል አክል…
+	Redact text and images	ጽሑፍና ምስሎችን ሸፍን
+	Redact pages…	ገጾችን ሸፍን…
+	Find text and redact…	ጽሑፍ ፈልግና ሸፍን…
+	Redaction properties…	የመሸፈኛ ባሕሪያት…
+	Apply redactions…	መሸፈኛዎችን ተግብር…
+	Clear redaction marks	የመሸፈኛ ምልክቶችን አጽዳ
+	Remove hidden information…	የተደበቀ መረጃን አስወግድ…
+	Sanitize document…	ሰነዱን ከተደበቀ መረጃ አጽዳ…
+	Field properties…	የመስክ ባሕሪያት…
+	Add a text field	የጽሑፍ መስክ አክል
+	Add a checkbox	አመልካች ሳጥን አክል
+	Add a radio button	የምርጫ አዝራር አክል
+	Add a drop-down list	ተቆልቋይ ዝርዝር አክል
+	Add a list box	የዝርዝር ሳጥን አክል
+	Add a button	አዝራር አክል
+	Add an image field	የምስል መስክ አክል
+	Add a date field	የቀን መስክ አክል
+	Add a digital signature field	የዲጂታል ፊርማ መስክ አክል
+	Digitally sign	በዲጂታል ፈርም
+	Certify (visible signature)	ሰነዱን አጽድቅ (የሚታይ ፊርማ)
+	Certify (invisible signature)	ሰነዱን አጽድቅ (የማይታይ ፊርማ)
+	Validate all signatures	ሁሉንም ፊርማዎች አረጋግጥ
+	Signatures panel	የፊርማዎች ፓነል
+	Fill & Sign: add text	ሙላና ፈርም: ጽሑፍ አክል
+	Fill & Sign: checkmark	ሙላና ፈርም: ትክክል ምልክት
+	Fill & Sign: cross	ሙላና ፈርም: የ× ምልክት
+	Fill & Sign: dot	ሙላና ፈርም: ነጥብ
+	Fill & Sign: line	ሙላና ፈርም: መስመር
+	Fill & Sign: date	ሙላና ፈርም: ቀን
+	Fill & Sign: sign	ሙላና ፈርም: ፈርም
+	Fill & Sign: initials	ሙላና ፈርም: የስም መነሻ ፊደላት
+	Export to image…	እንደ ምስል ወደ ውጪ ላክ…
+	Reduce file size…	የፋይል መጠን ቀንስ…
+	Optimize PDF…	ፒዲኤፍ አመቻች…
+	Export to text…	እንደ ጽሑፍ ወደ ውጪ ላክ…
+	Export to Word…	እንደ Word ፋይል ወደ ውጪ ላክ…
+	Export to HTML…	እንደ HTML ወደ ውጪ ላክ…
+	Export to RTF…	እንደ RTF ወደ ውጪ ላክ…
+	JavaScript console…	የJavaScript ኮንሶል…
+	Document JavaScripts…	የሰነዱ JavaScript ስክሪፕቶች…
+	Recognize text…	ጽሑፍ ለይ…
+	Recognize text in multiple files…	በብዙ ፋይሎች ውስጥ ጽሑፍ ለይ…
+	Check for accessibility…	ተደራሽነትን ፈትሽ…
+	Open accessibility report	የተደራሽነት ሪፖርት ክፈት
+	Change reading options…	የንባብ አማራጮችን ቀይር…
+	Add alternate text…	አማራጭ ጽሑፍ አክል…
+	Export all images…	ሁሉንም ምስሎች ወደ ውጪ ላክ…
+	Add header & footer…	ራስጌና ግርጌ አክል…
+	Update header & footer…	ራስጌና ግርጌ አዘምን…
+	Remove header & footer	ራስጌና ግርጌ አስወግድ
+	Add watermark…	የውሃ ምልክት አክል…
+	Update watermark…	የውሃ ምልክት አዘምን…
+	Remove watermark	የውሃ ምልክት አስወግድ
+	Add background…	ዳራ አክል…
+	Update background…	ዳራ አዘምን…
+	Remove background	ዳራ አስወግድ
+	Protect using password…	በየይለፍ ቃል ጠብቅ…
+	Remove security	ጥበቃን አስወግድ
+	Security properties…	የደኅንነት ባሕሪያት…
+	Organize pages	ገጾችን አደራጅ
+	New bookmark	አዲስ ዕልባት
+	Rotate pages clockwise	ገጾችን በሰዓት አቅጣጫ አሽከርክር
+	Rotate pages counterclockwise	ገጾችን ከሰዓት አቅጣጫ በተቃራኒ አሽከርክር
+	Delete pages	ገጾችን ሰርዝ
+	Insert blank page	ባዶ ገጽ አስገባ
+	Rotate pages…	ገጾችን አሽከርክር…
+	Duplicate pages	ገጾችን አባዛ
+	Crop pages	ገጾችን ከርክም
+	Set page boxes…	የገጽ ሳጥኖችን አዘጋጅ…
+	Insert pages from file…	ከፋይል ገጾችን አስገባ…
+	Replace pages…	ገጾችን ተካ…
+	Extract pages…	ገጾችን አውጣ…
+	Split document…	ሰነዱን ከፋፍል…
+	Number pages…	ገጾችን ቁጥር ስጥ…
+	Keyboard shortcuts	የቁልፍ ሰሌዳ አቋራጮች
+	Join the ArtCraft Discord	የArtCraft Discordን ይቀላቀሉ
+	PdfCraft web page	የብራና ድረ-ገጽ
+	PdfCraft on GitHub	ብራና በGitHub ላይ
+	ArtCraft website	የArtCraft ድረ-ገጽ
+	Check for updates…	ዝማኔዎችን ፈትሽ…
+	About PdfCraft	ስለ ብራና
+	Export a PDF	ፒዲኤፍ ወደ ውጪ ላክ
+	Export to	የመላኪያ ቅርጸት
+	Microsoft Word (.docx)	Microsoft Word (.docx)
+	Spreadsheet (.xlsx)	የተመን ሉህ (.xlsx)
+	Presentation (.pptx)	የአቀራረብ ፋይል (.pptx)
+	Image (PNG)	ምስል (PNG)
+	Export all images	ሁሉንም ምስሎች ወደ ውጪ ላክ
+	HTML web page	HTML ድረ-ገጽ
+	Rich Text Format (.rtf)	Rich Text Format (.rtf)
+	Text (plain)	ጽሑፍ (ቀላል)
+	PostScript / EPS	PostScript / EPS
+	Fill & Sign	ሙላና ፈርም
+	Fill	ሙላ
+	Checkmark	ትክክል ምልክት
+	Cross	የ× ምልክት
+	Dot	ነጥብ
+	Line	መስመር
+	Date	ቀን
+	Signature	ፊርማ
+	Initials	የስም መነሻ ፊደላት
+	Edit a PDF	ፒዲኤፍ አርትዕ
+	Modify page	ገጽ አሻሽል
+	Rotate pages	ገጾችን አሽከርክር
+	Insert pages	ገጾችን አስገባ
+	Extract pages	ገጾችን አውጣ
+	Add content	ይዘት አክል
+	Text	ጽሑፍ
+	Image	ምስል
+	Header and footer	ራስጌና ግርጌ
+	Watermark	የውሃ ምልክት
+	Link	አገናኝ
+	Bates numbering	የBates ቁጥር አሰጣጥ
+	Background	ዳራ
+	Attach file	ፋይል አያይዝ
+	Create a PDF	ፒዲኤፍ ፍጠር
+	Create from	የመፍጠሪያ ምንጭ
+	Single file	ነጠላ ፋይል
+	Multiple files	ብዙ ፋይሎች
+	Images	ምስሎች
+	Clipboard	ቅንጥብ ሰሌዳ
+	Blank page	ባዶ ገጽ
+	Combine files	ፋይሎችን አዋህድ
+	Combine	አዋህድ
+	Add files to combine	የሚዋሃዱ ፋይሎችን አክል
+	Page options	የገጽ አማራጮች
+	Page grid	የገጽ ፍርግርግ
+	Rotate	አሽከርክር
+	Delete	ሰርዝ
+	Extract	አውጣ
+	Insert	አስገባ
+	Replace	ተካ
+	Split	ከፋፍል
+	More	ተጨማሪ
+	Set page boxes	የገጽ ሳጥኖችን አዘጋጅ
+	Page labels	የገጽ መለያዎች
+	Page transitions	የገጽ ሽግግሮች
+	Add comments	አስተያየቶችን አክል
+	Markup	ምልክት ማድረጊያ
+	Sticky note	ማስታወሻ
+	Underline	አስምር
+	Strikethrough	በመስመር ሰርዝ
+	Squiggly underline	የሞገድ መስመር
+	Text box	የጽሑፍ ሳጥን
+	Drawing	ስዕል
+	Rectangle	አራት ማዕዘን
+	Oval	ሞላላ
+	Arrow	ቀስት
+	Cloud	ደመና
+	Stamp	ማህተም
+	Review	ግምገማ
+	Comment list	የአስተያየቶች ዝርዝር
+	Scan & OCR	ቅኝትና OCR
+	Recognize text	ጽሑፍ ለይ
+	In this file	በዚህ ፋይል ውስጥ
+	In multiple files	በብዙ ፋይሎች ውስጥ
+	Enhance scanned file	የተቃኘ ፋይልን አሻሽል
+	Correct recognized text	የተለየውን ጽሑፍ አስተካክል
+	Protect a PDF	ፒዲኤፍ ጠብቅ
+	Protect	ጠብቅ
+	Protect with password	በየይለፍ ቃል ጠብቅ
+	Remove hidden information	የተደበቀ መረጃን አስወግድ
+	Advanced options	የላቁ አማራጮች
+	Encrypt with certificate	በሰርተፊኬት አመስጥር
+	Security properties	የደኅንነት ባሕሪያት
+	Redact a PDF	በፒዲኤፍ ውስጥ ይዘት ሸፍን
+	Redact	ሸፍን
+	Redact pages	ገጾችን ሸፍን
+	Find text and redact	ጽሑፍ ፈልግና ሸፍን
+	Set properties	ባሕሪያትን አዘጋጅ
+	Sanitize document	ሰነዱን ከተደበቀ መረጃ አጽዳ
+	Compress a PDF	ፒዲኤፍ ጨመቅ
+	Optimize	አመቻች
+	Reduce file size	የፋይል መጠን ቀንስ
+	Advanced optimization	የላቀ ማመቻቸት
+	Audit space usage	የቦታ አጠቃቀምን መርምር
+	Field list	የመስኮች ዝርዝር
+	Field properties	የመስክ ባሕሪያት
+	Tab order by rows	የTab ቅደም ተከተል በረድፍ
+	Tab order by columns	የTab ቅደም ተከተል በዓምድ
+	Import data	ውሂብ አስመጣ
+	Export data	ውሂብ ወደ ውጪ ላክ
+	Add form components	የቅጽ ክፍሎችን አክል
+	Text field	የጽሑፍ መስክ
+	Checkbox	አመልካች ሳጥን
+	Radio button	የምርጫ አዝራር
+	Drop-down list	ተቆልቋይ ዝርዝር
+	List box	የዝርዝር ሳጥን
+	Button	አዝራር
+	Image field	የምስል መስክ
+	Date field	የቀን መስክ
+	Digital signature	ዲጂታል ፊርማ
+	Stamps	ማህተሞች
+	Stamp palette	የማህተሞች ስብስብ
+	Use a certificate	ሰርተፊኬት ተጠቀም
+	Certificates	ሰርተፊኬቶች
+	Timestamp	የጊዜ ማህተም
+	Use print production	የህትመት ዝግጅትን ተጠቀም
+	Print production	የህትመት ዝግጅት
+	Output preview	የውጤት ቅድመ እይታ
+	Preflight	ቅድመ-ፍተሻ
+	Convert colors	ቀለሞችን ቀይር
+	Add printer marks	የአታሚ ምልክቶችን አክል
+	Fix hairlines	በጣም ቀጭን መስመሮችን አስተካክል
+	Measure objects	ነገሮችን ለካ
+	Measure	ለካ
+	Measuring tool	የመለኪያ መሣሪያ
+	Geospatial location	መልክዓ ምድራዊ አቀማመጥ
+	Compare files	ፋይሎችን አወዳድር
+	Select files to compare	የሚወዳደሩ ፋይሎችን ይምረጡ
+	Use guided actions	የተመሩ እርምጃዎችን ተጠቀም
+	Actions list	የእርምጃዎች ዝርዝር
+	Action Wizard	የእርምጃ አዋቂ
+	Make accessible	ተደራሽ አድርግ
+	Prepare for distribution	ለማሰራጨት አዘጋጅ
+	Optimize scanned documents	የተቃኙ ሰነዶችን አመቻች
+	Archive documents	ሰነዶችን በማህደር አስቀምጥ
+	Prepare for accessibility	ለተደራሽነት አዘጋጅ
+	Accessibility	ተደራሽነት
+	Automatically tag PDF	ለፒዲኤፍ በራስ-ሰር መለያ ስጥ
+	Change reading options	የንባብ አማራጮችን ቀይር
+	Check for accessibility	ተደራሽነትን ፈትሽ
+	Add alternate text	አማራጭ ጽሑፍ አክል
+	Fix reading order	የንባብ ቅደም ተከተልን አስተካክል
+	Apply PDF standards	የፒዲኤፍ ደረጃዎችን ተግብር
+	Standards	ደረጃዎች
+	Save as PDF/A	እንደ PDF/A አስቀምጥ
+	Save as PDF/X	እንደ PDF/X አስቀምጥ
+	Save as PDF/UA	እንደ PDF/UA አስቀምጥ
+	Add search index	የፍለጋ ማውጫ አክል
+	Index	ማውጫ
+	Manage embedded index	የተካተተውን ማውጫ አስተዳድር
+	Use JavaScript	JavaScript ተጠቀም
+	JavaScript	JavaScript
+	Console	ኮንሶል
+	Document JavaScripts	የሰነዱ JavaScript ስክሪፕቶች
+	Document actions	የሰነድ እርምጃዎች
+	AI assistant	የAI ረዳት
+	Bring your own model (off by default)	የራስዎን ሞዴል ይጠቀሙ (በነባሪ ጠፍቷል)
+	Summarize	አጠቃልል
+	Ask about this document	ስለዚህ ሰነድ ይጠይቁ
+	Translate	ተርጉም
+	pages	ገጾች
+	Planned	የታቀደ
+	Planned for milestone	የታቀደበት ምዕራፍ
+	open to see what it will include	ምን እንደሚያካትት ለማየት ይክፈቱ
+	Optional: needs an AI provider you configure	አማራጭ: እርስዎ የሚያዋቅሩት የAI አቅራቢ ያስፈልገዋል
+	Coming in milestone	የሚመጣበት ምዕራፍ
+	Items marked Ready work today.	«ዝግጁ» የሚል ምልክት ያላቸው ንጥሎች ዛሬ ይሠራሉ።
+	Preview	ቅድመ እይታ
+	Edit fields	መስኮችን አርትዕ
+	Try the form as people filling it in will see it	ቅጹን የሚሞሉ ሰዎች እንደሚያዩት ይሞክሩት
+	Redact all	ሁሉንም ሸፍን
+	Clear all	ሁሉንም አጽዳ
+	Rotate page	ገጹን አሽከርክር
+	Delete page	ገጹን ሰርዝ
+	Move page	ገጹን አንቀሳቅስ
+	Move pages	ገጾችን አንቀሳቅስ
+	Duplicate page	ገጹን አባዛ
+	Replace page	ገጹን ተካ
+	Replace pages	ገጾችን ተካ
+	Crop page	ገጹን ከርክም
+	Cancel	ይቅር
+	Don't save	አታስቀምጥ
+	Apply	ተግብር
+	Run	አሂድ
+	Clear	አጽዳ
+	Sanitize	አጥራ
+	Mark all	ሁሉንም ምልክት አድርግ
+	Save changes to “{name}” before closing?	“{name}” ከመዘጋቱ በፊት ለውጦቹ ይቀመጡ?
+	Your changes will be lost if you don't save them.	ካላስቀመጧቸው ለውጦችዎ ይጠፋሉ።
+	Password required	የይለፍ ቃል ያስፈልጋል
+	“{name}” is protected. Enter a password to open it.	“{name}” የተጠበቀ ነው። ለመክፈት የይለፍ ቃል ያስገቡ።
+	Password	የይለፍ ቃል
+	Incorrect password. Try again.	የይለፍ ቃሉ ትክክል አይደለም። እንደገና ይሞክሩ።
+	Recognize Text	ጽሑፍ ለይ
+	Password protection will be applied when you save	ሲያስቀምጡ የይለፍ ቃል ጥበቃ ይተገበራል
+	Saved the print-ready PDF to {path}	ለህትመት ዝግጁ የሆነው ፒዲኤፍ በ{path} ተቀምጧል
+	Could not save: {e}	ማስቀመጥ አልተቻለም: {e}
+	Earlier in tab order	በTab ቅደም ተከተል አስቀድም
+	Later in tab order	በTab ቅደም ተከተል አዘግይ
+	From:	ከ:
+	To:	እስከ:
+	High Resolution	ከፍተኛ ጥራት
+	Print	አትም
+	Verify to see what the document needs.	ሰነዱ ምን እንደሚያስፈልገው ለማየት ያረጋግጡ።
+	Set Page Boxes	የገጽ ሳጥኖችን አዘጋጅ
+	Signature panel	የፊርማ ፓነል
+	{month} {day}, {y}	{month} {day} ቀን {y}
+	The document's security settings don't allow filling in form fields	የሰነዱ የደኅንነት ቅንብሮች የቅጽ መስኮችን መሙላት አይፈቅዱም
+	{name} is read-only	{name} ለንባብ ብቻ ነው
+	{name} has no action	{name} ምንም እርምጃ የለውም
+	Previous month	ያለፈው ወር
+	Next month	የሚቀጥለው ወር
+	January	ጃንዩወሪ
+	February	ፌብሩወሪ
+	March	ማርች
+	April	ኤፕሪል
+	May	ሜይ
+	June	ጁን
+	July	ጁላይ
+	August	ኦገስት
+	September	ሴፕቴምበር
+	October	ኦክቶበር
+	November	ኖቬምበር
+	December	ዲሴምበር
+	Done	ተከናውኗል
+	This certificate is in your list of trusted certificates.	ይህ ሰርተፊኬት በታመኑ ሰርተፊኬቶችዎ ዝርዝር ውስጥ አለ።
+	This certificate is trusted through a certificate above it in the chain.	ይህ ሰርተፊኬት የታመነው በሰንሰለቱ ውስጥ ከእሱ በላይ ባለ ሰርተፊኬት በኩል ነው።
+	This certificate is not trusted. Signatures made with it show an unknown identity.	ይህ ሰርተፊኬት የታመነ አይደለም። በእሱ የተደረጉ ፊርማዎች ያልታወቀ ማንነት ያሳያሉ።
+	Add to Trusted Certificates	ወደ ታመኑ ሰርተፊኬቶች አክል
+	Export…	ወደ ውጪ ላክ…
+	PDF Optimizer	የፒዲኤፍ አመቻች
+	Discard Objects	ነገሮችን አስወግድ
+	Discard User Data	የተጠቃሚ ውሂብን አስወግድ
+	Clean Up	አጽዳ
+	Color Images	ባለቀለም ምስሎች
+	Grayscale Images	ግራጫ ምስሎች
+	Bicubic downsampling to	ጥራትን (bicubic) ቀንስ ወደ
+	for images above	ጥራታቸው ከዚህ በላይ ለሆኑ ምስሎች
+	Compression	መጨመቂያ
+	ZIP	ZIP
+	Retain existing	ያለውን አቆይ
+	Minimum	በጣም ዝቅተኛ
+	Low	ዝቅተኛ
+	High	ከፍተኛ
+	Maximum	በጣም ከፍተኛ
+	Each image is measured where pages draw it; an image is replaced only if the result is smaller.	እያንዳንዱ ምስል የሚለካው ገጾቹ በሚስሉበት መጠን ነው፤ ምስል የሚተካው ውጤቱ ያነሰ ከሆነ ብቻ ነው።
+	Discard all links, actions and JavaScript	ሁሉንም አገናኞች፣ እርምጃዎች እና JavaScript አስወግድ
+	Discard alternate images	አማራጭ ምስሎችን አስወግድ
+	Discard embedded page thumbnails	የተካተቱ የገጽ ድንክዬዎችን አስወግድ
+	Discard document tags	የሰነድ መለያዎችን አስወግድ
+	Discard embedded print settings	የተካተቱ የህትመት ቅንብሮችን አስወግድ
+	Discard bookmarks	ዕልባቶችን አስወግድ
+	Discard hidden layer content	የተደበቁ ንብርብሮችን ይዘት አስወግድ
+	Discard all comments, forms and multimedia	ሁሉንም አስተያየቶች፣ ቅጾች እና መልቲሚዲያ አስወግድ
+	Discard document information and metadata	የሰነድ መረጃና ሜታዳታ አስወግድ
+	Discard all object data (file attachments)	ሁሉንም የነገር ውሂብ (የፋይል አባሪዎች) አስወግድ
+	Discard private data of other applications	የሌሎች መተግበሪያዎችን የግል ውሂብ አስወግድ
+	Discard hidden text	የተደበቀ ጽሑፍ አስወግድ
+	Use Flate to encode streams that are not encoded	ያልተጨመቁ ዥረቶችን በFlate ጨመቅ
+	Remove invalid links and bookmarks	ልክ ያልሆኑ አገናኞችንና ዕልባቶችን አስወግድ
+	Remove unreferenced named destinations	ያልተጠቀሱ የተሰየሙ መዳረሻዎችን አስወግድ
+	Compress document structure (object streams)	የሰነዱን መዋቅር ጨመቅ (object streams)
+	Remove unused objects and merge identical ones	ጥቅም ላይ ያልዋሉ ነገሮችን አስወግድና ተመሳሳዮቹን አዋህድ
+	Audit space usage…	የቦታ አጠቃቀምን መርምር…
+	Space Audit	የቦታ ምርመራ
+	Bytes	ባይት
+	Content Streams	የይዘት ዥረቶች
+	X Object Forms	የX Object ቅጾች
+	Structure Info	የመዋቅር መረጃ
+	Thumbnails	ድንክዬዎች
+	Named Destinations	የተሰየሙ መዳረሻዎች
+	Color Spaces	የቀለም ስርዓቶች
+	Shadings	ጥላዎች
+	Patterns (graphics objects)	ንድፎች (የግራፊክስ ነገሮች)
+	Extended Graphics States	የተራዘሙ የግራፊክስ ሁኔታዎች
+	Embedded Files	የተካተቱ ፋይሎች
+	Document Overhead	የሰነድ ተጨማሪ ጭነት
+	Total	ጠቅላላ
+	Text Field Properties	የጽሑፍ መስክ ባሕሪያት
+	Check Box Properties	የአመልካች ሳጥን ባሕሪያት
+	Radio Button Properties	የምርጫ አዝራር ባሕሪያት
+	Dropdown Properties	የተቆልቋይ ዝርዝር ባሕሪያት
+	List Box Properties	የዝርዝር ሳጥን ባሕሪያት
+	Button Properties	የአዝራር ባሕሪያት
+	Digital Signature Properties	የዲጂታል ፊርማ ባሕሪያት
+	Position	አቀማመጥ
+	Options	አማራጮች
+	Validate	ማረጋገጫ
+	Calculate	ስሌት
+	Actions	እርምጃዎች
+	This field is locked. Unlock it to change its properties.	ይህ መስክ ተቆልፏል። ባሕሪያቱን ለመቀየር ይክፈቱት።
+	Tooltip:	የመጠቆሚያ ጽሑፍ:
+	Common Properties	የጋራ ባሕሪያት
+	Read Only	ለንባብ ብቻ
+	Required	ግዴታ
+	Font Size:	የቅርጸ-ቁምፊ መጠን:
+	Auto	ራስ-ሰር
+	Text Color:	የጽሑፍ ቀለም:
+	Borders and Colors	ድንበሮችና ቀለሞች
+	Border Color:	የድንበር ቀለም:
+	Fill Color:	የሙሊት ቀለም:
+	No color	ቀለም የለም
+	Beveled	ባለ ተዳፋት ጠርዝ
+	Left:	ግራ:
+	Bottom:	ታች:
+	Width:	ስፋት:
+	Height:	ቁመት:
+	Points from the page's bottom-left corner.	ከገጹ ታችኛው ግራ ጥግ ያለው ርቀት በነጥብ።
+	Alignment:	አሰላለፍ:
+	Default Value:	ነባሪ እሴት:
+	Multi-line	ባለብዙ መስመር
+	Scroll long text	ረጅም ጽሑፍን አሸብልል
+	Allow Rich Text Formatting	የበለጸገ የጽሑፍ ቅርጸትን ፍቀድ
+	Limit of	ገደብ:
+	characters	ፊደላት
+	Field is used for file selection	መስኩ ፋይል ለመምረጥ ያገለግላል
+	Check spelling	የፊደል ግድፈትን ፈትሽ
+	Comb of	በሳጥኖች ከፋፍል:
+	Export Value: {on}	የሚላክ እሴት: {on}
+	Check box is checked by default	አመልካች ሳጥኑ በነባሪ ምልክት ተደርጎበታል
+	Button is checked by default	አዝራሩ በነባሪ ተመርጧል
+	Buttons with the same name and value are selected in unison	ተመሳሳይ ስምና እሴት ያላቸው አዝራሮች አብረው ይመረጣሉ
+	Item:	ንጥል:
+	Item List	የንጥሎች ዝርዝር
+	Up	ወደ ላይ
+	Delete {o}	{o}ን ሰርዝ
+	Add the choices people pick from.	ሰዎች የሚመርጡባቸውን ምርጫዎች ያክሉ።
+	Default:	ነባሪ:
+	(none)	(ምንም)
+	Sort items	ንጥሎችን ደርድር
+	Allow user to enter custom text	ተጠቃሚው የራሱን ጽሑፍ እንዲያስገባ ፍቀድ
+	Multiple selection	ብዙ መምረጥ
+	Commit selected value immediately	የተመረጠውን እሴት ወዲያውኑ መዝግብ
+	Number	ቁጥር
+	Percentage	መቶኛ
+	Time	ሰዓት
+	Special	ልዩ
+	Select format category:	የቅርጸት ምድብ ይምረጡ:
+	The value is shown as typed.	እሴቱ እንደተተየበ ይታያል።
+	Decimal places:	የአስርዮሽ ቦታዎች:
+	Separator style:	የመለያያ ዘይቤ:
+	Currency symbol:	የገንዘብ ምልክት:
+	Before the number	ከቁጥሩ በፊት
+	Negative number style:	የአሉታዊ ቁጥር ዘይቤ:
+	Format:	ቅርጸት:
+	Custom:	ብጁ:
+	Zip Code	የፖስታ ኮድ
+	Zip Code + 4	የፖስታ ኮድ + 4
+	Phone Number	ስልክ ቁጥር
+	Social Security Number	የማኅበራዊ ዋስትና ቁጥር
+	Arbitrary Mask	ብጁ ጭምብል
+	Mask:	ጭምብል:
+	9 digit, A letter, O letter or digit, X any character	9 አሃዝ፣ A ፊደል፣ O ፊደል ወይም አሃዝ፣ X ማንኛውም ቁምፊ
+	Example: {sample}	ምሳሌ: {sample}
+	Field value is not validated	የመስኩ እሴት አይረጋገጥም
+	Field value is in range:	የመስኩ እሴት በዚህ ክልል ውስጥ ነው:
+	Add an Action	እርምጃ አክል
+	Select Trigger:	ቀስቃሽ ይምረጡ:
+	Mouse Up	መዳፊት ሲለቀቅ
+	Mouse Down	መዳፊት ሲጫን
+	Mouse Enter	መዳፊት ሲገባ
+	Mouse Exit	መዳፊት ሲወጣ
+	On Focus	ትኩረት ሲያገኝ
+	On Blur	ትኩረት ሲያጣ
+	Select Action:	እርምጃ ይምረጡ:
+	Open a web link	የድር አገናኝ ክፈት
+	Reset a form	ቅጽ ዳግም አስጀምር
+	Execute a menu item	የምናሌ ንጥል አሂድ
+	Show a field	መስክ አሳይ
+	Hide a field	መስክ ደብቅ
+	Submit a form	ቅጽ ላክ
+	Fields to reset (comma-separated; empty: all)	ዳግም የሚጀመሩ መስኮች (በኮማ የተለዩ፤ ባዶ: ሁሉም)
+	Print, NextPage, PrevPage, FirstPage or LastPage	Print, NextPage, PrevPage, FirstPage ወይም LastPage
+	Field names (comma-separated)	የመስኮች ስሞች (በኮማ የተለዩ)
+	URL to submit to	የሚላክበት አድራሻ (URL)
+	Script:	ስክሪፕት:
+	Value:	እሴት:
+	No actions	ምንም እርምጃዎች የሉም
+	Value is not calculated	እሴቱ አይሰላም
+	Value is the	እሴቱ:
+	sum (+)	ድምር (+)
+	product (x)	ብዜት (x)
+	average	አማካይ
+	minimum	ዝቅተኛው
+	maximum	ከፍተኛው
+	of the following fields:	ከሚከተሉት መስኮች:
+	Simplified field notation:	ቀላል የመስክ አጻጻፍ:
+	Field names with + - * / and parentheses; put \\ before spaces in names.	የመስክ ስሞች ከ + - * / እና ቅንፎች ጋር፤ በስሞች ውስጥ ካሉ ክፍተቶች በፊት \\ ያስገቡ።
+	Format text	ጽሑፍን ቅረጽ
+	Bold	ደማቅ
+	Italic	ሰያፍ
+	Align left	ወደ ግራ አሰልፍ
+	Centre	መሃል
+	Align right	ወደ ቀኝ አሰልፍ
+	Justify	በሁለቱም ጎን አሰልፍ
+	Standard fonts; text outside Windows-1252 isn't supported yet.	መደበኛ ቅርጸ-ቁምፊዎች፤ ከWindows-1252 ውጭ ያለ ጽሑፍ ገና አይደገፍም።
+	Edit image	ምስል አርትዕ
+	Rotate counterclockwise	ከሰዓት አቅጣጫ በተቃራኒ አሽከርክር
+	Rotate clockwise	በሰዓት አቅጣጫ አሽከርክር
+	Flip horizontal	በአግድም ገልብጥ
+	Flip vertical	በቁመት ገልብጥ
+	Replace image	ምስል ተካ
+	Crop (% trimmed from each side)	ከርክም (ከእያንዳንዱ ጎን የሚቆረጥ %)
+	Click on the page to add text; each click starts a new box, and ✓ finishes. Drag items to move them, drag a corner to resize, double-click text to edit it.	ጽሑፍ ለማከል ገጹ ላይ ጠቅ ያድርጉ፤ እያንዳንዱ ጠቅታ አዲስ ሳጥን ይጀምራል፣ ✓ ደግሞ ያጠናቅቃል። ንጥሎችን ለማንቀሳቀስ ይጎትቷቸው፣ መጠን ለመቀየር ጥጉን ይጎትቱ፣ ጽሑፍ ለማርትዕ ሁለቴ ጠቅ ያድርጉት።
+	Choose an image	ምስል ይምረጡ
+	Export to Image	እንደ ምስል ወደ ውጪ ላክ
+	Export to Text	እንደ ጽሑፍ ወደ ውጪ ላክ
+	Export All Images	ሁሉንም ምስሎች ወደ ውጪ ላክ
+	Resolution	የምስል ጥግግት
+	Format	ቅርጸት
+	Quality	ጥራት
+	One {f} file per page, named after the document.	ለእያንዳንዱ ገጽ አንድ {f} ፋይል፣ በሰነዱ ስም የሚሰየም።
+	Exclude images smaller than	ከዚህ ያነሱ ምስሎችን አግልል:
+	No limit	ገደብ የለም
+	Each image once, named after the document and page. JPEG images are saved unchanged; others as PNG.	እያንዳንዱ ምስል አንድ ጊዜ፣ በሰነዱና በገጹ ስም ይሰየማል። የJPEG ምስሎች ሳይለወጡ ይቀመጣሉ፤ ሌሎቹ በPNG።
+	Plain text in reading order; pages are separated by form feeds.	በንባብ ቅደም ተከተል ቀላል ጽሑፍ፤ ገጾች በገጽ መለያ ቁምፊ (form feed) ይለያሉ።
+	Create {what}	{what} ፍጠር
+	initials	የስም መነሻ ፊደላት
+	signature	ፊርማ
+	Create Custom Stamp	ብጁ ማህተም ፍጠር
+	From {file}	ከ{file}
+	Category:	ምድብ:
+	e.g. My stamps	ለምሳሌ: የእኔ ማህተሞች
+	Name:	ስም:
+	Custom	ብጁ
+	Delete stamp	ማህተሙን ሰርዝ
+	Create custom stamp…	ብጁ ማህተም ፍጠር…
+	From a PDF page or an image	ከፒዲኤፍ ገጽ ወይም ከምስል
+	Line spacing	የመስመር ክፍተት
+	Character spacing	የቁምፊ ክፍተት
+	Horizontal scale	አግድም መጠን
+	Rotate Clockwise	በሰዓት አቅጣጫ አሽከርክር
+	Rotate Counterclockwise	ከሰዓት አቅጣጫ በተቃራኒ አሽከርክር
+	Flip Horizontal	በአግድም ገልብጥ
+	Flip Vertical	በቁመት ገልብጥ
+	Replace Image…	ምስል ተካ…
+	Save Image As…	ምስሉን በሌላ ስም አስቀምጥ…
+	Check for updates	ዝማኔዎችን ፈትሽ
+	No check has run yet.	እስካሁን ምንም ፍተሻ አልተደረገም።
+	Checking for a newer version…	አዲስ ስሪት በመፈለግ ላይ…
+	PdfCraft {v} is available.	ብራና {v} ይገኛል።
+	You have version {c}. Download the new version from its release page.	ያለዎት ስሪት {c} ነው። አዲሱን ስሪት ከመልቀቂያ ገጹ ያውርዱ።
+	PdfCraft {c} is up to date.	ብራና {c} የቅርብ ጊዜው ስሪት ነው።
+	Couldn't check for updates: {e}	ዝማኔዎችን መፈተሽ አልተቻለም: {e}
+	You have version {c}. All releases are listed at {page}.	ያለዎት ስሪት {c} ነው። ሁሉም ስሪቶች በ{page} ተዘርዝረዋል።
+	Asks GitHub for the latest release. Nothing is downloaded or installed automatically.	የቅርብ ጊዜውን ስሪት ከGitHub ይጠይቃል። ምንም ነገር በራስ-ሰር አይወርድም ወይም አይጫንም።
+	Download	አውርድ
+	Later	በኋላ
+	none	ምንም
+	Declared conformance: {shown}	የተገለጸ ተስማሚነት: {shown}
+	Output intent: {list}	የውጤት ዓላማ: {list}
+	Conformance level:	የተስማሚነት ደረጃ:
+	No problems found: the document conforms to {level}.	ምንም ችግር አልተገኘም: ሰነዱ ከ{level} ጋር ይስማማል።
+	 (page {p})	 (ገጽ {p})
+	  · not fixable here	  · እዚህ ሊስተካከል አይችልም
+	Verify	አረጋግጥ
+	Box	ሳጥን
+	Units	መለኪያዎች
+	Set to zero	ወደ ዜሮ አድርግ
+	Current page ({n})	የአሁኑ ገጽ ({n})
+	Subset	ንዑስ ስብስብ
+	Update	አዘምን
+	Add	አክል
+	{verb} Header and Footer	ራስጌና ግርጌ {verb}
+	{verb} Watermark	የውሃ ምልክት {verb}
+	{verb} Background	ዳራ {verb}
+	Margins (in)	ህዳጎች (ኢንች)
+	Left Header Text	የግራ ራስጌ ጽሑፍ
+	Center Header Text	የመሃል ራስጌ ጽሑፍ
+	Right Header Text	የቀኝ ራስጌ ጽሑፍ
+	Left Footer Text	የግራ ግርጌ ጽሑፍ
+	Center Footer Text	የመሃል ግርጌ ጽሑፍ
+	Right Footer Text	የቀኝ ግርጌ ጽሑፍ
+	Insert Page Number	የገጽ ቁጥር አስገባ
+	Insert Date	ቀን አስገባ
+	Start page number	የመጀመሪያ ገጽ ቁጥር
+	Source	ምንጭ
+	Fit to page	ከገጹ ጋር አስማማ
+	Rotation	ማሽከርከር
+	Appear behind page	ከገጹ ጀርባ ይታይ
+	Appear on top of page	ከገጹ በላይ ይታይ
+	From colour	ከቀለም
+	Page Range Options	የገጽ ክልል አማራጮች
+	Preview: page {p} of {n}	ቅድመ እይታ: ገጽ {p} ከ{n}
+	Applies to 1 page	ለ1 ገጽ ይተገበራል
+	Applies to {n} pages	ለ{n} ገጾች ይተገበራል
+	Replaces the existing one on those pages.	በእነዚያ ገጾች ላይ ያለውን ይተካል።
+	PDF or image	ፒዲኤፍ ወይም ምስል
+	No file chosen	ምንም ፋይል አልተመረጠም
+	Page number	የገጽ ቁጥር
+	Scale relative to target page	ከዒላማው ገጽ አንጻር መጠን
+	Link Properties	የአገናኝ ባሕሪያት
+	Create Link	አገናኝ ፍጠር
+	Link Appearance	የአገናኝ መልክ
+	Link Type:	የአገናኝ አይነት:
+	Visible Rectangle	የሚታይ አራት ማዕዘን
+	Invisible Rectangle	የማይታይ አራት ማዕዘን
+	Highlight Style:	የማድመቂያ ዘይቤ:
+	Invert	ቀለም ገልብጥ
+	Outline	ዙሪያ መስመር
+	Inset	የገባ
+	Line Thickness:	የመስመር ውፍረት:
+	Thin	ቀጭን
+	Thick	ወፍራም
+	Line Style:	የመስመር ዘይቤ:
+	Solid	ሙሉ
+	Dashed	ሰረዝ ያለው
+	Color:	ቀለም:
+	Link Action	የአገናኝ እርምጃ
+	Open a web page	ድረ-ገጽ ክፈት
+	Go to a page view	ወደ ገጽ እይታ ሂድ
+	Type the web address.	የድር አድራሻውን ይተይቡ።
+	This document has no signatures.	ይህ ሰነድ ምንም ፊርማ የለውም።
+	The Keychain's digital IDs couldn't be listed: {e}	የKeychain ዲጂታል መታወቂያዎችን መዘርዘር አልተቻለም: {e}
+	Signed and saved to {path}	ተፈርሞ በ{path} ተቀምጧል
+	Couldn't open revision {n}: {e}	ክለሳ {n}ን መክፈት አልተቻለም: {e}
+	Couldn't open the signed version: {e}	የተፈረመውን ስሪት መክፈት አልተቻለም: {e}
+	Sign with a Digital ID	በዲጂታል መታወቂያ ፈርም
+	Choose the digital ID that you want to use for signing:	ለመፈረም መጠቀም የሚፈልጉትን ዲጂታል መታወቂያ ይምረጡ:
+	Keychain  ·  	Keychain  ·  
+	Windows store  ·  	የWindows ማከማቻ  ·  
+	Issued by: 	የሰጠው: 
+	, Expires: 	፣ የሚያበቃበት: 
+	No digital IDs yet.	እስካሁን ምንም ዲጂታል መታወቂያ የለም።
+	Configure New Digital ID	አዲስ ዲጂታል መታወቂያ አዋቅር
+	Continue	ቀጥል
+	Configure a Digital ID for Signing	ለመፈረሚያ ዲጂታል መታወቂያ አዋቅር
+	Use a Digital ID from a file	ከፋይል ዲጂታል መታወቂያ ተጠቀም
+	Create a new Digital ID (self-signed, saved to a password-protected file)	አዲስ ዲጂታል መታወቂያ ፍጠር (በራሱ የተፈረመ፣ በየይለፍ ቃል በተጠበቀ ፋይል ውስጥ የሚቀመጥ)
+	Name	ስም
+	Organizational Unit	የድርጅት ክፍል
+	Organization Name	የድርጅት ስም
+	Email Address	የኢሜይል አድራሻ
+	Country/Region	አገር/ክልል
+	Key Algorithm	የቁልፍ ስልተ ቀመር
+	Confirm Password	የይለፍ ቃል ያረጋግጡ
+	Valid for 5 years, for digital signatures. Self-signed IDs are usually not trusted by others.	ለ5 ዓመታት የሚያገለግል፣ ለዲጂታል ፊርማዎች። በራሳቸው የተፈረሙ መታወቂያዎችን ሌሎች ብዙውን ጊዜ አያምኗቸውም።
+	File (.p12, .pfx)	ፋይል (.p12, .pfx)
+	Digital ID	ዲጂታል መታወቂያ
+	Browse…	አስስ…
+	{verb} as "{name}"	እንደ "{name}" {verb}
+	Certify	አጽድቅ
+	The signature will be invisible.	ፊርማው አይታይም።
+	Distinguished name	መለያ ስም (Distinguished name)
+	Labels	መለያዎች
+	Permitted actions after certifying	ከማጽደቅ በኋላ የሚፈቀዱ ድርጊቶች
+	No changes allowed	ምንም ለውጥ አይፈቀድም
+	Annotations, form fill-in, and digital signatures	አስተያየቶች፣ ቅጽ መሙላት እና ዲጂታል ፊርማዎች
+	Form fill-in and digital signatures	ቅጽ መሙላት እና ዲጂታል ፊርማዎች
+	The key is in the macOS Keychain, which may ask to allow PdfCraft to use it.	ቁልፉ በmacOS Keychain ውስጥ ነው፤ ብራና እንዲጠቀምበት ፈቃድ ሊጠይቅ ይችላል።
+	The key is in the Windows certificate store, which may ask to allow PdfCraft to use it.	ቁልፉ በWindows የሰርተፊኬት ማከማቻ ውስጥ ነው፤ ብራና እንዲጠቀምበት ፈቃድ ሊጠይቅ ይችላል።
+	Digital ID password	የዲጂታል መታወቂያ የይለፍ ቃል
+	Back	ተመለስ
+	Validate all	ሁሉንም አረጋግጥ
+	Sign this field…	ይህን መስክ ፈርም…
+	Signature is valid:	ፊርማው ትክክለኛ ነው:
+	Signature validity is UNKNOWN:	የፊርማው ትክክለኛነት አይታወቅም:
+	Signature is INVALID:	ፊርማው ትክክል አይደለም:
+	Signature Details	የፊርማ ዝርዝሮች
+	Reason	ምክንያት
+	Signing time	የተፈረመበት ጊዜ
+	Algorithm	ስልተ ቀመር
+	Signer	ፈራሚ
+	Issued by	የሰጠው
+	Valid	የሚሰራ
+	Field	መስክ
+	Field: {field} on page {p}	መስክ: {field} በገጽ {p}
+	Add to trusted certificates	ወደ ታመኑ ሰርተፊኬቶች አክል
+	View signed version	የተፈረመውን ስሪት አሳይ
+	Show certificate…	ሰርተፊኬቱን አሳይ…
+	Export certificate…	ሰርተፊኬቱን ወደ ውጪ ላክ…
+	Certificate Viewer	የሰርተፊኬት መመልከቻ
+	This dialog shows the details of a certificate and its chain.	ይህ መገናኛ ሳጥን የሰርተፊኬቱን እና የሰንሰለቱን ዝርዝሮች ያሳያል።
+	Trust	እምነት
+	Issued to	የተሰጠው ለ
+	Valid from	የሚሰራው ከ
+	Valid to	የሚሰራው እስከ
+	Intended usage	የታሰበው አገልግሎት
+	Any	ማንኛውም
+	Version	ስሪት
+	Serial number	መለያ ቁጥር
+	Issuer	ሰጪ
+	Validity starts	የሚሰራበት መጀመሪያ
+	Validity ends	የሚሰራበት ማብቂያ
+	Public key	የሕዝብ ቁልፍ
+	Key usage	የቁልፍ አጠቃቀም
+	Not present	የለም
+	Self-signed	በራሱ የተፈረመ
+	Edit Action	እርምጃ አርትዕ
+	New Action	አዲስ እርምጃ
+	Action name:	የእርምጃ ስም:
+	Description:	መግለጫ:
+	Steps	እርከኖች
+	Add the steps this action runs, in order.	ይህ እርምጃ የሚያከናውናቸውን እርከኖች በቅደም ተከተል ያክሉ።
+	Add Step	እርከን አክል
+	An action with this name already exists.	በዚህ ስም እርምጃ አስቀድሞ አለ።
+	New Action…	አዲስ እርምጃ…
+	Edit…	አርትዕ…
+	Add watermark	የውሃ ምልክት አክል
+	Add header	ራስጌ አክል
+	Add footer	ግርጌ አክል
+	Set document title	የሰነድ ርዕስ አዘጋጅ
+	Run a JavaScript	JavaScript አሂድ
+	Prepare for Distribution	ለማሰራጨት አዘጋጅ
+	Remove hidden information and flatten comments and form fields, so recipients see only the pages.	ተቀባዮች ገጾቹን ብቻ እንዲያዩ የተደበቀ መረጃን ያስወግዳል፣ አስተያየቶችንና የቅጽ መስኮችንም ከገጹ ጋር ያዋህዳል።
+	Optimize Scanned Documents	የተቃኙ ሰነዶችን አመቻች
+	Make scans searchable, then make them smaller.	የተቃኙ ሰነዶችን መፈለግ የሚቻልባቸው ያደርጋል፣ ከዚያም መጠናቸውን ይቀንሳል።
+	Add Page Numbers	የገጽ ቁጥሮችን አክል
+	Number every page in the footer.	በግርጌው ላይ ለእያንዳንዱ ገጽ ቁጥር ይሰጣል።
+	Mark as Confidential	እንደ ሚስጥራዊ ምልክት አድርግ
+	A diagonal CONFIDENTIAL watermark on every page.	በእያንዳንዱ ገጽ ላይ ሰያፍ የ«CONFIDENTIAL» የውሃ ምልክት።
+	Sanitize Documents	ሰነዶችን ከተደበቀ መረጃ አጽዳ
+	Remove hidden information, metadata, scripts and embedded content, and rewrite the files.	የተደበቀ መረጃን፣ ሜታዳታን፣ ስክሪፕቶችንና የተካተተ ይዘትን ያስወግዳል፣ ፋይሎቹንም እንደገና ይጽፋል።
+	Type text	ጽሑፍ ይተይቡ
+	Text to insert	የሚገባው ጽሑፍ
+	Replacement text	የምትክ ጽሑፍ
+	Edit text…	ጽሑፍ አርትዕ…
+	Add a sticky note here	እዚህ ማስታወሻ አክል
+	{kind} Properties	የ{kind} ባሕሪያት
+	Appearance	መልክ
+	General	አጠቃላይ
+	Review History	የግምገማ ታሪክ
+	This comment's appearance can't be changed yet.	የዚህ አስተያየት መልክ ገና ሊቀየር አይችልም።
+	Icon	አዶ
+	Thickness	ውፍረት
+	Modified	የተሻሻለበት
+	No status has been set.	ምንም ሁኔታ አልተዘጋጀም።
+	Compare Files	ፋይሎችን አወዳድር
+	Old file:	የቀድሞው ፋይል:
+	Open the older version first	መጀመሪያ የቀድሞውን ስሪት ይክፈቱ
+	New file:	አዲሱ ፋይል:
+	Text is compared word by word; the differences are shown on the new file.	ጽሑፉ ቃል በቃል ይወዳደራል፤ ልዩነቶቹ በአዲሱ ፋይል ላይ ይታያሉ።
+	Compare this file with an older version: Compare files… in All tools.	ይህን ፋይል ከቀድሞው ስሪት ጋር ያወዳድሩ: በ«ሁሉም መሣሪያዎች» ውስጥ «ፋይሎችን አወዳድር…»።
+	No differences in the text.	በጽሑፉ ላይ ምንም ልዩነት የለም።
+	{n} {kind}	{n} {kind}
+	Inserted	የገባ
+	Deleted	የተሰረዘ
+	Replaced	የተተካ
+	Visual	የእይታ
+	Mark as comments	እንደ አስተያየቶች ምልክት አድርግ
+	Report…	ሪፖርት…
+	{kind} · page {p}	{kind} · ገጽ {p}
+	Set Alternate Text	አማራጭ ጽሑፍ አዘጋጅ
+	This document has no tagged figures.	ይህ ሰነድ መለያ የተሰጣቸው ምስሎች የሉትም።
+	 on page {p}	 በገጽ {p}
+	Figure {i} of {n}{page}	ምስል {i} ከ{n}{page}
+	No preview	ቅድመ እይታ የለም
+	Alternate text	አማራጭ ጽሑፍ
+	Describe the figure	ምስሉን ይግለጹ
+	Decorative figure	ለጌጥ የሆነ ምስል
+	Previous figure	ቀዳሚ ምስል
+	Next figure	ቀጣይ ምስል
+	Save & Close	አስቀምጥና ዝጋ
+	Accessibility Checker Options	የተደራሽነት ፈታሽ አማራጮች
+	Report Options	የሪፖርት አማራጮች
+	Create accessibility report	የተደራሽነት ሪፖርት ፍጠር
+	Page Range	የገጽ ክልል
+	All pages in document	በሰነዱ ውስጥ ያሉ ሁሉም ገጾች
+	Checking Options ({on} of 32 in all categories)	የፍተሻ አማራጮች (በሁሉም ምድቦች ከ32 ውስጥ {on})
+	Show this dialog when the Checker starts	ፈታሹ ሲጀምር ይህን መገናኛ ሳጥን አሳይ
+	Select All	ሁሉንም ምረጥ
+	Clear All	ሁሉንም አጽዳ
+	Start Checking	ፍተሻ ጀምር
+	This document hasn't been checked yet.	ይህ ሰነድ ገና አልተፈተሸም።
+	No issues found	ምንም ችግር አልተገኘም
+	1 issue	1 ችግር
+	{n} issues	{n} ችግሮች
+	{label} (1 issue)	{label} (1 ችግር)
+	{label} ({n} issues)	{label} ({n} ችግሮች)
+	Check again	እንደገና ፈትሽ
+	Report	ሪፖርት
+	Show the accessibility report	የተደራሽነት ሪፖርቱን አሳይ
+	Collapse	ሰብስብ
+	Expand	ዘርጋ
+	{rule} - {status}	{rule} - {status}
+	Passed	አልፏል
+	Failed	አልተሳካም
+	Needs manual check	በእጅ መፈተሽ ያስፈልገዋል
+	Skipped	ታልፏል
+	Fix	አስተካክል
+	Skip Rule	ደንቡን እለፍ
+	Explain	አብራራ
+	Check Again	እንደገና ፈትሽ
+	Show Report	ሪፖርት አሳይ
+	Options…	አማራጮች…
+	Go to the page	ወደ ገጹ ሂድ
+	Page Content	የገጽ ይዘት
+	Forms	ቅጾች
+	Alternate Text	አማራጭ ጽሑፍ
+	Tables	ሰንጠረዦች
+	Lists	ዝርዝሮች
+	Headings	ርዕሶች
+	Accessibility permission flag	የተደራሽነት ፈቃድ ምልክት
+	Accessibility permission flag is set	የተደራሽነት ፈቃድ ምልክት ተዘጋጅቷል
+	Security settings must allow assistive technology to read the content ("Enable text access for screen reader devices"). Change the document's security to allow it.	የደኅንነት ቅንብሮቹ አጋዥ ቴክኖሎጂ ይዘቱን እንዲያነብ መፍቀድ አለባቸው («ለስክሪን አንባቢ መሣሪያዎች የጽሑፍ መዳረሻን አንቃ»)። ይህን ለመፍቀድ የሰነዱን ደኅንነት ይቀይሩ።
+	Image-only PDF	ምስል ብቻ የሆነ ፒዲኤፍ
+	Document is not image-only PDF	ሰነዱ ምስል ብቻ የሆነ ፒዲኤፍ አይደለም
+	Pages that are only pictures of text can't be read aloud or searched. Recognize text (OCR) to add a text layer.	የጽሑፍ ፎቶ ብቻ የሆኑ ገጾች ጮክ ብለው ሊነበቡ ወይም ሊፈለጉ አይችሉም። የጽሑፍ ንብርብር ለማከል ጽሑፍ ይለዩ (OCR)።
+	Document is tagged PDF	ሰነዱ መለያ የተሰጠው ፒዲኤፍ ነው
+	Tags give the document a logical structure that assistive technology follows. Tag the document (Automatically tag PDF).	መለያዎች ለሰነዱ አጋዥ ቴክኖሎጂ የሚከተለውን ምክንያታዊ መዋቅር ይሰጡታል። ለሰነዱ መለያ ይስጡ («ለፒዲኤፍ በራስ-ሰር መለያ ስጥ»)።
+	Logical Reading Order	ምክንያታዊ የንባብ ቅደም ተከተል
+	Document structure provides a logical reading order	የሰነዱ መዋቅር ምክንያታዊ የንባብ ቅደም ተከተል ይሰጣል
+	Check that the tags read in the order a sighted reader would. Use the Reading Order tool or the Tags panel to correct it.	መለያዎቹ ማየት የሚችል አንባቢ በሚያነብበት ቅደም ተከተል መነበባቸውን ያረጋግጡ። ለማስተካከል የንባብ ቅደም ተከተል መሣሪያውን ወይም የመለያዎች ፓነልን ይጠቀሙ።
+	Primary language	ዋና ቋንቋ
+	Text language is specified	የጽሑፉ ቋንቋ ተገልጿል
+	Screen readers choose their voice from the document's language. Set it in Document Properties > Advanced > Language.	የስክሪን አንባቢዎች ድምፃቸውን የሚመርጡት በሰነዱ ቋንቋ ነው። በየሰነድ ባሕሪያት > የላቀ > ቋንቋ ውስጥ ያዘጋጁት።
+	Document title is showing in title bar	የሰነዱ ርዕስ በርዕስ አሞሌ ላይ ይታያል
+	The window should show a meaningful title rather than the file name. Set a title and Initial View > Show: Document Title.	መስኮቱ ከፋይሉ ስም ይልቅ ትርጉም ያለው ርዕስ ማሳየት አለበት። ርዕስ ያዘጋጁና የመጀመሪያ እይታ > አሳይ: የሰነድ ርዕስ የሚለውን ይምረጡ።
+	Bookmarks are present in large documents	በትልልቅ ሰነዶች ውስጥ ዕልባቶች አሉ
+	Documents of more than 20 pages need bookmarks for navigation. Add bookmarks for the main sections.	ከ20 ገጾች በላይ ያላቸው ሰነዶች ለመዳሰስ ዕልባቶች ያስፈልጋቸዋል። ለዋና ዋና ክፍሎቹ ዕልባቶችን ያክሉ።
+	Color contrast	የቀለም ንፅፅር
+	Document has appropriate color contrast	ሰነዱ ተገቢ የቀለም ንፅፅር አለው
+	Text must contrast enough with its background for people with low vision. Check the colours by eye or with a contrast tool.	ዝቅተኛ የማየት ችሎታ ላላቸው ሰዎች ጽሑፍ ከዳራው ጋር በቂ ንፅፅር ሊኖረው ይገባል። ቀለሞቹን በዓይን ወይም በንፅፅር መሣሪያ ይፈትሹ።
+	Tagged content	መለያ የተሰጠው ይዘት
+	All page content is tagged	ሁሉም የገጽ ይዘት መለያ ተሰጥቶታል
+	Everything on a page must be tagged or marked as an artifact (decoration, headers, footers). Tag the untagged content.	በገጽ ላይ ያለ ማንኛውም ነገር መለያ ሊሰጠው ወይም እንደ ተጨማሪ ነገር (ጌጥ፣ ራስጌዎች፣ ግርጌዎች) ምልክት ሊደረግበት ይገባል። መለያ ላልተሰጠው ይዘት መለያ ይስጡ።
+	Tagged annotations	መለያ የተሰጣቸው አስተያየቶች
+	All annotations are tagged	ሁሉም አስተያየቶች መለያ ተሰጥቷቸዋል
+	Comments, links and fields must be in the tag tree to be announced. Tag the annotations.	አስተያየቶች፣ አገናኞችና መስኮች እንዲነገሩ በመለያ ዛፉ ውስጥ መሆን አለባቸው። ለአስተያየቶቹ መለያ ይስጡ።
+	Tab order	የTab ቅደም ተከተል
+	Tab order is consistent with structure order	የTab ቅደም ተከተል ከመዋቅሩ ቅደም ተከተል ጋር ይስማማል
+	Pages with links, comments or fields should tab in structure order. The fix sets each page's tab order to Use Document Structure.	አገናኞች፣ አስተያየቶች ወይም መስኮች ያሏቸው ገጾች በመዋቅሩ ቅደም ተከተል መሄድ አለባቸው። ማስተካከያው የእያንዳንዱን ገጽ የTab ቅደም ተከተል ወደ «የሰነዱን መዋቅር ተጠቀም» ያዘጋጃል።
+	Character encoding	የቁምፊ ኮድ አሰጣጥ
+	Reliable character encoding is provided	አስተማማኝ የቁምፊ ኮድ አሰጣጥ ተሰጥቷል
+	Fonts must map their characters to Unicode so text can be read and copied. Fix the fonts or recreate the PDF.	ጽሑፍ እንዲነበብና እንዲቀዳ ቅርጸ-ቁምፊዎች ቁምፊዎቻቸውን ከUnicode ጋር ማዛመድ አለባቸው። ቅርጸ-ቁምፊዎቹን ያስተካክሉ ወይም ፒዲኤፉን እንደገና ይፍጠሩ።
+	Tagged multimedia	መለያ የተሰጠው መልቲሚዲያ
+	All multimedia objects are tagged	ሁሉም የመልቲሚዲያ ነገሮች መለያ ተሰጥቷቸዋል
+	Video, sound and rich media must be tagged to be announced. Tag the multimedia annotations.	ቪዲዮ፣ ድምፅና የበለጸገ ሚዲያ እንዲነገሩ መለያ ሊሰጣቸው ይገባል። ለመልቲሚዲያ አስተያየቶቹ መለያ ይስጡ።
+	Screen flicker	የማያ ገጽ ብልጭታ
+	Page will not cause screen flicker	ገጹ የማያ ገጽ ብልጭታ አያስከትልም
+	Animation that flashes can cause seizures. Check scripts and media for flicker.	የሚያብለጨልጭ እንቅስቃሴ የሚጥል በሽታን ሊቀሰቅስ ይችላል። ስክሪፕቶችንና ሚዲያን ለብልጭታ ይፈትሹ።
+	Scripts	ስክሪፕቶች
+	No inaccessible scripts	ተደራሽ ያልሆኑ ስክሪፕቶች የሉም
+	Timed responses	በጊዜ የተገደቡ ምላሾች
+	Page does not require timed responses	ገጹ በጊዜ የተገደቡ ምላሾችን አይጠይቅም
+	People may need more time to respond. Check that nothing has a time limit.	ሰዎች ምላሽ ለመስጠት ተጨማሪ ጊዜ ሊያስፈልጋቸው ይችላል። ምንም ነገር የጊዜ ገደብ እንደሌለው ያረጋግጡ።
+	Navigation links	የመዳሰሻ አገናኞች
+	Navigation links are not repetitive	የመዳሰሻ አገናኞች ተደጋጋሚ አይደሉም
+	Repeated navigation links should be skippable. Check links that appear on every page.	ተደጋጋሚ የመዳሰሻ አገናኞች መዝለል የሚቻልባቸው መሆን አለባቸው። በእያንዳንዱ ገጽ ላይ የሚታዩ አገናኞችን ይፈትሹ።
+	Tagged form fields	መለያ የተሰጣቸው የቅጽ መስኮች
+	All form fields are tagged	ሁሉም የቅጽ መስኮች መለያ ተሰጥቷቸዋል
+	Form fields must be in the tag tree (Form tags) to be announced. Tag the form fields.	የቅጽ መስኮች እንዲነገሩ በመለያ ዛፉ ውስጥ (Form መለያዎች) መሆን አለባቸው። ለቅጽ መስኮቹ መለያ ይስጡ።
+	Field descriptions	የመስክ መግለጫዎች
+	All form fields have description	ሁሉም የቅጽ መስኮች መግለጫ አላቸው
+	Each field needs a tooltip that says what to enter. Add one in Field Properties > General > Tooltip.	እያንዳንዱ መስክ ምን መግባት እንዳለበት የሚናገር የመጠቆሚያ ጽሑፍ ያስፈልገዋል። በየመስክ ባሕሪያት > አጠቃላይ > የመጠቆሚያ ጽሑፍ ውስጥ ያክሉ።
+	Figures alternate text	የምስሎች አማራጭ ጽሑፍ
+	Figures require alternate text	ምስሎች አማራጭ ጽሑፍ ያስፈልጋቸዋል
+	Pictures need alternate text that describes them, or must be marked decorative. Add alternate text to each figure.	ሥዕሎች የሚገልጻቸው አማራጭ ጽሑፍ ያስፈልጋቸዋል፣ አለበለዚያ ለጌጥ እንደሆኑ ምልክት ሊደረግባቸው ይገባል። ለእያንዳንዱ ምስል አማራጭ ጽሑፍ ያክሉ።
+	Nested alternate text	የተደራረበ አማራጭ ጽሑፍ
+	Alternate text that will never be read	መቼም የማይነበብ አማራጭ ጽሑፍ
+	Alternate text inside an element that already has alternate text is never read. Remove the inner alternate text.	አስቀድሞ አማራጭ ጽሑፍ ባለው አካል ውስጥ ያለ አማራጭ ጽሑፍ መቼም አይነበብም። ውስጣዊውን አማራጭ ጽሑፍ ያስወግዱ።
+	Associated with content	ከይዘት ጋር የተያያዘ
+	Alternate text must be associated with some content	አማራጭ ጽሑፍ ከተወሰነ ይዘት ጋር መያያዝ አለበት
+	Alternate text on an element without page content is never reached. Remove it or attach the element to content.	የገጽ ይዘት በሌለው አካል ላይ ያለ አማራጭ ጽሑፍ መቼም አይደረስበትም። ያስወግዱት ወይም አካሉን ከይዘት ጋር ያያይዙት።
+	Hides annotation	አስተያየትን ይደብቃል
+	Alternate text should not hide annotation	አማራጭ ጽሑፍ አስተያየትን መደበቅ የለበትም
+	Alternate text on an element that contains a link or field hides that annotation from assistive technology. Move the alternate text.	አገናኝ ወይም መስክ ባለው አካል ላይ ያለ አማራጭ ጽሑፍ ያንን አስተያየት ከአጋዥ ቴክኖሎጂ ይደብቃል። አማራጭ ጽሑፉን ያንቀሳቅሱ።
+	Other elements alternate text	የሌሎች አካላት አማራጭ ጽሑፍ
+	Other elements that require alternate text	አማራጭ ጽሑፍ የሚያስፈልጋቸው ሌሎች አካላት
+	Formulas and similar non-text elements need alternate text. Add alternate text to them.	ቀመሮችና ተመሳሳይ ጽሑፍ ያልሆኑ አካላት አማራጭ ጽሑፍ ያስፈልጋቸዋል። አማራጭ ጽሑፍ ያክሉላቸው።
+	Rows	ረድፎች
+	TR must be a child of Table, THead, TBody, or TFoot	TR የTable፣ THead፣ TBody ወይም TFoot ልጅ መሆን አለበት
+	Table cells belong in a row. Fix the table's tags.	የሰንጠረዥ ሕዋሶች በረድፍ ውስጥ መሆን አለባቸው። የሰንጠረዡን መለያዎች ያስተካክሉ።
+	Headers	ራስጌዎች
+	Tables should have headers	ሰንጠረዦች ራስጌዎች ሊኖራቸው ይገባል
+	Header cells (TH) tell listeners what each column or row holds. Mark the header cells.	የራስጌ ሕዋሶች (TH) ለአድማጮች እያንዳንዱ ዓምድ ወይም ረድፍ ምን እንደያዘ ይነግራሉ። የራስጌ ሕዋሶቹን ምልክት ያድርጉ።
+	Regularity	መደበኛነት
+	Tables must contain the same number of columns in each row and rows in each column	ሰንጠረዦች በእያንዳንዱ ረድፍ ተመሳሳይ የዓምዶች ብዛት፣ በእያንዳንዱ ዓምድም ተመሳሳይ የረድፎች ብዛት ሊኖራቸው ይገባል
+	Irregular tables confuse cell navigation. Give every row the same number of cells (counting spans).	መደበኛ ያልሆኑ ሰንጠረዦች በሕዋሶች መካከል መዳሰስን ያደናግራሉ። ለእያንዳንዱ ረድፍ ተመሳሳይ የሕዋሶች ብዛት ይስጡ (የተዋሃዱትን ጨምሮ)።
+	Summary	ማጠቃለያ
+	Tables must have a summary	ሰንጠረዦች ማጠቃለያ ሊኖራቸው ይገባል
+	A summary describes the table's purpose and layout. Add a Summary attribute to each table.	ማጠቃለያ የሰንጠረዡን ዓላማና አቀማመጥ ይገልጻል። ለእያንዳንዱ ሰንጠረዥ የSummary ባሕሪ ያክሉ።
+	List items	የዝርዝር ንጥሎች
+	LI must be a child of L	LI የL ልጅ መሆን አለበት
+	List items belong in a list. Fix the list's tags.	የዝርዝር ንጥሎች በዝርዝር ውስጥ መሆን አለባቸው። የዝርዝሩን መለያዎች ያስተካክሉ።
+	Lbl and LBody	Lbl እና LBody
+	Lbl and LBody must be children of LI	Lbl እና LBody የLI ልጆች መሆን አለባቸው
+	List labels and bodies belong in a list item. Fix the list's tags.	የዝርዝር መለያዎችና አካላት በዝርዝር ንጥል ውስጥ መሆን አለባቸው። የዝርዝሩን መለያዎች ያስተካክሉ።
+	Appropriate nesting	ተገቢ አደራረብ
+	Heading levels shouldn't skip (an H1 followed by an H3). Retag the headings.	የርዕስ ደረጃዎች መዝለል የለባቸውም (H1 ተከትሎ H3)። ለርዕሶቹ እንደገና መለያ ይስጡ።
+	TH and TD	TH እና TD
+	TH and TD must be children of TR	TH እና TD የTR ልጆች መሆን አለባቸው
+	Mark Page Range	የገጽ ክልል ምልክት አድርግ
+	Pages from	ገጾች ከ
+	Single word or phrase	ነጠላ ቃል ወይም ሐረግ
+	Text to find	የሚፈለገው ጽሑፍ
+	Patterns	ንድፎች
+	Phone Numbers	ስልክ ቁጥሮች
+	Email Addresses	የኢሜይል አድራሻዎች
+	Credit Cards	የክሬዲት ካርዶች
+	Social Security Numbers	የማኅበራዊ ዋስትና ቁጥሮች
+	Dates	ቀኖች
+	Text in images isn't found; recognise text (OCR) first.	በምስሎች ውስጥ ያለ ጽሑፍ አይገኝም፤ መጀመሪያ ጽሑፍ ይለዩ (OCR)።
+	No matches.	ምንም ተዛማጅ የለም።
+	{n} match(es) marked for redaction.	{n} ተዛማጅ(ዎች) ለመሸፈን ምልክት ተደርጎባቸዋል።
+	Redaction Tool Properties	የመሸፈኛ መሣሪያ ባሕሪያት
+	Redacted area fill colour:	የተሸፈነው አካባቢ የሙሊት ቀለም:
+	Use overlay text	በላዩ ላይ የሚታይ ጽሑፍ ተጠቀም
+	Custom text:	ብጁ ጽሑፍ:
+	Font:	ቅርጸ-ቁምፊ:
+	Font size:	የቅርጸ-ቁምፊ መጠን:
+	Auto-size text to fit redaction region	ጽሑፉን ከመሸፈኛው ክልል ጋር እንዲገጥም በራስ-ሰር አመጣጥን
+	Font colour:	የቅርጸ-ቁምፊ ቀለም:
+	Repeat overlay text	በላዩ ላይ የሚታየውን ጽሑፍ ድገም
+	Text alignment:	የጽሑፍ አሰላለፍ:
+	Center	መሃል
+	Apply redactions	መሸፈኛዎችን ተግብር
+	You are about to apply 1 redaction mark. Text, images and drawings under the marks, and comments and form fields that overlap them, are removed permanently.	1 የመሸፈኛ ምልክት ሊተገብሩ ነው። ከምልክቶቹ ስር ያሉ ጽሑፍ፣ ምስሎችና ስዕሎች፣ እንዲሁም ከእነሱ ጋር የሚደራረቡ አስተያየቶችና የቅጽ መስኮች በቋሚነት ይወገዳሉ።
+	You are about to apply {n} redaction marks. Text, images and drawings under the marks, and comments and form fields that overlap them, are removed permanently.	{n} የመሸፈኛ ምልክቶችን ሊተገብሩ ነው። ከምልክቶቹ ስር ያሉ ጽሑፍ፣ ምስሎችና ስዕሎች፣ እንዲሁም ከእነሱ ጋር የሚደራረቡ አስተያየቶችና የቅጽ መስኮች በቋሚነት ይወገዳሉ።
+	Save the document afterwards: saving rewrites the whole file so no trace of the removed content stays in it.	ከዚያ በኋላ ሰነዱን ያስቀምጡ: ማስቀመጥ የተወገደው ይዘት ምንም አሻራ እንዳይቀር ፋይሉን በሙሉ እንደገና ይጽፋል።
+	Select the items to remove from this document.	ከዚህ ሰነድ የሚወገዱትን ንጥሎች ይምረጡ።
+	Metadata	ሜታዳታ
+	File attachments	የፋይል አባሪዎች
+	Comments and markups	አስተያየቶችና ምልክቶች
+	Hidden text	የተደበቀ ጽሑፍ
+	Hidden layers	የተደበቁ ንብርብሮች
+	Links, actions and JavaScripts	አገናኞች፣ እርምጃዎችና JavaScript ስክሪፕቶች
+	Private data of other applications	የሌሎች መተግበሪያዎች የግል ውሂብ
+	None found	ምንም አልተገኘም
+	Form fields are flattened: their values stay visible. Saving rewrites the whole file.	የቅጽ መስኮች ከገጹ ጋር ይዋሃዳሉ: እሴቶቻቸው እንደሚታዩ ይቆያሉ። ማስቀመጥ ፋይሉን በሙሉ እንደገና ይጽፋል።
+	Remove	አስወግድ
+	Sanitizing removes hidden information from the document: metadata, file attachments, comments, form fields (flattened), hidden text and layers, bookmarks, links, actions and scripts, and private application data.	ማጽዳት የተደበቀ መረጃን ከሰነዱ ያስወግዳል: ሜታዳታ፣ የፋይል አባሪዎች፣ አስተያየቶች፣ የቅጽ መስኮች (ከገጹ ጋር ይዋሃዳሉ)፣ የተደበቀ ጽሑፍና ንብርብሮች፣ ዕልባቶች፣ አገናኞች፣ እርምጃዎችና ስክሪፕቶች፣ እንዲሁም የመተግበሪያዎች የግል ውሂብ።
+	Save the document afterwards; saving rewrites the whole file so nothing removed stays in it.	ከዚያ በኋላ ሰነዱን ያስቀምጡ፤ ማስቀመጥ የተወገደ ምንም ነገር እንዳይቀር ፋይሉን በሙሉ እንደገና ይጽፋል።
+	Printer:	አታሚ:
+	Save as PDF	እንደ ፒዲኤፍ አስቀምጥ
+	{name} (default)	{name} (ነባሪ)
+	Copies:	ቅጂዎች:
+	Collate	በቅደም ተከተል አሰባስብ
+	Print in grayscale	በግራጫ አትም
+	Two-sided:	ባለሁለት ገጽ ህትመት:
+	Off	ጠፍቷል
+	Flip on long edge	በረጅሙ ጠርዝ ገልብጥ
+	Flip on short edge	በአጭሩ ጠርዝ ገልብጥ
+	Paper:	ወረቀት:
+	Pages to Print	የሚታተሙ ገጾች
+	More options:	ተጨማሪ አማራጮች:
+	All pages in range	በክልሉ ውስጥ ያሉ ሁሉም ገጾች
+	Odd pages only	ጎዶሎ ገጾች ብቻ
+	Even pages only	ጥንድ ገጾች ብቻ
+	Reverse pages	የገጾችን ቅደም ተከተል ገልብጥ
+	Page Sizing & Handling	የገጽ መጠንና አያያዝ
+	Size	መጠን
+	Poster	ፖስተር
+	Multiple	ብዙ
+	Booklet	ቡክሌት
+	Fit	አስማማ
+	Shrink oversized pages	በጣም ትልልቅ ገጾችን አሳንስ
+	Custom scale:	ብጁ መጠን:
+	Tile scale:	የንጣፍ መጠን:
+	Overlap:	መደራረብ:
+	Cut marks	የመቁረጫ ምልክቶች
+	Pages per sheet:	ገጾች በአንድ ሉህ:
+	Page order:	የገጽ ቅደም ተከተል:
+	Horizontal	አግድም
+	Horizontal reversed	አግድም (የተገለበጠ)
+	Vertical	ቁልቁል
+	Vertical reversed	ቁልቁል (የተገለበጠ)
+	Print page border	የገጽ ድንበር አትም
+	Auto-rotate pages	ገጾችን በራስ-ሰር አሽከርክር
+	Booklet subset:	የቡክሌት ክፍል:
+	Both sides	ሁለቱም ጎኖች
+	Front side only	የፊት ጎን ብቻ
+	Back side only	የኋላ ጎን ብቻ
+	Binding:	መጠረዣ:
+	Left	ግራ
+	Right	ቀኝ
+	Orientation:	አቅጣጫ:
+	Auto portrait/landscape	ራስ-ሰር ቁመታዊ/አግዳሚ
+	Portrait	ቁመታዊ
+	Landscape	አግዳሚ
+	Comments & Forms	አስተያየቶችና ቅጾች
+	Document	ሰነድ
+	Document and markups	ሰነድና ምልክቶች
+	Document and stamps	ሰነድና ማህተሞች
+	Form fields only	የቅጽ መስኮች ብቻ
+	Previous sheet	ቀዳሚ ሉህ
+	Next sheet	ቀጣይ ሉህ
+	No sheets	ምንም ሉህ የለም
+	Sheet {s} of {n}	ሉህ {s} ከ{n}
+	Removed 1 hidden item. Save to remove them from the file.	1 የተደበቀ ንጥል ተወግዷል። ከፋይሉ ለማስወገድ ያስቀምጡ።
+	Removed {n} hidden items. Save to remove them from the file.	{n} የተደበቁ ንጥሎች ተወግደዋል። ከፋይሉ ለማስወገድ ያስቀምጡ።
+	Document sanitized. Save to finish: saving rewrites the whole file.	ሰነዱ ተጸድቷል። ለመጨረስ ያስቀምጡ: ማስቀመጥ ፋይሉን በሙሉ እንደገና ይጽፋል።
+	Applied 1 redaction mark. Save to remove the content from the file.	1 የመሸፈኛ ምልክት ተተግብሯል። ይዘቱን ከፋይሉ ለማስወገድ ያስቀምጡ።
+	Applied {n} redaction marks. Save to remove the content from the file.	{n} የመሸፈኛ ምልክቶች ተተግብረዋል። ይዘቱን ከፋይሉ ለማስወገድ ያስቀምጡ።
+	JavaScript Console	የJavaScript ኮንሶል
+	JavaScript is turned off (Preferences ▸ JavaScript).	JavaScript ጠፍቷል (ምርጫዎች ▸ JavaScript)።
+	Output appears here.	ውጤቱ እዚህ ይታያል።
+	Script Name:	የስክሪፕት ስም:
+	This document has no document-level scripts.	ይህ ሰነድ የሰነድ ደረጃ ስክሪፕቶች የሉትም።
+	No form fields were detected	ምንም የቅጽ መስክ አልተገኘም
+	Detected 1 form field	1 የቅጽ መስክ ተገኝቷል
+	Detected {n} form fields	{n} የቅጽ መስኮች ተገኝተዋል
+	{field}: {e}	{field}: {e}
+	Current page	የአሁኑ ገጽ
+	Selected pages	የተመረጡ ገጾች
+	Document language	የሰነድ ቋንቋ
+	Output	ውጤት
+	Searchable Image (Exact)	ሊፈለግ የሚችል ምስል (ትክክለኛ)
+	Adds invisible text over each word; the page image is not changed	በእያንዳንዱ ቃል ላይ የማይታይ ጽሑፍ ያክላል፤ የገጹ ምስል አይለወጥም
+	Downsample to	ጥራቱን ቀንስ ወደ
+	Settings	ቅንብሮች
+	Optional	አማራጭ
+	Planned · {m}	የታቀደ · {m}
+	Planned for milestone {m} — open to see what it will include	ለምዕራፍ {m} የታቀደ — ምን እንደሚያካትት ለማየት ይክፈቱ
+	Coming in milestone {m}. Items marked Ready work today.	በምዕራፍ {m} ይመጣል። «ዝግጁ» የሚል ምልክት ያላቸው ንጥሎች ዛሬ ይሠራሉ።
+	1 mark	1 ምልክት
+	{n} marks	{n} ምልክቶች
+	Dynamic	ተለዋዋጭ
+	Sign Here	እዚህ ይፈርሙ
+	Standard Business	መደበኛ የንግድ
+	Choose a stamp, then click on the page to place it.	ማህተም ይምረጡ፣ ከዚያም ለማስቀመጥ ገጹ ላይ ጠቅ ያድርጉ።
+	Note	ማስታወሻ
+	Polyline	የተያያዘ መስመር
+	Attachment	አባሪ
+	Callout	የማብራሪያ ሳጥን
+	Typewriter	የጽሕፈት መኪና
+	Checked	ምልክት የተደረገበት
+	Unchecked	ምልክት ያልተደረገበት
+	Marked	ምልክት ተደርጓል
+	Locked	ተቆልፏል
+	Search comments	አስተያየቶችን ፈልግ
+	Add a comment	አስተያየት አክል
+	No comments yet.	እስካሁን ምንም አስተያየት የለም።
+	Pick a tool in the quick bar, or type above.	በፈጣን አሞሌው ውስጥ መሣሪያ ይምረጡ፣ ወይም ከላይ ይተይቡ።
+	No comments match.	የሚዛመድ አስተያየት የለም።
+	Unknown author	ያልታወቀ ደራሲ
+	No colour	ቀለም የለም
+	Remove checkmark	የትክክል ምልክቱን አስወግድ
+	Mark with checkmark	በትክክል ምልክት አመልክት
+	Reply	መልስ
+	Add a reply	መልስ አክል
+	Post	ላክ
+	Page {label}	ገጽ {label}
+	{kind} — click to show it on the page	{kind} — በገጹ ላይ ለማሳየት ጠቅ ያድርጉ
+	Set status	ሁኔታ አዘጋጅ
+	Copy text	ጽሑፍ ቅዳ
+	Properties…	ባሕሪያት…
+	Make Current Properties Default	የአሁኑን ባሕሪያት ነባሪ አድርግ
+	More options	ተጨማሪ አማራጮች
+	Sort by	ደርድር በ
+	Author	ደራሲ
+	Type	አይነት
+	Colour	ቀለም
+	Show all comments	ሁሉንም አስተያየቶች አሳይ
+	Create PDF comment summary…	የፒዲኤፍ አስተያየቶች ማጠቃለያ ፍጠር…
+	Export all to data file…	ሁሉንም እንደ ውሂብ ፋይል ወደ ውጪ ላክ…
+	Filter comments	አስተያየቶችን አጣራ
+	Status	ሁኔታ
+	Accepted	ተቀባይነት አግኝቷል
+	Rejected	ውድቅ ተደርጓል
+	Cancelled	ተሰርዟል
+	Completed	ተጠናቋል
+	Show all	ሁሉንም አሳይ
+	Yellow	ቢጫ
+	Orange	ብርቱካናማ
+	Red	ቀይ
+	Pink	ሮዝ
+	Purple	ወይን ጠጅ
+	Blue	ሰማያዊ
+	Light blue	ፈዛዛ ሰማያዊ
+	Green	አረንጓዴ
+	Gray	ግራጫ
+	Black	ጥቁር
+	Bookmark options	የዕልባት አማራጮች
+	Expand all bookmarks	ሁሉንም ዕልባቶች ዘርጋ
+	Expand top-level bookmarks	የላይኛውን ደረጃ ዕልባቶች ዘርጋ
+	Collapse all bookmarks	ሁሉንም ዕልባቶች ሰብስብ
+	New bookmark (⌘B)	አዲስ ዕልባት (⌘B)
+	This document has no bookmarks.	ይህ ሰነድ ምንም ዕልባት የለውም።
+	This document has no layers.	ይህ ሰነድ ምንም ንብርብር የለውም።
+	This document has no attachments.	ይህ ሰነድ ምንም አባሪ የለውም።
+	Hide layer	ንብርብሩን ደብቅ
+	Show layer	ንብርብሩን አሳይ
+	Set layer visibility	የንብርብር ታይነትን አዘጋጅ
+	on page {label}	በገጽ {label}
+	Save attachment…	አባሪውን አስቀምጥ…
+	Open in a new tab	በአዲስ ትር ክፈት
+	This document has no pages.	ይህ ሰነድ ምንም ገጽ የለውም።
+	Find text	ጽሑፍ ፈልግ
+	No matches	ምንም ተዛማጅ የለም
+	Searching… {s}/{p}	በመፈለግ ላይ… {s}/{p}
+	{c} of {n}{more}	{c} ከ{n}{more}
+	Previous (⇧⌘G)	ቀዳሚ (⇧⌘G)
+	Next (⌘G)	ቀጣይ (⌘G)
+	Find options	የፍለጋ አማራጮች
+	Whole words only	ሙሉ ቃላት ብቻ
+	Case-sensitive	የፊደል መጠን (ትልቅ/ትንሽ) ለይ
+	Close (Esc)	ዝጋ (Esc)
+	Align	አሰልፍ
+	Top	ላይ
+	Bottom	ታች
+	Center horizontally	በአግድም መሃል አድርግ
+	Center vertically	በቁመት መሃል አድርግ
+	Distribute	አከፋፍል
+	Horizontally	በአግድም
+	Vertically	በቁመት
+	Set Fields to Same Size	መስኮችን ተመሳሳይ መጠን አድርግ
+	Height	ቁመት
+	Width	ስፋት
+	Both	ሁለቱንም
+	Duplicate…	አባዛ…
+	All pages	ሁሉም ገጾች
+	Odd pages	ጎዶሎ ገጾች
+	Even pages	ጥንድ ገጾች
+	Landscape pages	አግዳሚ ገጾች
+	Portrait pages	ቁመታዊ ገጾች
+	Move earlier	አስቀድም
+	Move later	አዘግይ
+	Back to the document	ወደ ሰነዱ ተመለስ
+	Protect Using Password	በየይለፍ ቃል ጠብቅ
+	Requires user to enter a password for:	ተጠቃሚው የይለፍ ቃል እንዲያስገባ የሚጠየቀው ለ:
+	Viewing	ለማየት
+	Editing	ለማርትዕ
+	Type Password	የይለፍ ቃል ይተይቡ
+	Re-type Password	የይለፍ ቃሉን እንደገና ይተይቡ
+	Strength: {s}	ጥንካሬ: {s}
+	Strong	ጠንካራ
+	Medium	መካከለኛ
+	Weak	ደካማ
+	Advanced Options {chevron}	የላቁ አማራጮች {chevron}
+	Compatibility	ተኳኋኝነት
+	Acrobat X and later (256-bit AES)	Acrobat X እና ከዚያ በኋላ (256-ቢት AES)
+	Acrobat 7.0 and later (128-bit AES)	Acrobat 7.0 እና ከዚያ በኋላ (128-ቢት AES)
+	Acrobat 5.0 and later (128-bit RC4)	Acrobat 5.0 እና ከዚያ በኋላ (128-ቢት RC4)
+	Acrobat 3.0 and later (40-bit RC4)	Acrobat 3.0 እና ከዚያ በኋላ (40-ቢት RC4)
+	Encrypt	አመስጥር
+	All document contents	ሁሉንም የሰነድ ይዘቶች
+	All document contents except metadata	ከሜታዳታ በስተቀር ሁሉንም የሰነድ ይዘቶች
+	Printing allowed	ማተም ይፈቀዳል
+	Low Resolution (150 dpi)	ዝቅተኛ ጥራት (150 dpi)
+	Changes allowed	የሚፈቀዱ ለውጦች
+	Inserting, deleting, and rotating pages	ገጾችን ማስገባት፣ መሰረዝ እና ማሽከርከር
+	Filling in form fields and signing existing signature fields	የቅጽ መስኮችን መሙላት እና ያሉትን የፊርማ መስኮች መፈረም
+	Commenting, filling in form fields, and signing existing signature fields	አስተያየት መስጠት፣ የቅጽ መስኮችን መሙላት እና ያሉትን የፊርማ መስኮች መፈረም
+	Any except extracting pages	ገጾችን ከማውጣት በስተቀር ማንኛውም
+	Enable copying of text, images, and other content	ጽሑፍን፣ ምስሎችን እና ሌላ ይዘትን መቅዳት አንቃ
+	Enable text access for screen reader devices for the visually impaired	ማየት ለተሳናቸው የስክሪን አንባቢ መሣሪያዎች የጽሑፍ መዳረሻን አንቃ
+	Type a password.	የይለፍ ቃል ይተይቡ።
+	The passwords don't match.	የይለፍ ቃላቱ አይዛመዱም።
+	This compatibility level supports only plain ASCII passwords.	ይህ የተኳኋኝነት ደረጃ ቀላል የASCII የይለፍ ቃላትን ብቻ ይደግፋል።
+	Anyone opening the document will need this password. It's applied when you save.	ሰነዱን የሚከፍት ማንኛውም ሰው ይህ የይለፍ ቃል ያስፈልገዋል። ሲያስቀምጡ ይተገበራል።
+	The document opens without a password; this password is needed to change the restrictions. It's applied when you save.	ሰነዱ ያለ የይለፍ ቃል ይከፈታል፤ ገደቦቹን ለመቀየር ይህ የይለፍ ቃል ያስፈልጋል። ሲያስቀምጡ ይተገበራል።
+	Recover unsaved documents?	ያልተቀመጡ ሰነዶች ይመለሱ?
+	PdfCraft didn't shut down normally. These documents had changes that were autosaved:	ብራና በተለመደው መንገድ አልተዘጋም። እነዚህ ሰነዶች በራስ-ሰር የተቀመጡ ለውጦች ነበሯቸው:
+	just now	አሁን
+	{n} min ago	ከ{n} ደቂቃ በፊት
+	{n} h ago	ከ{n} ሰዓት በፊት
+	 · password-protected	 · በየይለፍ ቃል የተጠበቀ
+	Recover	አስመልስ
+	Discard	አስወግድ
+	Version {v}	ስሪት {v}
+	A clean-room, open-source PDF application written in Rust. MIT OR Apache-2.0.	በRust የተጻፈ፣ የሌሎችን ኮድ ሳይቀዳ የተሠራ ክፍት ምንጭ የፒዲኤፍ መተግበሪያ። MIT OR Apache-2.0.
+	Part of	አካል የሆነበት:
+	Summarize Options	የማጠቃለያ አማራጮች
+	Choose a layout:	አቀማመጥ ይምረጡ:
+	Comments only	አስተያየቶች ብቻ
+	Sort comments by:	አስተያየቶችን ደርድር በ:
+	Create PDF Comment Summary	የፒዲኤፍ አስተያየቶች ማጠቃለያ ፍጠር
+	Revert to the previously saved version of “{name}”? Changes since then can't be undone afterwards.	ወደ “{name}” ቀድሞ የተቀመጠ ስሪት ይመለሱ? ከዚያ በኋላ የተደረጉ ለውጦች መልሰው ሊቀለበሱ አይችሉም።
+	Number pages	ገጾችን ቁጥር ስጥ
+	Style	ዘይቤ
+	None (prefix only)	ምንም (ቅድመ ቅጥያ ብቻ)
+	Prefix	ቅድመ ቅጥያ
+	Start	መነሻ
+	Labels: {preview}. Later pages keep their labels.	መለያዎች: {preview}። የኋለኞቹ ገጾች መለያዎቻቸውን ይይዛሉ።
+	Even and Odd Pages	ጥንድና ጎዶሎ ገጾች
+	Even Pages Only	ጥንድ ገጾች ብቻ
+	Odd Pages Only	ጎዶሎ ገጾች ብቻ
+	Landscape and Portrait Pages	አግዳሚና ቁመታዊ ገጾች
+	Landscape Pages	አግዳሚ ገጾች
+	Portrait Pages	ቁመታዊ ገጾች
+	Duplicate Field	መስኩን አባዛ
+	Duplicate "{name}" onto:	"{name}"ን አባዛ ወደ:
+	1 page selected.	1 ገጽ ተመርጧል።
+	{n} pages selected.	{n} ገጾች ተመርጠዋል።
+	Delete pages after extracting	ከወጡ በኋላ ገጾቹን ሰርዝ
+	Extract pages as separate files	ገጾችን እንደ ተለያዩ ፋይሎች አውጣ
+	Rotate Pages	ገጾችን አሽከርክር
+	Direction:	አቅጣጫ:
+	Clockwise 90 degrees	በሰዓት አቅጣጫ 90 ዲግሪ
+	Counterclockwise 90 degrees	ከሰዓት አቅጣጫ በተቃራኒ 90 ዲግሪ
+	180 degrees	180 ዲግሪ
+	Pages:	ገጾች:
+	All	ሁሉም
+	Selection	ምርጫ
+	From	ከ
+	Rotate:	አሽከርክር:
+	Repairs	ጥገናዎች
+	Repair log	የጥገና መዝገብ
+	Split document	ሰነዱን ከፋፍል
+	Number of pages	የገጾች ብዛት
+	Pages per file	ገጾች በአንድ ፋይል
+	File size	የፋይል መጠን
+	At most	ቢበዛ
+	Top-level bookmarks ({n})	የላይኛው ደረጃ ዕልባቶች ({n})
+	Before each selected page (select pages in Organize)	ከእያንዳንዱ የተመረጠ ገጽ በፊት (በ«አደራጅ» ውስጥ ገጾችን ይምረጡ)
+	Creates 1 file from {n} pages.	ከ{n} ገጾች 1 ፋይል ይፈጥራል።
+	Creates {f} files from {n} pages.	ከ{n} ገጾች {f} ፋይሎችን ይፈጥራል።
+	Each file holds as many of the {n} pages as fit.	እያንዳንዱ ፋይል ከ{n} ገጾቹ የሚገጥመውን ያህል ይይዛል።
+	Replace Pages	ገጾችን ተካ
+	Original: replace pages	ዋናው: የሚተኩ ገጾች
+	to	እስከ
+	to {n}	እስከ {n}
+	Replacement: pages of {name}	ምትክ: የ{name} ገጾች
+	of {name}	የ{name}
+	Only the page content changes: links, comments, form fields and bookmarks on the original pages stay.	የሚለወጠው የገጹ ይዘት ብቻ ነው: በዋናዎቹ ገጾች ላይ ያሉ አገናኞች፣ አስተያየቶች፣ የቅጽ መስኮችና ዕልባቶች ይቆያሉ።
+	The replacement file doesn't have that many pages.	የምትኩ ፋይል ያን ያህል ገጾች የሉትም።
+	Tagged PDF	መለያ የተሰጠው ፒዲኤፍ
+	Document Properties	የሰነድ ባሕሪያት
+	Description	መግለጫ
+	Initial View	የመጀመሪያ እይታ
+	Security	ደኅንነት
+	Fonts	ቅርጸ-ቁምፊዎች
+	Advanced	የላቀ
+	Title	ርዕስ
+	Subject	ርዕሰ ጉዳይ
+	Keywords	ቁልፍ ቃላት
+	Application	መተግበሪያ
+	PDF producer	የፒዲኤፍ አዘጋጅ
+	Layout and Magnification	አቀማመጥና ማጉላት
+	Navigation tab	የመዳሰሻ ትር
+	Page Only	ገጽ ብቻ
+	Bookmarks Panel and Page	የዕልባቶች ፓነልና ገጽ
+	Pages Panel and Page	የገጾች ፓነልና ገጽ
+	Attachments Panel and Page	የአባሪዎች ፓነልና ገጽ
+	Layers Panel and Page	የንብርብሮች ፓነልና ገጽ
+	Page layout	የገጽ አቀማመጥ
+	Default	ነባሪ
+	Single Page	ነጠላ ገጽ
+	Single Page Continuous	ነጠላ ገጽ ተከታታይ
+	Two-Up (Facing)	ባለሁለት ገጽ (ተፋጣጭ)
+	Two-Up Continuous (Facing)	ባለሁለት ገጽ ተከታታይ (ተፋጣጭ)
+	Two-Up (Cover Page)	ባለሁለት ገጽ (የሽፋን ገጽ)
+	Two-Up Continuous (Cover Page)	ባለሁለት ገጽ ተከታታይ (የሽፋን ገጽ)
+	Magnification	ማጉላት
+	Actual Size	ትክክለኛ መጠን
+	Fit Page	ገጹን አስማማ
+	Fit Width	ስፋቱን አስማማ
+	Fit Height	ቁመቱን አስማማ
+	Fit Visible	የሚታየውን አስማማ
+	Open to page	የሚከፈትበት ገጽ
+	of {pages}	ከ{pages}
+	Window Options	የመስኮት አማራጮች
+	Resize window to initial page	መስኮቱን ከመጀመሪያው ገጽ ጋር አስማማ
+	Center window on screen	መስኮቱን በማያ ገጹ መሃል አድርግ
+	Open in Full Screen mode	በሙሉ ማያ ገጽ ክፈት
+	Show:	አሳይ:
+	File Name	የፋይል ስም
+	Document Title	የሰነድ ርዕስ
+	User Interface Options	የበይነገጽ አማራጮች
+	Hide menu bar	የምናሌ አሞሌን ደብቅ
+	Hide toolbars	የመሣሪያ አሞሌዎችን ደብቅ
+	Hide window controls	የመስኮት መቆጣጠሪያዎችን ደብቅ
+	Security method	የደኅንነት ዘዴ
+	No security	ደኅንነት የለም
+	Restrictions	ገደቦች
+	None — everything is allowed	ምንም — ሁሉም ነገር ይፈቀዳል
+	Password security	የይለፍ ቃል ደኅንነት
+	Encryption	ምስጠራ
+	Opened with	የተከፈተው በ
+	— (protection is applied when you save)	— (ጥበቃው ሲያስቀምጡ ይተገበራል)
+	Owner password (no restrictions apply)	የባለቤት የይለፍ ቃል (ገደቦች አይተገበሩም)
+	User password	የተጠቃሚ የይለፍ ቃል
+	Change settings…	ቅንብሮችን ቀይር…
+	Printing	ማተም
+	Not allowed	አይፈቀድም
+	Allowed	ይፈቀዳል
+	High resolution	ከፍተኛ ጥራት
+	Low resolution	ዝቅተኛ ጥራት
+	Changing the document	ሰነዱን መቀየር
+	Document assembly	የሰነድ ማቀናበር
+	Content copying	ይዘትን መቅዳት
+	Content copying for accessibility	ለተደራሽነት ይዘትን መቅዳት
+	Commenting	አስተያየት መስጠት
+	Filling of form fields	የቅጽ መስኮችን መሙላት
+	No fonts are referenced by the pages.	ገጾቹ ምንም ቅርጸ-ቁምፊ አይጠቀሙም።
+	PDF version	የፒዲኤፍ ስሪት
+	Location	ቦታ
+	Page size	የገጽ መጠን
+	Yes	አዎ
+	No	አይ
+	Revisions	ክለሳዎች
+	View revision {n}	ክለሳ {n}ን አሳይ
+	Open the file as it was saved then	ፋይሉን በዚያን ጊዜ እንደተቀመጠው ክፈት
+	Binding	መጠረዣ
+	Left Edge	የግራ ጠርዝ
+	Right Edge	የቀኝ ጠርዝ
+	Language	ቋንቋ
+	Saved {place}: {before} → {after} ({pct}% smaller){detail}	{place} ተቀምጧል: {before} → {after} ({pct}% ያነሰ){detail}
+	Couldn't save the image: {e}	ምስሉን ማስቀመጥ አልተቻለም: {e}
+	Adding images arrives on the web with file pickers for images	በድር ስሪቱ ምስሎችን ማከል የሚመጣው የምስል ፋይል መምረጫዎች ሲመጡ ነው
+	Replacing images on page {p} arrives on the web with image pickers ({i})	በገጽ {p} ላይ ምስሎችን መተካት በድር ስሪቱ የሚመጣው የምስል መምረጫዎች ሲመጡ ነው ({i})
+	{name}: choosing images arrives on the web with file pickers for images	{name}: በድር ስሪቱ ምስሎችን መምረጥ የሚመጣው የምስል ፋይል መምረጫዎች ሲመጡ ነው
+	Replacing images arrives on the web with image file pickers	በድር ስሪቱ ምስሎችን መተካት የሚመጣው የምስል ፋይል መምረጫዎች ሲመጡ ነው
+	Couldn't create a PDF: {e}	ፒዲኤፍ መፍጠር አልተቻለም: {e}
+	The clipboard has no image or text	ቅንጥብ ሰሌዳው ምንም ምስል ወይም ጽሑፍ የለውም
+	On the web, open or drop an image to convert it	በድር ስሪቱ ምስልን ለመቀየር ይክፈቱት ወይም ይጣሉት
+	Couldn't optimize the file: {e}	ፋይሉን ማመቻቸት አልተቻለም: {e}
+	Couldn't write {path}: {e}	{path}ን መጻፍ አልተቻለም: {e}
+	The form asks to be submitted to {u}; PdfCraft doesn't send form data. Save the document to keep your entries.	ቅጹ ወደ {u} እንዲላክ ይጠይቃል፤ ብራና የቅጽ ውሂብ አይልክም። ያስገቡትን ለማቆየት ሰነዱን ያስቀምጡ።
+	{s} actions run in the JavaScript engine (M6)	የ{s} እርምጃዎች በJavaScript ሞተር ውስጥ ይሠራሉ (M6)
+	{name}: the {other} action isn't supported yet	{name}: የ{other} እርምጃ ገና አይደገፍም
+	{name} submits the form to {url}; PdfCraft doesn't send form data. Save the document to keep your entries.	{name} ቅጹን ወደ {url} ይልካል፤ ብራና የቅጽ ውሂብ አይልክም። ያስገቡትን ለማቆየት ሰነዱን ያስቀምጡ።
+	Export stopped: {e}	ወደ ውጪ መላክ ቆሟል: {e}
+	Exported 1 image	1 ምስል ወደ ውጪ ተልኳል
+	Exported {n} images	{n} ምስሎች ወደ ውጪ ተልከዋል
+	 ({s} not exported: {first})	 ({s} ወደ ውጪ አልተላኩም: {first})
+	Exported the text of 1 page	የ1 ገጽ ጽሑፍ ወደ ውጪ ተልኳል
+	Exported the text of {n} pages	የ{n} ገጾች ጽሑፍ ወደ ውጪ ተልኳል
+	{msg} to {dir}	{msg} ወደ {dir}
+	Exporting… {d} of {t}	ወደ ውጪ በመላክ ላይ… {d} ከ{t}
+	Choose a folder for the exported files	ወደ ውጪ ለሚላኩት ፋይሎች አቃፊ ይምረጡ
+	New {tool} comments will look like this one	አዲስ የ{tool} አስተያየቶች እንደዚህኛው ይመስላሉ
+	This document can't be checked: it couldn't be read for editing	ይህ ሰነድ ሊፈተሽ አይችልም: ለአርትዖት ሊነበብ አልቻለም
+	The checker found no problems in this document.	ፈታሹ በዚህ ሰነድ ውስጥ ምንም ችግር አላገኘም።
+	The checker found 1 problem which may prevent the document from being fully accessible.	ፈታሹ ሰነዱ ሙሉ በሙሉ ተደራሽ እንዳይሆን ሊከለክል የሚችል 1 ችግር አግኝቷል።
+	The checker found {n} problems which may prevent the document from being fully accessible.	ፈታሹ ሰነዱ ሙሉ በሙሉ ተደራሽ እንዳይሆን ሊከለክሉ የሚችሉ {n} ችግሮች አግኝቷል።
+	The text is the same	ጽሑፉ ተመሳሳይ ነው
+	1 difference found	1 ልዩነት ተገኝቷል
+	{n} differences found	{n} ልዩነቶች ተገኝተዋል
+	Added 1 comment	1 አስተያየት ታክሏል
+	Added {n} comments	{n} አስተያየቶች ታክለዋል
+	Choose a folder for the results	ለውጤቶቹ አቃፊ ይምረጡ
+	Files for {name}	የ{name} ፋይሎች
+	An action is already running	አንድ እርምጃ አስቀድሞ በመሥራት ላይ ነው
+	Running action… file {d} of {t}	እርምጃ በማሄድ ላይ… ፋይል {d} ከ{t}
+	No unlinked web addresses were found in the text	በጽሑፉ ውስጥ አገናኝ ያልተደረገ የድር አድራሻ አልተገኘም
+	Created 1 link	1 አገናኝ ተፈጥሯል
+	Created {n} links	{n} አገናኞች ተፈጥረዋል
+	Text recognition is already running	ጽሑፍ ለይቶ ማወቅ አስቀድሞ በመሥራት ላይ ነው
+	Optimizing… removing user data	በማመቻቸት ላይ… የተጠቃሚ ውሂብን በማስወገድ ላይ
+	Optimizing… image {d} of {t}	በማመቻቸት ላይ… ምስል {d} ከ{t}
+	Optimizing… cleaning up	በማመቻቸት ላይ… በማጽዳት ላይ
+	Optimizing… merging identical objects	በማመቻቸት ላይ… ተመሳሳይ ነገሮችን በማዋሃድ ላይ
+	Optimizing… writing the copy	በማመቻቸት ላይ… ቅጂውን በመጻፍ ላይ
+	Cancelling…	በማቋረጥ ላይ…
+	Optimization is already running	ማመቻቸት አስቀድሞ በመሥራት ላይ ነው
+	Optimization cancelled	ማመቻቸቱ ተቋርጧል
+	Couldn't optimize the file	ፋይሉን ማመቻቸት አልተቻለም
+	Recognizing text… file {d} of {t}	ጽሑፍ በመለየት ላይ… ፋይል {d} ከ{t}
+	Recognizing text… page {d} of {t}	ጽሑፍ በመለየት ላይ… ገጽ {d} ከ{t}
+	Recognized 1 word	1 ቃል ተለይቷል
+	Recognized {n} words	{n} ቃላት ተለይተዋል
+	{words} on {pages}	{words} በ{pages}
+	; 1 page already had text	፤ 1 ገጽ አስቀድሞ ጽሑፍ ነበረው
+	; {n} pages already had text	፤ {n} ገጾች አስቀድመው ጽሑፍ ነበራቸው
+	Recognized {w} words in 1 file	በ1 ፋይል ውስጥ {w} ቃላት ተለይተዋል
+	Recognized {w} words in {n} files	በ{n} ፋይሎች ውስጥ {w} ቃላት ተለይተዋል
+	; failed: {list}	፤ ያልተሳኩ: {list}
+	1 file done	1 ፋይል ተጠናቋል
+	{n} files done	{n} ፋይሎች ተጠናቀዋል
+	The selected area has been copied ({w} × {h} pixels)	የተመረጠው አካባቢ ተቀድቷል ({w} × {h} ፒክስል)
+	Couldn't take the snapshot: {e}	ቅጽበታዊ ምስሉን ማንሳት አልተቻለም: {e}
+	Couldn't recover {name}: {e}	{name}ን መመለስ አልተቻለም: {e}
+	The document now conforms to {level}; save it to keep the changes	ሰነዱ አሁን ከ{level} ጋር ይስማማል፤ ለውጦቹን ለማቆየት ያስቀምጡት
+	Fixed what could be fixed; 1 problem remains	ሊስተካከል የሚችለው ተስተካክሏል፤ 1 ችግር ቀርቷል
+	Fixed what could be fixed; {n} problems remain	ሊስተካከል የሚችለው ተስተካክሏል፤ {n} ችግሮች ቀርተዋል
+	Custom stamps arrive on the web with file pickers for images	በድር ስሪቱ ብጁ ማህተሞች የሚመጡት የምስል ፋይል መምረጫዎች ሲመጡ ነው
+	{file} is too large for a stamp (at most {n} MB)	{file} ለማህተም በጣም ትልቅ ነው (ቢበዛ {n} MB)
+	Sent to {printer}	ወደ {printer} ተልኳል
+	Sent to {printer}: {msg}	ወደ {printer} ተልኳል: {msg}
+	Choose a folder for the searchable files	ሊፈለጉ ለሚችሉት ፋይሎች አቃፊ ይምረጡ
+	Files are combined from top to bottom. Leave Pages empty to take every page.	ፋይሎቹ ከላይ ወደ ታች ይዋሃዳሉ። ሁሉንም ገጾች ለመውሰድ «ገጾች»ን ባዶ ይተዉት።
+	Unlock…	ቁልፉን ክፈት…
+	Select a password-protected file first	መጀመሪያ በየይለፍ ቃል የተጠበቀ ፋይል ይምረጡ
+	Enter the permissions password to allow combining	ማዋሃድን ለመፍቀድ የፈቃዶች የይለፍ ቃሉን ያስገቡ
+	Enter the password that opens it	የሚከፍተውን የይለፍ ቃል ያስገቡ
+	Unlock {name}	የ{name}ን ቁልፍ ክፈት
+	Unlock {n} files	የ{n} ፋይሎችን ቁልፍ ክፈት
+	The same password is tried on each file.	ተመሳሳዩ የይለፍ ቃል በእያንዳንዱ ፋይል ላይ ይሞከራል።
+	Hide password	የይለፍ ቃሉን ደብቅ
+	Show password	የይለፍ ቃሉን አሳይ
+	Wrong password	የተሳሳተ የይለፍ ቃል
+	The password is only used to read the file; it isn't saved.	የይለፍ ቃሉ ፋይሉን ለማንበብ ብቻ ያገለግላል፤ አይቀመጥም።
+	Unlock	ቁልፉን ክፈት
+	Opened, but its security settings don't allow combining. Enter the permissions password.	ተከፍቷል፣ ነገር ግን የደኅንነት ቅንብሮቹ ማዋሃድን አይፈቅዱም። የፈቃዶች የይለፍ ቃሉን ያስገቡ።
+	Unlocked: the combined file won't be password-protected	ቁልፉ ተከፍቷል: የተዋሃደው ፋይል በየይለፍ ቃል አይጠበቅም
+	Unlocked {n} of {m} files	ከ{m} ፋይሎች {n} ተከፍተዋል
+	Drop PDFs or folders here, or choose them.	ፒዲኤፎችን ወይም አቃፊዎችን እዚህ ይጣሉ፣ ወይም ይምረጧቸው።
+	Add folder…	አቃፊ አክል…
+	Add folder and subfolders…	አቃፊና ንዑስ አቃፊዎችን አክል…
+	More ways to add files	ፋይሎችን ለማከል ተጨማሪ መንገዶች
+	Every PDF in the folder	በአቃፊው ውስጥ ያለ እያንዳንዱ ፒዲኤፍ
+	Every PDF in the folder and the folders inside it	በአቃፊውና በውስጡ ባሉ አቃፊዎች ውስጥ ያለ እያንዳንዱ ፒዲኤፍ
+	Add folder	አቃፊ አክል
+	Add folder and subfolders	አቃፊና ንዑስ አቃፊዎችን አክል
+	No PDFs found in {folder}	በ{folder} ውስጥ ምንም ፒዲኤፍ አልተገኘም
+	Added the first {n} PDFs in {folder}	በ{folder} ውስጥ ያሉ የመጀመሪያዎቹ {n} ፒዲኤፎች ታክለዋል
+	Click to sort, drag to move the column. Drag its edge to resize it.	ለመደርደር ጠቅ ያድርጉ፣ ዓምዱን ለማንቀሳቀስ ይጎትቱ። መጠኑን ለመቀየር ጠርዙን ይጎትቱ።
+	Reset columns	ዓምዶችን ዳግም አስጀምር
+	Remove {n} files	{n} ፋይሎችን አስወግድ
+	{n} selected	{n} ተመርጠዋል
+	sorted ascending	በሚጨምር ቅደም ተከተል ተደርድሯል
+	sorted descending	በሚቀንስ ቅደም ተከተል ተደርድሯል
+	Protected: the combined file won't keep its security settings	የተጠበቀ: የተዋሃደው ፋይል የደኅንነት ቅንብሮቹን አይይዝም
+	Add open documents	ክፍት ሰነዶችን አክል
+	All open documents	ሁሉም ክፍት ሰነዶች
+	No documents are open	ምንም ሰነድ አልተከፈተም
+	Select a file first	መጀመሪያ ፋይል ይምረጡ
+	1 file	1 ፋይል
+	{n} files	{n} ፋይሎች
+	1 file needs attention	1 ፋይል ትኩረት ያስፈልገዋል
+	{n} files need attention	{n} ፋይሎች ትኩረት ያስፈልጋቸዋል
+	{name} can't be combined: {why}	{name} ሊዋሃድ አይችልም: {why}
+	Check the pages of {name}: {why}	የ{name} ገጾችን ይፈትሹ: {why}
+	Add the PDFs to combine	የሚዋሃዱትን ፒዲኤፎች ያክሉ
+	File name	የፋይል ስም
+	Warnings	ማስጠንቀቂያዎች
+	Drag to reorder	ቅደም ተከተል ለመቀየር ይጎትቱ
+	{k} of {n}	{k} ከ{n}
+	? of {n}	? ከ{n}
+	Added more than once	ከአንድ ጊዜ በላይ ታክሏል
+	yesterday	ትናንት
+	{n} days ago	ከ{n} ቀናት በፊት
+	No pages selected	ምንም ገጽ አልተመረጠም
+	Password-protected	በየይለፍ ቃል የተጠበቀ
+	Its security settings don't allow copying pages	የደኅንነት ቅንብሮቹ ገጾችን መቅዳት አይፈቅዱም
+	Can't be read: {e}	ሊነበብ አይችልም: {e}
+	Includes unsaved changes	ያልተቀመጡ ለውጦችን ያካትታል
+	Pages of {name} to combine, e.g. 1-3, 6	የሚዋሃዱት የ{name} ገጾች፣ ለምሳሌ 1-3, 6
+	Remove {name}	{name}ን አስወግድ
+	Add files…	ፋይሎችን አክል…
+	Add at least two files	ቢያንስ ሁለት ፋይሎችን ያክሉ
+	Couldn't add {name}: {e}	{name}ን ማከል አልተቻለም: {e}
+	Couldn't combine files: {e}	ፋይሎችን ማዋሃድ አልተቻለም: {e}
+	Export comments	አስተያየቶችን ወደ ውጪ ላክ
+	Export form data	የቅጽ ውሂብ ወደ ውጪ ላክ
+	Comment and form data	የአስተያየትና የቅጽ ውሂብ
+	Export	ወደ ውጪ ላክ
+	Select data files to merge	የሚዋሃዱ የውሂብ ፋይሎችን ይምረጡ
+	Form data and PDF forms	የቅጽ ውሂብና የፒዲኤፍ ቅጾች
+	Save the spreadsheet	የተመን ሉሁን አስቀምጥ
+	Save the accessibility report	የተደራሽነት ሪፖርቱን አስቀምጥ
+	Save image	ምስሉን አስቀምጥ
+	Export certificate	ሰርተፊኬቱን ወደ ውጪ ላክ
+	Choose a folder for the extracted pages	ለወጡት ገጾች አቃፊ ይምረጡ
+	Choose a folder for the split files	ለተከፋፈሉት ፋይሎች አቃፊ ይምረጡ
+	Couldn't use {name}: {e}	{name}ን መጠቀም አልተቻለም: {e}
+	Couldn't extract pages: {e}	ገጾችን ማውጣት አልተቻለም: {e}
+	Couldn't write {name}: {e}	{name}ን መጻፍ አልተቻለም: {e}
+	Wrote 1 file to {dir}	1 ፋይል በ{dir} ተጽፏል
+	Wrote {n} files to {dir}	{n} ፋይሎች በ{dir} ተጽፈዋል
+	No pages match those choices	ከእነዚያ ምርጫዎች ጋር የሚዛመድ ገጽ የለም
+	Couldn't split: {e}	መከፋፈል አልተቻለም: {e}
+	Couldn't summarize comments: {e}	አስተያየቶችን ማጠቃለል አልተቻለም: {e}
+	Couldn't open the result: {e}	ውጤቱን መክፈት አልተቻለም: {e}
+	Importing data arrives on the web with file pickers for data files	በድር ስሪቱ ውሂብ ማስመጣት የሚመጣው የውሂብ ፋይል መምረጫዎች ሲመጡ ነው
+	Exported to {path}	ወደ ውጪ ተልኳል: {path}
+	Merging data files needs the desktop app	የውሂብ ፋይሎችን ማዋሃድ የዴስክቶፕ መተግበሪያውን ይፈልጋል
+	Merged 1 file into {path}	1 ፋይል ወደ {path} ተዋህዷል
+	Merged {n} files into {path}	{n} ፋይሎች ወደ {path} ተዋህደዋል
+	Combined {n} files	{n} ፋይሎች ተዋህደዋል
+	Extracted 1 page	1 ገጽ ወጥቷል
+	Extracted {n} pages	{n} ገጾች ወጥተዋል
+	Created a comment summary	የአስተያየቶች ማጠቃለያ ተፈጥሯል
+	Couldn't open {name}: {e}	{name}ን መክፈት አልተቻለም: {e}
+	Couldn't read {name}: {e}	{name}ን ማንበብ አልተቻለም: {e}
+	Portable mode is off: {folder} can't be written ({error}). Settings are kept in your user folder instead.	ተንቀሳቃሽ ሁነታ ጠፍቷል: {folder} ላይ መጻፍ አይቻልም ({error})። በምትኩ ቅንብሮቹ በተጠቃሚ አቃፊዎ ውስጥ ይቀመጣሉ።
+	Couldn't save: {e}	ማስቀመጥ አልተቻለም: {e}
+	Downloading attachments on the web arrives with M3.10 ({n} bytes ready)	በድር ስሪቱ አባሪዎችን ማውረድ ከM3.10 ጋር ይመጣል ({n} ባይት ዝግጁ ናቸው)
+	`{command}` {when}	`{command}` {when}
+	ships in milestone {m}	በምዕራፍ {m} ይመጣል
+	needs an AI provider (off by default)	የAI አቅራቢ ያስፈልገዋል (በነባሪ ጠፍቷል)
+	is available	ይገኛል
+	is not available yet	ገና አይገኝም
+	{label} failed: {e}	{label} አልተሳካም: {e}
+	Undid {label}	{label} ተቀልብሷል
+	Redid {label}	{label} ተደግሟል
+	A document needs at least one page: copy instead	ሰነድ ቢያንስ አንድ ገጽ ያስፈልገዋል: በምትኩ ይቅዱ
+	Cut {what}	{what} ተቆርጧል
+	Copied {what}	{what} ተቀድቷል
+	1 page	1 ገጽ
+	{n} pages	{n} ገጾች
+	Copy or cut pages first	መጀመሪያ ገጾችን ይቅዱ ወይም ይቁረጡ
+	Couldn't save {name}: {e}	{name}ን ማስቀመጥ አልተቻለም: {e}
+	Saved {name}	{name} ተቀምጧል
+	Saved, but reopening failed: {e}	ተቀምጧል፣ ነገር ግን እንደገና መክፈት አልተሳካም: {e}
+	Downloaded {name}	{name} ወርዷል
+	Couldn't download {name}: {e}	{name}ን ማውረድ አልተቻለም: {e}
+	Reverted to the last saved version	ወደ መጨረሻው የተቀመጠ ስሪት ተመልሷል
+	That didn't work: an internal error stopped it ({m}). Your documents are unchanged.	ያ አልሠራም: የውስጥ ስህተት አስቆመው ({m})። ሰነዶችዎ አልተለወጡም።
+	Nothing to undo	የሚቀለበስ ነገር የለም
+	Nothing to redo	የሚደገም ነገር የለም
+	This document has no form fields you can fill in	ይህ ሰነድ ሊሞሉት የሚችሉት የቅጽ መስክ የለውም
+	This document has no comments to flatten	ይህ ሰነድ ከገጹ ጋር የሚዋሃድ አስተያየት የለውም
+	This document has no form fields to flatten	ይህ ሰነድ ከገጹ ጋር የሚዋሃድ የቅጽ መስክ የለውም
+	There are no redaction marks (mark text, areas or pages first)	ምንም የመሸፈኛ ምልክቶች የሉም (መጀመሪያ ጽሑፍን፣ አካባቢዎችን ወይም ገጾችን ምልክት ያድርጉ)
+	This document has no {kind} to change	ይህ ሰነድ የሚቀየር {kind} የለውም
+	header or footer	ራስጌ ወይም ግርጌ
+	watermark	የውሃ ምልክት
+	background	ዳራ
+	This document isn't password-protected	ይህ ሰነድ በየይለፍ ቃል አልተጠበቀም
+	Only the document's owner can change its security (open it with the permissions password)	የሰነዱን ደኅንነት መቀየር የሚችለው ባለቤቱ ብቻ ነው (በፈቃዶች የይለፍ ቃል ይክፈቱት)
+	The document's security settings don't allow this change	የሰነዱ የደኅንነት ቅንብሮች ይህን ለውጥ አይፈቅዱም
+	Open a document first	መጀመሪያ ሰነድ ይክፈቱ
+	Security will be removed when you save	ሲያስቀምጡ ጥበቃው ይወገዳል
+	Click text or an image to edit it	ለማርትዕ ጽሑፍ ወይም ምስል ላይ ጠቅ ያድርጉ
+	Drag a rectangle to create a link; double-click a link to edit it	አገናኝ ለመፍጠር አራት ማዕዘን ይጎትቱ፤ አገናኝን ለማርትዕ ሁለቴ ጠቅ ያድርጉት
+	There are no redaction marks to apply	የሚተገበሩ የመሸፈኛ ምልክቶች የሉም
+	Drag to draw the area where the signature should appear.	ፊርማው የሚታይበትን አካባቢ ለመሳል ይጎትቱ።
+	Couldn't fit the visible content: {e}	የሚታየውን ይዘት ማስማማት አልተቻለም: {e}
+	Drag a rectangle around the area to copy	በሚቀዳው አካባቢ ዙሪያ አራት ማዕዘን ይጎትቱ
+	Click on the page to add a {tool}, or drag to set its size	{tool} ለማከል ገጹ ላይ ጠቅ ያድርጉ፣ ወይም መጠኑን ለማዘጋጀት ይጎትቱ
+	Drag a rectangle on a page to crop it; double-click a page for Set Page Boxes	ገጹን ለመከርከም በገጹ ላይ አራት ማዕዘን ይጎትቱ፤ ለ«የገጽ ሳጥኖችን አዘጋጅ» ገጹን ሁለቴ ጠቅ ያድርጉ
+	Keep tool selected: on	መሣሪያው እንደተመረጠ ይቆይ: በርቷል
+	Keep tool selected	መሣሪያው እንደተመረጠ ይቆይ
+	Opacity	ድፍንነት
+	Line thickness	የመስመር ውፍረት
+	What word or phrase would you like to search for?	የትኛውን ቃል ወይም ሐረግ መፈለግ ይፈልጋሉ?
+	Searching… {s} of {p} pages	በመፈለግ ላይ… ከ{p} ገጾች {s}
+	 (searching… {s} of {p} pages)	 (በመፈለግ ላይ… ከ{p} ገጾች {s})
+	1 instance	1 ውጤት
+	{n} instances	{n} ውጤቶች
+	Go to this result	ወደዚህ ውጤት ሂድ
+	Highlight	አድምቅ
+	Draw	ሳል
+	Polygon	ባለብዙ ጎን
+	Connected lines	የተያያዙ መስመሮች
+	Eraser	ማጥፊያ
+	Sign	ፈርም
+	Certified by {by}	በ{by} የጸደቀ
+	At least one signature is invalid.	ቢያንስ አንድ ፊርማ ትክክል አይደለም።
+	Signed and all signatures are valid.	ተፈርሟል፤ ሁሉም ፊርማዎች ትክክለኛ ናቸው።
+	At least one signature has problems.	ቢያንስ አንድ ፊርማ ችግር አለበት።
+	This document is secured. Some changes are restricted by its security settings.	ይህ ሰነድ የተጠበቀ ነው። አንዳንድ ለውጦች በደኅንነት ቅንብሮቹ የተገደቡ ናቸው።
+	This is a dynamic XFA form, which PdfCraft can't display yet. What you see is the file's placeholder page.	ይህ ተለዋዋጭ የXFA ቅጽ ነው፤ ብራና ገና ሊያሳየው አይችልም። የሚያዩት የፋይሉን ጊዜያዊ ገጽ ነው።
+	This form also contains XFA data, which PdfCraft doesn't read yet. You can fill its fields, but Acrobat may show the XFA values instead.	ይህ ቅጽ የXFA ውሂብም ይዟል፤ ብራና ገና አያነበውም። መስኮቹን መሙላት ይችላሉ፣ ነገር ግን Acrobat በምትኩ የXFA እሴቶቹን ሊያሳይ ይችላል።
+	This document contains {n} interactive form fields.	ይህ ሰነድ {n} በይነተገናኝ የቅጽ መስኮችን ይዟል።
+	This file was damaged and has been repaired. Saving keeps the repaired version.	ይህ ፋይል ተበላሽቶ ነበር፤ ተጠግኗል። ማስቀመጥ የተጠገነውን ስሪት ያቆያል።
+	Dismiss	አሰናብት
+	Hide field highlights	የመስክ ማድመቂያዎችን ደብቅ
+	Highlight fields	መስኮችን አድምቅ
+	Security settings	የደኅንነት ቅንብሮች
+	Details	ዝርዝሮች
+	Select (V)	ምረጥ (V)
+	Hand (H)	እጅ (H)
+	Delete pages (Delete)	ገጾችን ሰርዝ (Delete)
+	Insert a blank page after the selection	ከምርጫው በኋላ ባዶ ገጽ አስገባ
+	Insert pages from a file…	ከፋይል ገጾችን አስገባ…
+	Extract pages to a new document	ገጾችን ወደ አዲስ ሰነድ አውጣ
+	Split into files…	ወደ ፋይሎች ከፋፍል…
+	Select pages	ገጾችን ምረጥ
+	Cut	ቁረጥ
+	Copy	ቅዳ
+	Paste after	በኋላ ለጥፍ
+	Rename	እንደገና ሰይም
+	Set to current page ({n})	ወደ አሁኑ ገጽ አዘጋጅ ({n})
+	Move up	ወደ ላይ አንቀሳቅስ
+	Move down	ወደ ታች አንቀሳቅስ
+	Indent	ወደ ውስጥ አስገባ
+	Outdent	ወደ ውጪ አውጣ
+	This document has no form fields.	ይህ ሰነድ ምንም የቅጽ መስክ የለውም።
+	Tab order: move a field with its arrows.	የTab ቅደም ተከተል: መስክን በቀስቶቹ ያንቀሳቅሱ።
+	Unplaced	ቦታ ያልተሰጠው
+	Has JavaScript actions (run in M6)	የJavaScript እርምጃዎች አሉት (በM6 ይሠራሉ)
+	Page	ገጽ
+	None	ምንም
+	Delete selected fields	የተመረጡትን መስኮች ሰርዝ
+	Diagnostic details	የምርመራ ዝርዝሮች
+	The operation failed.	ክንውኑ አልተሳካም።
+	no such document	እንደዚህ ያለ ሰነድ የለም
+	nothing to undo	የሚቀለበስ ነገር የለም
+	nothing to redo	የሚደገም ነገር የለም
+	this document is signed: rewriting it would invalidate its signatures (save it incrementally instead)	ይህ ሰነድ ተፈርሟል: እንደገና መጻፍ ፊርማዎቹን ያበላሻል (በምትኩ በጭማሪ ያስቀምጡት)
+	the document is protected by a password	ሰነዱ በየይለፍ ቃል የተጠበቀ ነው
+	the password is incorrect	የይለፍ ቃሉ ትክክል አይደለም
+	the document has no page tree	ሰነዱ የገጽ ዛፍ የለውም
+	a document must keep at least one page	ሰነድ ቢያንስ አንድ ገጽ መያዝ አለበት
+	a bookmark cannot be moved inside itself	ዕልባት ወደ ራሱ ውስጥ ሊንቀሳቀስ አይችልም
+	the title must not be empty	ርዕሱ ባዶ መሆን የለበትም
+	the document has no form fields	ሰነዱ ምንም የቅጽ መስክ የለውም
+	there are no redaction marks to apply	የሚተገበሩ የመሸፈኛ ምልክቶች የሉም
+	there are no pages to print	የሚታተሙ ገጾች የሉም
+	the document has no tags	ሰነዱ ምንም መለያ የለውም
+	{0}: {1}	{0}: {1}
+	the image is empty	ምስሉ ባዶ ነው
+	this file isn't XFDF, FDF, XML or text form data	ይህ ፋይል XFDF፣ FDF፣ XML ወይም የጽሑፍ የቅጽ ውሂብ አይደለም
+	nothing in the file matches this document	በፋይሉ ውስጥ ከዚህ ሰነድ ጋር የሚዛመድ ምንም ነገር የለም
+	This page couldn't be displayed.\n{e}	ይህ ገጽ ሊታይ አልቻለም።\n{e}
+	Go to page {p}	ወደ ገጽ {p} ሂድ
+	{s} action	የ{s} እርምጃ
+	Page {p} of {n}	ገጽ {p} ከ{n}
+	1 page selected	1 ገጽ ተመርጧል
+	{n} pages selected	{n} ገጾች ተመርጠዋል
+	{name} — unsaved changes	{name} — ያልተቀመጡ ለውጦች
+	{kind} field	የ{kind} መስክ
+	Select a file for the stamp	ለማህተሙ ፋይል ይምረጡ
+	JavaScript, e.g. getField("total").value	JavaScript፣ ለምሳሌ getField("total").value
+	Font: Helvetica	ቅርጸ-ቁምፊ: Helvetica
+	e.g. en-US	ለምሳሌ am-ET
+	Rendering: hayro (bootstrap) · UI: egui · Icons: Lucide (ISC) · Fonts: Inter, JetBrains Mono, Dancing Script (OFL)	ማሳያ: hayro (bootstrap) · በይነገጽ: egui · አዶዎች: Lucide (ISC) · ቅርጸ-ቁምፊዎች: Inter, JetBrains Mono, Dancing Script (OFL)
+	CheckBox	አመልካች ሳጥን
+	Radio	የምርጫ አዝራር
+	PushButton	አዝራር
+	Combo	ተቆልቋይ
+	List	ዝርዝር
+	Unknown	ያልታወቀ
+	The document has no XMP metadata	ሰነዱ የXMP ሜታዳታ የለውም
+	The title in the metadata and the document information differ	በሜታዳታው እና በሰነዱ መረጃ ውስጥ ያለው ርዕስ ይለያያል
+	The document is encrypted	ሰነዱ ተመስጥሯል
+	Device colour is used, but there is no PDF/A output intent	የመሣሪያ ቀለም ጥቅም ላይ ውሏል፣ ነገር ግን የPDF/A የውጤት ዓላማ የለም
+	DeviceCMYK is used: it needs a CMYK output intent (not added automatically)	DeviceCMYK ጥቅም ላይ ውሏል: የCMYK የውጤት ዓላማ ያስፈልገዋል (በራስ-ሰር አይታከልም)
+	The document has additional actions (/AA)	ሰነዱ ተጨማሪ እርምጃዎች (/AA) አሉት
+	The document has document-level JavaScript	ሰነዱ የሰነድ ደረጃ JavaScript አለው
+	The form asks viewers to make appearances (NeedAppearances)	ቅጹ መመልከቻዎች መልኮችን እንዲፈጥሩ ይጠይቃል (NeedAppearances)
+	A form field has additional actions	አንድ የቅጽ መስክ ተጨማሪ እርምጃዎች አሉት
+	A stream uses LZW compression	አንድ ዥረት የLZW መጨመቂያ ይጠቀማል
+	A stream refers to an external file	አንድ ዥረት ውጫዊ ፋይልን ያመለክታል
+	An image asks to be interpolated	አንድ ምስል እንዲለሰልስ (interpolation) ይጠይቃል
+	An image has alternates or OPI information	አንድ ምስል አማራጭ ምስሎች ወይም የOPI መረጃ አለው
+	PostScript XObjects aren't allowed	PostScript XObjects አይፈቀዱም
+	Embedded files must be PDF/A files themselves (use PDF/A-3 for others)	የተካተቱ ፋይሎች ራሳቸው የPDF/A ፋይሎች መሆን አለባቸው (ለሌሎቹ PDF/A-3 ይጠቀሙ)
+	An embedded file has no AFRelationship	አንድ የተካተተ ፋይል AFRelationship የለውም
+	Select Icon	አዶ ይምረጡ
+	Choose images	ምስሎችን ይምረጡ
+	{dpi} pixels/inch	{dpi} ፒክስል/ኢንች
+	Type your {what}.	{what}ዎን ይተይቡ።
+	Draw your {what} below.	{what}ዎን ከታች ይሳሉ።
+	Your name	ስምዎ
+	Images and text (converted to PDF)	ምስሎችና ጽሑፍ (ወደ ፒዲኤፍ የሚቀየሩ)
+	Images and text	ምስሎችና ጽሑፍ
+	Check Box Style:	የአመልካች ሳጥን ዘይቤ:
+	Button Style:	የአዝራር ዘይቤ:
+	Check	ትክክል ምልክት
+	Circle	ክብ
+	Diamond	አልማዝ
+	Square	ካሬ
+	Star	ኮከብ
+	{month} {y}	{month} {y}
+	Change {key}	{key} መቀየር
+	Insert pages from {name}	ከ{name} ገጾችን ማስገባት
+	Fill in {name}	{name}ን መሙላት
+	Set the image of {name}	የ{name}ን ምስል ማዘጋጀት
+	Edit script of {name}	የ{name}ን ስክሪፕት ማርትዕ
+	Import {name}	{name}ን ማስመጣት
+	Add bookmark	ዕልባት ማከል
+	Rename bookmark	ዕልባት እንደገና መሰየም
+	Delete bookmark	ዕልባት መሰረዝ
+	Move bookmark	ዕልባት ማንቀሳቀስ
+	Set bookmark destination	የዕልባት መድረሻ ማዘጋጀት
+	Add stamp	ማህተም ማከል
+	Delete comment	አስተያየት መሰረዝ
+	Edit comment	አስተያየት ማርትዕ
+	Erase	ማጥፋት
+	Lock comment	አስተያየት መቆለፍ
+	Unlock comment	አስተያየት መክፈት
+	Move comment	አስተያየት ማንቀሳቀስ
+	Resize comment	የአስተያየት መጠን መቀየር
+	Change comment properties	የአስተያየት ባሕሪያትን መቀየር
+	Add field	መስክ ማከል
+	Change field properties	የመስክ ባሕሪያትን መቀየር
+	Delete field	መስክ መሰረዝ
+	Duplicate field	መስክ ማባዛት
+	Set tab order	የTab ቅደም ተከተል ማዘጋጀት
+	Change initial view	የመጀመሪያ እይታን መቀየር
+	Set alternate text	አማራጭ ጽሑፍ ማዘጋጀት
+	Mark figure as decorative	ምስልን ለጌጥ እንደሆነ ምልክት ማድረግ
+	Run JavaScript	JavaScript ማሄድ
+	Delete document JavaScript	የሰነድ JavaScript መሰረዝ
+	Edit document JavaScript	የሰነድ JavaScript ማርትዕ
+	Edit text	ጽሑፍ ማርትዕ
+	Move image	ምስል ማንቀሳቀስ
+	Rotate image	ምስል ማሽከርከር
+	Flip image	ምስል መገልበጥ
+	Delete image	ምስል መሰረዝ
+	Add header & footer	ራስጌና ግርጌ ማከል
+	Update header & footer	ራስጌና ግርጌ ማዘመን
+	Update watermark	የውሃ ምልክት ማዘመን
+	Add background	ዳራ ማከል
+	Update background	ዳራ ማዘመን
+	Add image	ምስል ማከል
+	Edit content	ይዘት ማርትዕ
+	Delete content	ይዘት መሰረዝ
+	Remove redaction marks	የመሸፈኛ ምልክቶችን ማስወገድ
+	Add link	አገናኝ ማከል
+	Change link properties	የአገናኝ ባሕሪያትን መቀየር
+	Delete link	አገናኝ መሰረዝ
+	Create link	አገናኝ መፍጠር
+	Flatten	ከገጹ ጋር ማዋሃድ
+	Add sticky note	ማስታወሻ ማከል
+	Add highlight	ማድመቂያ ማከል
+	Add underline	ማስመሪያ ማከል
+	Add strikethrough	የመሰረዣ መስመር ማከል
+	Add squiggly underline	የሞገድ መስመር ማከል
+	Add rectangle	አራት ማዕዘን ማከል
+	Add oval	ሞላላ ማከል
+	Add arrow	ቀስት ማከል
+	Add line	መስመር ማከል
+	Add drawing	ስዕል ማከል
+	Add text box	የጽሑፍ ሳጥን ማከል
+	Add checkmark	ትክክል ምልክት ማከል
+	Add cross	የ× ምልክት ማከል
+	Add dot	ነጥብ ማከል
+	Add signature	ፊርማ ማከል
+	Add redaction mark	የመሸፈኛ ምልክት ማከል
+	Add cloud	ደመና ማከል
+	Add polygon	ባለብዙ ጎን ማከል
+	Add connected lines	የተያያዙ መስመሮችን ማከል
+	Add callout	የማብራሪያ ሳጥን ማከል
+	Add inserted text	የገባ ጽሑፍ ማከል
+	Add file attachment	የፋይል አባሪ ማከል
+	Set status Accepted	ሁኔታን «ተቀባይነት አግኝቷል» ማድረግ
+	Set status Rejected	ሁኔታን «ውድቅ ተደርጓል» ማድረግ
+	Set status Cancelled	ሁኔታን «ተሰርዟል» ማድረግ
+	Set status Completed	ሁኔታን «ተጠናቋል» ማድረግ
+	Set status None	ሁኔታን «ምንም» ማድረግ
+	Set status Unmarked	ሁኔታን «ምልክት ያልተደረገበት» ማድረግ
+	Save as PDF/A-1b	እንደ PDF/A-1b አስቀምጥ
+	Save as PDF/A-2b	እንደ PDF/A-2b አስቀምጥ
+	Save as PDF/A-3b	እንደ PDF/A-3b አስቀምጥ
+	Fill & Sign: change signature	ሙላና ፈርም: ፊርማ ቀይር
+	Fill & Sign: change initials	ሙላና ፈርም: የስም መነሻ ፊደላትን ቀይር
+	Fill & Sign: remove saved signature	ሙላና ፈርም: የተቀመጠውን ፊርማ አስወግድ
+	Fill & Sign: remove saved initials	ሙላና ፈርም: የተቀመጡትን የስም መነሻ ፊደላት አስወግድ
+	Change signature	ፊርማ ቀይር
+	Change initials	የስም መነሻ ፊደላትን ቀይር
+	Measure distance	ርቀት ለካ
+	Measure perimeter	ዙሪያ ለካ
+	Measure area	የቦታ ስፋት ለካ
+	Set measurement scale	የመለኪያ ሚዛን አዘጋጅ
+	Measurement information	የመለኪያ መረጃ
+	Measurement snapping	የመለኪያ ማጣበቂያ
+	Export measurements as CSV	መለኪያዎችን እንደ CSV ወደ ውጪ ላክ
+	Distance	ርቀት
+	Perimeter	ዙሪያ
+	Area	የቦታ ስፋት
+	Drawing scale	የስዕል ሚዛን
+	Snapping	ማጣበቂያ
+	Export measurements	መለኪያዎችን ወደ ውጪ ላክ
+	Open a PDF to measure it.	ለመለካት ፒዲኤፍ ይክፈቱ።
+	Click vertices. Enter or double-click finishes a perimeter or area. Click the first point to close an area.	ጫፎችን ጠቅ ያድርጉ። Enter ወይም ሁለቴ ጠቅ ማድረግ ዙሪያን ወይም የቦታ ስፋትን ያጠናቅቃል። የቦታ ስፋትን ለመዝጋት የመጀመሪያውን ነጥብ ጠቅ ያድርጉ።
+	Shift constrains to 45 degrees. Backspace removes a vertex. Escape cancels.	Shift ወደ 45 ዲግሪ ይገድባል። Backspace ጫፍን ያስወግዳል። Escape ይሰርዛል።
+	Angle	ማዕዘን
+	Click the first point to begin.	ለመጀመር የመጀመሪያውን ነጥብ ጠቅ ያድርጉ።
+	Snap to drawing	ከስዕሉ ጋር አጣብቅ
+	Endpoints	የመጨረሻ ነጥቦች
+	Midpoints	የመሃል ነጥቦች
+	Intersections	መጋጠሚያዎች
+	Paths	ዱካዎች
+	Sensitivity	ትብነት
+	Unit	መለኪያ አሃድ
+	Decimals	አስርዮሽ
+	Calibrate from two points	ከሁለት ነጥቦች አስተካክል
+	Entire page	ሙሉ ገጹ
+	Viewport rectangle in page points (x, y, width, height)	የእይታ ክፈፍ አራት ማዕዘን በገጽ ነጥቦች (x, y, ስፋት, ቁመት)
+	Viewport	የእይታ ክፈፍ
+	Apply scale	ሚዛኑን ተግብር
+	Saved measurements	የተቀመጡ መለኪያዎች
+	Saved measurements.	መለኪያዎቹ ተቀምጠዋል።
+	Endpoint	የመጨረሻ ነጥብ
+	Midpoint	የመሃል ነጥብ
+	Intersection	መጋጠሚያ
+	Path	ዱካ
+	This drawing exceeds the snapping limit; only the first paths are used.	ይህ ስዕል ከማጣበቂያው ገደብ ያልፋል፤ የመጀመሪያዎቹ ዱካዎች ብቻ ጥቅም ላይ ይውላሉ።
+	Some page content couldn't be read; snapping uses the rest.	አንዳንድ የገጽ ይዘት ሊነበብ አልቻለም፤ ማጣበቂያው ቀሪውን ይጠቀማል።
+	Unsupported measurements	የማይደገፉ መለኪያዎች
+	Label	መለያ
+	{n} measurements use an unsupported format and are left out.	{n} መለኪያዎች የማይደገፍ ቅርጸት ስለሚጠቀሙ አልተካተቱም።
+	This area has too many overlapping paths; intersection snapping is limited.	ይህ አካባቢ በጣም ብዙ የተደራረቡ ዱካዎች አሉት፤ በመጋጠሚያዎች ላይ መጣበቅ የተገደበ ነው።
+	This measurement needs at least {n} points.	ይህ መለኪያ ቢያንስ {n} ነጥቦች ያስፈልገዋል።
+	Switch to two-page view first to show the cover page	የሽፋን ገጹን ለማሳየት መጀመሪያ ወደ ባለሁለት ገጽ እይታ ይቀይሩ
+	Page display: {layout}	የገጽ ማሳያ: {layout}
+	Fit to width scrolling	ከስፋት ጋር የሚስማማ ማሸብለል
+	Fit one full page	አንድ ሙሉ ገጽ አስማማ
+	Created a PDF from {n} files	ከ{n} ፋይሎች ፒዲኤፍ ተፈጥሯል
+	PDF, images and text	ፒዲኤፍ፣ ምስሎችና ጽሑፍ
+	Insert a file before page {label}	ከገጽ {label} በፊት ፋይል አስገባ
+	Insert a file at the end	በመጨረሻ ፋይል አስገባ
+	Save pages	ገጾችን አስቀምጥ
+	Save these pages as one PDF	እነዚህን ገጾች እንደ አንድ ፒዲኤፍ አስቀምጥ
+	No changes to save	የሚቀመጡ ለውጦች የሉም
+	Created a PDF from {n} files; left out: {names}	ከ{n} ፋይሎች ፒዲኤፍ ተፈጥሯል፤ ያልተካተቱ: {names}
+	Created a PDF from the first {n} files	ከመጀመሪያዎቹ {n} ፋይሎች ፒዲኤፍ ተፈጥሯል
+	None of those files can be made into a PDF; use PDFs, images or .txt files	ከእነዚያ ፋይሎች አንዳቸውም ወደ ፒዲኤፍ ሊቀየሩ አይችሉም፤ ፒዲኤፎችን፣ ምስሎችን ወይም .txt ፋይሎችን ይጠቀሙ
+	Choose a PNG or JPEG image (up to 4 MiB). Transparency is preserved.	PNG ወይም JPEG ምስል ይምረጡ (እስከ 4 MiB)። ግልጽነቱ ይጠበቃል።
+	Couldn't import the signature image: {e}	የፊርማውን ምስል ማስመጣት አልተቻለም: {e}
+	Go to page…	ወደ ገጽ ሂድ…
+	Change {what}	{what} ቀይር
+	Cut and stack	ቁረጥና ቁለል
+	Default workspace mode	ነባሪ የሥራ ቦታ ሁነታ
+	Documents and view	ሰነዶችና እይታ
+	Open email app	የኢሜይል መተግበሪያ ክፈት
+	Open link	አገናኝ ክፈት
+	Open this web page?	ይህ ድረ-ገጽ ይከፈት?
+	Scripts run in a sandbox without file or network access. A script that asks to open a web page needs your permission first. With JavaScript off, Acrobat's standard format, validate and calculate functions still work.	ስክሪፕቶች ፋይል ወይም አውታረ መረብ መድረስ በማይችሉበት ገለልተኛ አካባቢ ይሠራሉ። ድረ-ገጽ ለመክፈት የሚጠይቅ ስክሪፕት መጀመሪያ የእርስዎን ፈቃድ ይፈልጋል። JavaScript ጠፍቶም ቢሆን የAcrobat መደበኛ የቅርጸት፣ የማረጋገጫ እና የስሌት ተግባራት ይሠራሉ።
+	Sign yourself	ራስዎ ይፈርሙ
+	Used when opening PDFs. An explicit launch or control mode takes precedence for the session.	ፒዲኤፎችን ሲከፍቱ ጥቅም ላይ ይውላል። በግልጽ የተሰጠ የማስጀመሪያ ወይም የቁጥጥር ሁነታ ለክፍለ ጊዜው ቅድሚያ ይኖረዋል።
+	Write this email?	ይህ ኢሜይል ይጻፍ?
+	{who} in this document wants to open this address in your browser:	በዚህ ሰነድ ውስጥ ያለ {who} ይህን አድራሻ በአሳሽዎ ውስጥ መክፈት ይፈልጋል:
+	{who} in this document wants to open your email app with this address:	በዚህ ሰነድ ውስጥ ያለ {who} የኢሜይል መተግበሪያዎን በዚህ አድራሻ መክፈት ይፈልጋል:
+	This web address mixes letters from different alphabets, a common way to imitate another site's name.	ይህ የድር አድራሻ ከተለያዩ ፊደላት የተውጣጡ ፊደሎችን ያቀላቅላል፤ ይህ የሌላን ድረ-ገጽ ስም ለመኮረጅ የተለመደ ዘዴ ነው።
+	This web address uses letters from another alphabet, which can look like familiar ones.	ይህ የድር አድራሻ ከሌላ ፊደል የተገኙ ፊደሎችን ይጠቀማል፤ እነዚህም የሚታወቁ ፊደሎችን ሊመስሉ ይችላሉ።
+	Create PDF from images	ከምስሎች ፒዲኤፍ ፍጠር
+	Selected image files: {count}	የተመረጡ የምስል ፋይሎች: {count}
+	Use image resolution	የምስሉን ጥግግት ተጠቀም
+	Use each image's embedded DPI; use 72 DPI when it is absent.	የእያንዳንዱን ምስል የተካተተ DPI ተጠቀም፤ ከሌለ 72 DPI ተጠቀም።
+	Use 72 DPI (one point per pixel)	72 DPI ተጠቀም (አንድ ነጥብ ለአንድ ፒክስል)
+	Use custom DPI	ብጁ DPI ተጠቀም
+	DPI sets the printed page size without resampling the image.	DPI ምስሉን ዳግም ናሙና ሳያደርግ የታተመውን የገጽ መጠን ይወስናል።
+	Create	ፍጠር
+	Dynamic XFA form laid out from its template: {pages}, {fields}.	ከአብነቱ የተዘረጋ ተለዋዋጭ የXFA ቅጽ: {pages}፣ {fields}።
+	XFA form: its fields and its XFA data are kept in step, so other viewers show what you fill in.	የXFA ቅጽ: መስኮቹና የXFA ውሂቡ ተመሳስለው ይጠበቃሉ፤ ስለዚህ ሌሎች መመልከቻዎች የሞሉትን ያሳያሉ።
+	Default page display	ነባሪ የገጽ ማሳያ
+	Default zoom	ነባሪ ማጉላት
+	Used when a PDF doesn't ask for a layout or zoom. Continuous scrolling never snaps between pages.	ፒዲኤፍ አቀማመጥ ወይም ማጉላት ሳይጠይቅ ሲቀር ጥቅም ላይ ይውላል። ተከታታይ ማሸብለል በገጾች መካከል አይዘልም።
+	Show	አሳይ
+	Sort	ደርድር
+	Reverse the order	ቅደም ተከተሉን ገልብጥ
+	Grab bag	ቅልቅል
+	Table	ሰንጠረዥ
+	Username	የተጠቃሚ ስም
+	Display name	የሚታይ ስም
+	Real name	እውነተኛ ስም
+	Name (A–Z)	ስም (A–Z)
+	Merged PRs	የተዋሃዱ PRዎች
+	PRs	PRዎች
+	Commits	ኮሚቶች
+	Lines added	የታከሉ መስመሮች
+	+LOC	+LOC
+	Lines deleted	የተሰረዙ መስመሮች
+	−LOC	−LOC
+	Line delta	የመስመር ልዩነት
+	ΔLOC	ΔLOC
+	Binary assets added	የታከሉ ሁለትዮሽ ሀብቶች
+	+Bin	+Bin
+	Binary assets removed	የተወገዱ ሁለትዮሽ ሀብቶች
+	−Bin	−Bin
+	First commit	የመጀመሪያ ኮሚት
+	First	መጀመሪያ
+	Last commit	የመጨረሻ ኮሚት
+	Last	መጨረሻ
+	No contributor data was built into this copy.	በዚህ ቅጂ ውስጥ የአስተዋጽዖ አበርካቾች መረጃ አልተካተተም።
+	No model credits were built into this copy.	በዚህ ቅጂ ውስጥ የሞዴሎች ምስጋና አልተካተተም።
+	{n} contributors · {c} commits	{n} አስተዋጽዖ አበርካቾች · {c} ኮሚቶች
+	Company	ኩባንያ
+	Model	ሞዴል
+	% of all commits	ከሁሉም ኮሚቶች %
+	Lines +/−	መስመሮች +/−
+	@{login}: {prs} PRs, {commits} commits, +{added} / −{deleted} lines (Δ {delta}), +{bin_added} / −{bin_deleted} binary assets, {first} – {last}	@{login}: {prs} PRዎች፣ {commits} ኮሚቶች፣ +{added} / −{deleted} መስመሮች (Δ {delta})፣ +{bin_added} / −{bin_deleted} ሁለትዮሽ ሀብቶች፣ {first} – {last}
+@plural	{n} page|{n} pages	{n} ገጽ|{n} ገጾች
+@plural	{n} field|{n} fields	{n} መስክ|{n} መስኮች
+	A button	አዝራር
+	A link	አገናኝ
+	A script	ስክሪፕት
+	About	ስለ ብራና
+	Add {what}	{what} አክል
+	Align fields	መስኮችን አሰልፍ
+	Another file dialog is still open. Finish with it first.	ሌላ የፋይል መገናኛ ሳጥን አሁንም ክፍት ነው። መጀመሪያ እሱን ይጨርሱ።
+	Basic constraints	መሠረታዊ ገደቦች
+	Butt	ጠፍጣፋ ጫፍ
+	Change document properties	የሰነድ ባሕሪያትን መቀየር
+	Clear Recent Files	የቅርብ ጊዜ ፋይሎችን አጽዳ
+	Closed arrow	የተዘጋ ቀስት
+	Contributors	አስተዋጽዖ አበርካቾች
+	Couldn't open the printer's preferences: {e}	የአታሚውን ምርጫዎች መክፈት አልተቻለም: {e}
+	Couldn't show the file picker. Please try again.	የፋይል መምረጫውን ማሳየት አልተቻለም። እባክዎ እንደገና ይሞክሩ።
+	Date format	የቀን ቅርጸት
+	Distribute fields	መስኮችን አከፋፍል
+	Files are combined in this order. Leave Pages empty to take every page.	ፋይሎቹ በዚህ ቅደም ተከተል ይዋሃዳሉ። ሁሉንም ገጾች ለመውሰድ «ገጾች»ን ባዶ ይተዉት።
+	Fill & Sign dates	የሙላና ፈርም ቀኖች
+	Flatten Fill & Sign when saving	ሲቀመጥ ሙላና ፈርምን ከገጹ ጋር አዋህድ
+	H / Space (hold)	H / Space (ተጭኖ መያዝ)
+	Home / End	Home / End
+	Inserted text	የገባ ጽሑፍ
+	Larger pages	ትልልቅ ገጾች
+	Line ending	የመስመር መጨረሻ
+	Mark differences	ልዩነቶችን ምልክት አድርግ
+	Mark for redaction	ለመሸፈን ምልክት አድርግ
+	Mark pages for redaction	ገጾችን ለመሸፈን ምልክት አድርግ
+	Match field sizes	የመስኮችን መጠኖች አመሳስል
+	Models	ሞዴሎች
+	Only continue if you trust this document. An address can carry information from the document, such as what you typed into its form.	ይህን ሰነድ ካመኑት ብቻ ይቀጥሉ። አድራሻ ከሰነዱ መረጃን፣ ለምሳሌ በቅጹ ውስጥ የተየቡትን ሊይዝ ይችላል።
+	Open arrow	ክፍት ቀስት
+	Opens the printer driver's preferences. They are saved for every print from this computer; the copies, two-sided, grayscale and paper chosen here still apply.	የአታሚ ሾፌሩን ምርጫዎች ይከፍታል። ከዚህ ኮምፒውተር ለሚደረግ ለእያንዳንዱ ህትመት ይቀመጣሉ፤ እዚህ የተመረጡት ቅጂዎች፣ ባለሁለት ገጽ፣ ግራጫ እና ወረቀት አሁንም ይተገበራሉ።
+	Pattern	ንድፍ
+	PdfCraft is drawing without a graphics processor, so it may be slow. Updating the graphics driver may help.	ብራና ያለ ግራፊክስ ፕሮሰሰር እየሳለ ስለሆነ ቀርፋፋ ሊሆን ይችላል። የግራፊክስ ሾፌሩን ማዘመን ሊረዳ ይችላል።
+	Place saved {what}	የተቀመጠውን {what} በገጹ ላይ አኑር
+	Print single-sided. Keep the sheets in order, cut at the marks, then stack the piles left to right, top to bottom.	በአንድ ጎን ያትሙ። ሉሆቹን በቅደም ተከተል ያቆዩ፣ በምልክቶቹ ላይ ይቁረጡ፣ ከዚያም ክምሮቹን ከግራ ወደ ቀኝ፣ ከላይ ወደ ታች ይቁለሉ።
+	Printer properties	የአታሚ ባሕሪያት
+	Redo {action}	{action} ድገም
+	Remove from Recent	ከቅርብ ጊዜ ፋይሎች አስወግድ
+	Remove saved {what}	የተቀመጠውን {what} አስወግድ
+	Remove {name} from Recent	{name}ን ከቅርብ ጊዜ ፋይሎች አስወግድ
+	Reopen the files that were open when PdfCraft last closed	ብራና ለመጨረሻ ጊዜ ሲዘጋ ክፍት የነበሩትን ፋይሎች እንደገና ክፈት
+	Reset page size	የገጽ መጠንን ዳግም አስጀምር
+	Reset to printer defaults	ወደ አታሚው ነባሪዎች መልስ
+	Reverse closed arrow	የተገለበጠ የተዘጋ ቀስት
+	Reverse open arrow	የተገለበጠ ክፍት ቀስት
+	Rotation:	ማሽከርከር:
+	Run form script	የቅጽ ስክሪፕት ማሄድ
+	SHA-1 digest	የSHA-1 ማጠቃለያ ኮድ
+	SHA-256 digest	የSHA-256 ማጠቃለያ ኮድ
+	Same as interface ({language})	እንደ በይነገጹ ({language})
+	Scripted content must be usable with a keyboard and assistive technology. Check the document's scripts.	በስክሪፕት የሚሠራ ይዘት በቁልፍ ሰሌዳና በአጋዥ ቴክኖሎጂ ሊጠቀሙበት የሚቻል መሆን አለበት። የሰነዱን ስክሪፕቶች ይፈትሹ።
+	Scroll tabs left	ትሮችን ወደ ግራ አሸብልል
+	Scroll tabs right	ትሮችን ወደ ቀኝ አሸብልል
+	Slash	ሰያፍ መስመር
+	Smaller pages	ትናንሽ ገጾች
+	Squiggly	ሞገዳማ
+	Table rows belong directly in a table or its head, body or foot. Fix the table's tags.	የሰንጠረዥ ረድፎች በቀጥታ በሰንጠረዥ ወይም በራስጌው፣ በአካሉ ወይም በግርጌው ውስጥ መሆን አለባቸው። የሰንጠረዡን መለያዎች ያስተካክሉ።
+	Text recognition isn't installed: its model files are missing. Reinstall PdfCraft, or set PDFCRAFT_MODELS to the folder that holds them.	ጽሑፍ ለይቶ ማወቂያ አልተጫነም: የሞዴል ፋይሎቹ የሉም። ብራናን እንደገና ይጫኑ፣ ወይም PDFCRAFT_MODELS የሚለውን ፋይሎቹን ወደያዘው አቃፊ ያዘጋጁ።
+	Text, marks and signatures become part of the page. Other comments stay editable.	ጽሑፍ፣ ምልክቶችና ፊርማዎች የገጹ አካል ይሆናሉ። ሌሎች አስተያየቶች ሊታረሙ የሚችሉ ሆነው ይቆያሉ።
+	That didn't work: an internal error stopped it ({m}).	ያ አልሠራም: የውስጥ ስህተት አስቆመው ({m})።
+	The Windows store's digital IDs couldn't be listed: {e}	የWindows ማከማቻ ዲጂታል መታወቂያዎችን መዘርዘር አልተቻለም: {e}
+	The document changed while you were choosing a file, so nothing was changed.	ፋይል እየመረጡ ሳሉ ሰነዱ ስለተለወጠ ምንም ነገር አልተቀየረም።
+	The document was closed before it could be saved.	ሰነዱ ከመቀመጡ በፊት ተዘግቷል።
+	The pages were extracted but not deleted, because the document changed while you were choosing a folder.	አቃፊ እየመረጡ ሳሉ ሰነዱ ስለተለወጠ ገጾቹ ወጥተዋል ነገር ግን አልተሰረዙም።
+	The printer driver's own settings for this print: paper tray, paper type, finishing and more.	ለዚህ ህትመት የአታሚ ሾፌሩ የራሱ ቅንብሮች: የወረቀት ትሪ፣ የወረቀት አይነት፣ የማጠናቀቂያ ሥራ እና ሌሎችም።
+	The standard fonts can't draw “{c}” ({code}). Only Western European characters can be added as text for now.	መደበኛዎቹ ቅርጸ-ቁምፊዎች “{c}”ን ({code}) መሳል አይችሉም። ለጊዜው እንደ ጽሑፍ ሊታከሉ የሚችሉት የምዕራብ አውሮፓ ፊደላት ብቻ ናቸው።
+	This printer offers no settings of its own.	ይህ አታሚ የራሱ ቅንብሮች የሉትም።
+	Today: {date}	ዛሬ: {date}
+	Undo {action}	{action} ቀልብስ
+	Use {what}	{what} ተጠቀም
+	the text recognition models are not installed (reinstall PdfCraft, or set PDFCRAFT_MODELS to the folder that holds them)	የጽሑፍ ለይቶ ማወቂያ ሞዴሎቹ አልተጫኑም (ብራናን እንደገና ይጫኑ፣ ወይም PDFCRAFT_MODELS የሚለውን ሞዴሎቹን ወደያዘው አቃፊ ያዘጋጁ)
+	yyyy or yy year · m or mm month · mmm or mmmm month name · d or dd day · ddd or dddd weekday. H, h, M, s and t are time letters and can't be used on their own: put {escape} before a letter to show it as is.	yyyy ወይም yy ዓመት · m ወይም mm ወር · mmm ወይም mmmm የወር ስም · d ወይም dd ቀን · ddd ወይም dddd የሳምንቱ ቀን። H፣ h፣ M፣ s እና t የሰዓት ፊደላት ናቸው፤ ለብቻቸው መጠቀም አይቻልም: ፊደልን እንዳለ ለማሳየት ከፊቱ {escape} ያስገቡ።
+	{chars} can't be written into the PDF yet: Fill & Sign text is Western European only. Pick a numeric format such as dd.mm.yyyy.	{chars} ገና ወደ ፒዲኤፉ ሊጻፉ አይችሉም: የሙላና ፈርም ጽሑፍ የምዕራብ አውሮፓ ፊደላትን ብቻ ይደግፋል። እንደ dd.mm.yyyy ያለ የቁጥር ቅርጸት ይምረጡ።
+	{who} in this document tried to open an address PdfCraft won't open: {e}.	በዚህ ሰነድ ውስጥ ያለ {who} ብራና የማይከፍተውን አድራሻ ለመክፈት ሞክሯል: {e}።
+	{who} in this document tried to open an address PdfCraft won't open: {e}. Only web (http, https) and email (mailto) links open from documents.	በዚህ ሰነድ ውስጥ ያለ {who} ብራና የማይከፍተውን አድራሻ ለመክፈት ሞክሯል: {e}። ከሰነዶች የሚከፈቱት የድር (http, https) እና የኢሜይል (mailto) አገናኞች ብቻ ናቸው።
+	Certificate authority	የሰርተፊኬት ባለሥልጣን
+	End entity	የመጨረሻ አካል
+action wizard	Start	ጀምር
+certificate	Subject	ባለቤት
+comment menu	Edit	አርትዕ
+signature pad	Type	ተይብ
+	Shared Field Properties	የጋራ የመስክ ባሕሪያት
+	{n} fields selected	{n} መስኮች ተመርጠዋል
+	Mixed	የተቀላቀለ
+	Custom font	ብጁ ቅርጸ-ቁምፊ
+	Only checked properties will change. Mixed means the selected fields have different values.	የሚቀየሩት ምልክት የተደረገባቸው ባሕሪያት ብቻ ናቸው። «የተቀላቀለ» ማለት የተመረጡት መስኮች የተለያዩ እሴቶች አሏቸው ማለት ነው።
+	Shift- or Ctrl/Command-click to select several fields.	ብዙ መስኮችን ለመምረጥ Shift ወይም Ctrl/Command ይዘው ጠቅ ያድርጉ።
+	Font size 0 uses automatic sizing.	የቅርጸ-ቁምፊ መጠን 0 ራስ-ሰር መጠንን ይጠቀማል።
+	Character limit:	የቁምፊ ገደብ:
+	Character limit 0 means no limit. A comb of characters needs a limit.	የቁምፊ ገደብ 0 ማለት ገደብ የለም ማለት ነው። ቁምፊዎችን በሳጥኖች መከፋፈል ገደብ ያስፈልገዋል።
+	To change locked fields, also set Locked to No.	የተቆለፉ መስኮችን ለመቀየር «ተቆልፏል»ንም ወደ «አይ» ያዘጋጁ።
+	Comb of characters	ቁምፊዎችን በሳጥኖች ከፋፍል
+	The document changed while you were editing field properties.	የመስክ ባሕሪያትን እያረሙ ሳሉ ሰነዱ ተለውጧል።
+	The document is no longer open.	ሰነዱ ከእንግዲህ ክፍት አይደለም።
+	The field properties dialog is no longer open.	የመስክ ባሕሪያት መገናኛ ሳጥን ከእንግዲህ ክፍት አይደለም።
+	The field properties could not be changed.	የመስክ ባሕሪያቱ ሊቀየሩ አልቻሉም።
+	The selected fields could not be found. Select them again.	የተመረጡት መስኮች ሊገኙ አልቻሉም። እንደገና ይምረጧቸው።
+	The field {name} no longer exists.	{name} የሚባለው መስክ ከእንግዲህ የለም።
+	A selected field has no widget on any page, so the fields can't be edited together.	አንድ የተመረጠ መስክ በየትኛውም ገጽ ላይ ተለይቶ የሚታይ አካል የለውም፤ ስለዚህ መስኮቹ በአንድ ላይ ሊታረሙ አይችሉም።
+	 ({n} at {dpi} dpi, the largest size they can be drawn at)	 ({n} በ{dpi} dpi፣ ሊሳሉበት የሚችሉት ትልቁ መጠን)
+
+# Branna-only strings (bt! in branna.rs and its callers) and the app's name.
+	Branna	ብራና
+	Feedback	ግብረ መልስ
+	Help make Branna better	ብራናን ለማሻሻል ያግዙን
+	Found a problem or have an idea? Tell us on GitHub.	ችግር አጋጥሞዎታል ወይስ ሐሳብ አለዎት? በGitHub ላይ ይንገሩን።
+	Report a problem	ችግር ሪፖርት አድርግ
+	Based on {upstream} by the ArtCraft team.	በArtCraft ቡድን በተሠራው {upstream} ላይ የተመሠረተ።
+	Rendering: hayro (bootstrap) · UI: egui · Icons: Lucide (ISC) · Fonts: Inter, JetBrains Mono, Dancing Script, Noto Sans Ethiopic (OFL)	ማሳያ: hayro (bootstrap) · በይነገጽ: egui · አዶዎች: Lucide (ISC) · ቅርጸ-ቁምፊዎች: Inter, JetBrains Mono, Dancing Script, Noto Sans Ethiopic (OFL)

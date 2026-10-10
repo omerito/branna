@@ -28,15 +28,15 @@ pub fn show(app: &mut PdfCraftApp, ui: &mut egui::Ui) {
                 .show(ui, |ui| {
                     ui.set_width(ui.available_width());
                     ui.horizontal(|ui| {
-                        widgets::artcraft_mark(ui, 28.0);
+                        crate::branna::mark(ui, 28.0);
                         ui.vertical(|ui| {
-                            ui.label(egui::RichText::new(tl!("Join the ArtCraft community")).font(theme::semibold(15.0)));
-                            ui.label(egui::RichText::new(tl!("Get help, share feedback and follow development on Discord.")).color(t.text_muted));
+                            ui.label(egui::RichText::new(bt!("Help make Branna better")).font(theme::semibold(15.0)));
+                            ui.label(egui::RichText::new(bt!("Found a problem or have an idea? Tell us on GitHub.")).color(t.text_muted));
                         });
                     });
                     ui.add_space(8.0);
-                    if let Some(cmd) = widgets::community_links(ui) {
-                        app.execute(cmd);
+                    if let Some(url) = crate::branna::links(ui) {
+                        app.open_url(url);
                     }
                 });
             ui.add_space(22.0);

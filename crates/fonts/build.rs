@@ -43,7 +43,9 @@ fn craft_fonts(dir: &std::path::Path) -> Result<String, String> {
         let arabic = scripts.split(',').any(|s| s.trim() == "Arab");
         // Telugu faces too, for the Telugu interface.
         let telugu = scripts.split(',').any(|s| s.trim() == "Telu");
-        let web_face = (*family == "BIZ UDPGothic" && *style == "Regular") || arabic || telugu;
+        // Branna: and the Ethiopic faces of the Amharic interface (packaging/branna/fonts.sh).
+        let ethiopic = scripts.split(',').any(|s| s.trim() == "Ethi");
+        let web_face = (*family == "BIZ UDPGothic" && *style == "Regular") || arabic || telugu || ethiopic;
         if wasm && !web_face {
             continue;
         }

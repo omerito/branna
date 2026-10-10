@@ -99,9 +99,17 @@ fn plural_ukrainian(n: u64) -> usize {
     }
 }
 
+/// Branna: Amharic (CLDR `am`): 0 and 1 take the first form, everything else the second.
+fn plural_am(n: u64) -> usize {
+    usize::from(n > 1)
+}
+
 /// The registry. English first: it is the fallback and the source language.
-pub static LANGUAGES: [LangInfo; 15] = [
-    LangInfo { code: "en", name: "English", source: "", plural: plural_one_other, catalog: OnceLock::new() },
+pub static LANGUAGES: [LangInfo; 16] = [
+    // Branna: English's catalog only renames the app (PdfCraft → Branna) in the English text.
+    LangInfo { code: "en", name: "English", source: include_str!("en.tsv"), plural: plural_one_other, catalog: OnceLock::new() },
+    // Branna: Amharic, the default interface language (see `system_lang`); `am-ET` resolves here.
+    LangInfo { code: "am", name: "አማርኛ", source: include_str!("am.tsv"), plural: plural_am, catalog: OnceLock::new() },
     LangInfo { code: "ja", name: "日本語", source: include_str!("ja.tsv"), plural: plural_none, catalog: OnceLock::new() },
     // Simplified Chinese; `zh`, `zh-CN`, `zh-SG` and `zh-Hans-*` locales resolve here (see `candidates`).
     LangInfo { code: "zh-hans", name: "简体中文", source: include_str!("zh-hans.tsv"), plural: plural_none, catalog: OnceLock::new() },
@@ -248,7 +256,9 @@ pub fn system_lang() -> Lang {
         return Lang::EN;
     }
     static SYSTEM: OnceLock<Lang> = OnceLock::new();
-    *SYSTEM.get_or_init(detect_system_lang)
+    // Branna: "Auto" opens in Amharic whatever the system language (the owner's decision in
+    // BRANNA.md); any other language stays one choice away in Preferences.
+    *SYSTEM.get_or_init(|| if crate::branna::AMHARIC_BY_DEFAULT { Lang::from_code("am").unwrap_or(Lang::EN) } else { detect_system_lang() })
 }
 
 #[cfg(not(target_arch = "wasm32"))]

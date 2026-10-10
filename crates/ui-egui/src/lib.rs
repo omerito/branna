@@ -22,6 +22,15 @@ macro_rules! tl_ctx {
     };
 }
 
+/// Branna: [`tl!`] for a string only Branna shows (see `branna.rs`).
+macro_rules! bt {
+    ($s:literal) => {
+        $crate::branna::t($s)
+    };
+}
+
+pub mod branna;
+
 mod a11y_ui;
 mod actions_ui;
 pub mod canvas;
@@ -1910,7 +1919,7 @@ impl eframe::App for PdfCraftApp {
             .and_then(|i| self.session.get(self.views[i].id))
             .map(|d| d.display_name())
             .or_else(|| self.combine_showing().then(|| tl!("Combine files").to_owned()))
-            .map_or_else(|| "PdfCraft".to_owned(), |name| format!("{name} — PdfCraft"));
+            .map_or_else(|| branna::name().to_owned(), |name| format!("{name} — {}", branna::name()));
         if title != self.window_title {
             ctx.send_viewport_cmd(egui::ViewportCommand::Title(title.clone()));
             self.window_title = title;

@@ -137,6 +137,8 @@ impl Catalog {
         let (entries, errors) = parse_entries(text, forms);
         let mut c = Catalog::default();
         for Entry { context, source, translation } in entries {
+            // Branna: every catalog shows the app under Branna's name.
+            let translation = crate::branna::rebrand(translation);
             match context.as_str() {
                 "" => {
                     c.plain.insert(source, translation);

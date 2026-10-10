@@ -68,12 +68,16 @@ Branna-specific code with a `// Branna:` comment.
 
 - [x] **Phase 0 — Setup.** Workflow, fonts script, placeholder site, this plan.
 - [ ] **Phase 1 — Branna v0.1, the Amharic interface (public launch).**
-  - [ ] `crates/ui-egui/src/i18n/am.tsv`: every UI string in Amharic; coverage tests like Italian's.
-  - [ ] Noto Sans Ethiopic in the interface font stacks (slightly enlarged for legibility), including the web build.
-  - [ ] Amharic is the default ("Auto" resolves to Amharic).
-  - [ ] Rebrand: name, original logo, links (Help menu, About, Home), update checks; ArtCraft logos removed.
-  - [ ] README, NOTICE, ATTRIBUTION for the fork.
-  - [ ] Amharic loading screen; smaller download.
+  - [x] `crates/ui-egui/src/i18n/am.tsv`: every UI string in Amharic (first draft, 2,130 entries);
+    coverage tests in `crates/ui-egui/src/branna.rs`.
+  - [x] Noto Sans Ethiopic in the interface font stacks, drawn 10% larger (`theme::ETHIOPIC_SCALE`),
+    including the web build (`crates/fonts/build.rs` keeps `Ethi` faces on wasm).
+  - [x] Amharic is the default ("Auto" resolves to Amharic, `branna::AMHARIC_BY_DEFAULT`).
+  - [x] Rebrand: name, original mark (`assets/branna/branna-mark.svg`), links (Help menu, About,
+    Home, top bar), update checks; ArtCraft logos and community links removed.
+  - [x] README, NOTICE, ATTRIBUTION for the fork.
+  - [x] Amharic loading screen (`apps/pdfcraft-web/index.html`); the web build leaves the Japanese
+    font out (about 4.7 MB).
   - [ ] Check the built site in a browser in Amharic; then set `PUBLISH_SITE: "true"`.
 - [ ] **Phase 2 — Amharic inside PDFs.** Today, Amharic typed into form fields is drawn as `?`
   (`crates/forms/src/appearance.rs` falls back to WinAnsi Helvetica) and adding or editing text in
@@ -84,6 +88,22 @@ Branna-specific code with a `// Branna:` comment.
   - [ ] Typing: test Windows' Amharic input, Keyman and phone keyboards in the web app.
 - [ ] **Phase 3 — Later, if people use Branna.** Built-in phonetic Amharic keyboard; desktop
   downloads; phone app. Not planned: Amharic text recognition (the OCR engine reads Latin only).
+
+## How the rebrand works (keep it this way: it keeps merges easy)
+
+- Upstream's English strings stay in the code untouched; they are every catalog's lookup keys.
+- `crates/ui-egui/src/i18n/en.tsv` renames the app in the English text (each entry: upstream's text
+  with Branna for PdfCraft). `branna.rs` tests fail if a new English string names PdfCraft without
+  an entry there.
+- Every catalog's translations are rebranded as they load (`branna::rebrand`, PdfCraft → Branna), so
+  the other upstream languages name Branna too. Text that must name the upstream project writes it
+  through a `{upstream}` placeholder.
+- Strings only Branna shows use `bt!("…")` (not `tl!`), so upstream's per-language coverage tests
+  don't require them in every catalog; `am.tsv` translates them (its last section).
+- Known leftovers: saved PDFs still record PdfCraft as their Producer (the engine is PdfCraft's), and
+  the desktop app icons in `assets/app-icon/` are still PdfCraft's (desktop builds are Phase 3).
+- After changing `am.tsv`, `en.tsv` or `assets/branna/*`, update their SHA-256 in `ATTRIBUTION.toml`
+  and regenerate `ATTRIBUTION.md` (`cargo xtask assets --write`).
 
 ## Amharic style guide (for `am.tsv`)
 
