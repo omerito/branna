@@ -107,7 +107,8 @@ task does this:
 5. If upstream breaks something Branna can't fix quickly, leave `main` alone, push the branch, and
    open an issue saying what's wrong.
 
-Keep Branna's changes small and in as few upstream files as possible, so merges stay easy. Mark
+Keep Branna's changes small and in as few upstream files as possible, so merges stay easy. Record Branna's
+progress here, not in upstream's `ROADMAP.md` (its log belongs to PdfCraft). Mark
 Branna-specific code with a `// Branna:` comment.
 
 ## Phases
@@ -127,6 +128,9 @@ Branna-specific code with a `// Branna:` comment.
   - [x] Check the built site in a browser in Amharic (home, documents, Amharic search and typing,
     menus, command palette, Preferences, About, print, protect, dark theme); then set
     `PUBLISH_SITE: "true"`.
+  - [x] Integrate `phase-1` into `main` and verify the public deployment. The
+    [release workflow](https://github.com/omerito/branna/actions/runs/38087535832) passed;
+    the live Amharic app opened and rendered a synthetic two-page PDF and navigated to page 2.
   - [ ] A fluent Amharic speaker reviews `am.tsv` (a first draft; wording fixes are welcome).
 - [ ] **Phase 2 — Amharic inside PDFs.** Today, Amharic typed into form fields is drawn as `?`
   (`crates/forms/src/appearance.rs` falls back to WinAnsi Helvetica) and adding or editing text in
