@@ -241,7 +241,8 @@ pub(crate) fn preferences_body(ui: &mut egui::Ui, app: &mut PdfCraftApp, t: &Tok
             if ui.selectable_value(&mut app.language, crate::i18n::AUTO.to_string(), tl!("Auto")).clicked() {
                 ui.close();
             }
-            for language in crate::i18n::Lang::all() {
+            // Branna: only languages this build can draw.
+            for language in crate::i18n::Lang::all().filter(|l| crate::branna::offered(l.code())) {
                 if ui.selectable_value(&mut app.language, language.code().to_string(), language.name()).clicked() {
                     ui.close();
                 }
@@ -402,7 +403,7 @@ fn date_format(ui: &mut egui::Ui, app: &mut PdfCraftApp, t: &Tokens) {
                 if ui.selectable_label(current.is_none(), follow).clicked() && app.session.set_date_language(None).is_ok() {
                     ui.close();
                 }
-                for l in &DATE_LANGUAGES {
+                for l in DATE_LANGUAGES.iter().filter(|l| crate::branna::offered(l.code)) {
                     if ui.selectable_label(current.as_deref() == Some(l.code), l.name).clicked()
                         && app.session.set_date_language(Some(l.code)).is_ok()
                     {

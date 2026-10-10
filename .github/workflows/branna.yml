@@ -82,7 +82,7 @@ jobs:
       - name: Test
         env:
           CRAFT_FONTS_REQUIRED: "1"
-        run: cargo test --workspace 2>&1 | tee "$LOGS/test.log"
+        run: cargo test --workspace --no-fail-fast 2>&1 | tee "$LOGS/test.log"
 
       - name: Assets (licences and attribution)
         run: cargo xtask assets 2>&1 | tee "$LOGS/assets.log"

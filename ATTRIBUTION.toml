@@ -19,7 +19,7 @@ licence = "MIT OR Apache-2.0"
 licence_file = "LICENSE-MIT"
 kind = "translation"
 usage = "Amharic UI strings, Branna's default interface language, compiled in by crates/ui-egui/src/i18n/mod.rs"
-sha256 = "76b2c54c4de312a8a542a3b47e938eecfb82a949ec5dd36b0ee2d0ff201a4783"
+sha256 = "2d4b25c99a50fd5ddb6199584d59beb3178d0106d4a66af769b971773f2254b4"
 
 [[asset]]
 path = "crates/ui-egui/src/i18n/en.tsv"

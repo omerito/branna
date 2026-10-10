@@ -1183,7 +1183,7 @@
 	Applied 1 redaction mark. Save to remove the content from the file.	1 የመሸፈኛ ምልክት ተተግብሯል። ይዘቱን ከፋይሉ ለማስወገድ ያስቀምጡ።
 	Applied {n} redaction marks. Save to remove the content from the file.	{n} የመሸፈኛ ምልክቶች ተተግብረዋል። ይዘቱን ከፋይሉ ለማስወገድ ያስቀምጡ።
 	JavaScript Console	የJavaScript ኮንሶል
-	JavaScript is turned off (Preferences ▸ JavaScript).	JavaScript ጠፍቷል (ምርጫዎች ▸ JavaScript)።
+	JavaScript is turned off (Preferences ▸ JavaScript).	JavaScript ጠፍቷል (ምርጫዎች > JavaScript)።
 	Output appears here.	ውጤቱ እዚህ ይታያል።
 	Script Name:	የስክሪፕት ስም:
 	This document has no document-level scripts.	ይህ ሰነድ የሰነድ ደረጃ ስክሪፕቶች የሉትም።

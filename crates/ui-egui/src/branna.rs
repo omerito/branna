@@ -28,6 +28,23 @@ pub fn rebrand(translation: String) -> String {
     if translation.contains("PdfCraft") { translation.replace("PdfCraft", "Branna") } else { translation }
 }
 
+/// Whether Preferences offers the interface (and date) language `code`. The web build carries only
+/// the Ethiopic faces besides the Latin ones, so there Japanese, Chinese and Telugu, whose text
+/// would draw as replacement boxes, are left out; the desktop app also falls back to a system
+/// font and offers every language.
+pub fn offered(code: &str) -> bool {
+    if !cfg!(target_arch = "wasm32") {
+        return true;
+    }
+    let has = |script: &str| pdfcraft_fonts::CRAFT_FONTS.iter().any(|f| f.covers(script));
+    match code {
+        "ja" => has("Jpan"),
+        "zh-hans" | "zh-hant" => has("Hans") || has("Jpan"),
+        "te" => has("Telu"),
+        _ => true,
+    }
+}
+
 /// Branna's mark (contributor-original, `assets/branna/branna-mark.svg`), `size` points square.
 pub fn mark(ui: &mut egui::Ui, size: f32) -> egui::Response {
     ui.add(
