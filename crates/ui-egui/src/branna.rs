@@ -138,7 +138,8 @@ mod tests {
         let branna = literals("bt!(");
         assert!(branna.contains("Report a problem"), "bt! scan found {branna:?}");
         all.extend(branna);
-        all.insert("Branna".into());
+        // The app's name, and the default comment author on the web (`comments::login_name`).
+        all.extend(["Branna", "Guest"].map(String::from));
         let missing: Vec<_> = all.iter().filter(|label| !has(am(), label)).collect();
         assert!(missing.is_empty(), "untranslated Amharic UI literals: {missing:#?}");
     }

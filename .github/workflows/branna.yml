@@ -3,8 +3,8 @@
 # - Every push runs the tests and builds the web app. The built site goes to the `site-preview`
 #   branch, and each job's log goes to `ci-logs-<job>`, so a session without GitHub Actions access
 #   can read results with plain git.
-# - Pushes to main also publish the site to the `gh-pages` branch (what GitHub Pages serves), once
-#   PUBLISH_SITE is "true" and the tests pass. Until then gh-pages keeps the placeholder page.
+# - Pushes to main also publish the site to the `gh-pages` branch (what GitHub Pages serves), when
+#   PUBLISH_SITE is "true" and the tests pass.
 #
 # The inherited PdfCraft workflows (desktop releases, FreeBSD, Windows ARM, nightly fuzzing) are
 # removed in this fork; see BRANNA.md.
@@ -25,8 +25,9 @@ concurrency:
 env:
   CARGO_TERM_COLOR: never
   RUST_BACKTRACE: 1
-  # Flip to "true" when Branna is ready to replace the placeholder page.
-  PUBLISH_SITE: "false"
+  # "true" since the launch (2026-10-10): pushes to main publish the site. "false" stops
+  # publishing; gh-pages then keeps the last published site.
+  PUBLISH_SITE: "true"
 
 defaults:
   run:

@@ -133,7 +133,7 @@ def main():
     for ctx, src in sorted(keys(os.path.join(I18N, "it.tsv")) - amharic):
         problems.append(f"untranslated (Italian has it): context {ctx!r}, English {src!r}")
     english = {unescape(src) for ctx, src in amharic if ctx == ""}
-    for label in sorted((literals("tl!(") | literals("bt!(") | {"Branna"}) - english):
+    for label in sorted((literals("tl!(") | literals("bt!(") | {"Branna", "Guest"}) - english):
         problems.append(f"untranslated UI literal: {label!r}")
     for p in problems:
         print("  ✗", p)

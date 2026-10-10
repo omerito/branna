@@ -328,8 +328,9 @@ fn login_name() -> String {
             return v;
         }
     }
-    // Branna: in the interface language (the web app has no login name, so this is its default).
-    bt!("Guest").into()
+    // Branna: translated (the web app has no login name, so this is its default), in the language
+    // Branna opens in: this runs before the interface language is applied.
+    crate::i18n::tr(crate::i18n::system_lang(), "Guest").into()
 }
 
 /// A drag in progress on a page.

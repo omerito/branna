@@ -39,7 +39,7 @@ builds everything (`.github/workflows/branna.yml`). Every push to any branch:
 3. Each job writes its logs to `ci-logs-test` / `ci-logs-web` (`git fetch origin ci-logs-web`), so
    results can be read without Actions access.
 4. On `main`, when `PUBLISH_SITE` in the workflow is `"true"` and the tests pass, the site is published
-   to `gh-pages`, which GitHub Pages serves. Until launch, `gh-pages` holds a placeholder page.
+   to `gh-pages`, which GitHub Pages serves (`PUBLISH_SITE` is `"true"` since the launch on 2026-10-10).
 
 Branches `gh-pages`, `site-preview` and `ci-logs-*` are rewritten as a single commit on every publish
 (`packaging/branna/publish.sh`), so build output never piles up in history.
@@ -93,7 +93,9 @@ task does this:
      that brings back the ArtCraft brand or the Discord and ArtCraft website links. Then regenerate
      `ATTRIBUTION.md` (`assets.py --write`).
    - A new upstream language goes after Amharic in `LANGUAGES` (and `DATE_LANGUAGES`; fix the array
-     lengths). If the web build has no font for its script, add it to `branna::offered`.
+     lengths). If the web build has no font for its script, leave it out in `branna::drawable_on_web`.
+   - `Cargo.lock`: take upstream's (`git checkout --theirs Cargo.lock`), then re-add Branna's one
+     change, `"js-sys",` in the `dependencies` of `pdfcraft-engine`.
 3. Translate what's new: `catalog.py` lists it. Follow the style guide below, keep the meaning of
    the English, and add the entries to `am.tsv` (anywhere; the end of the main section is fine).
    An upstream English string that names PdfCraft also needs an `en.tsv` entry. Then
@@ -109,8 +111,8 @@ Branna-specific code with a `// Branna:` comment.
 ## Phases
 
 - [x] **Phase 0 — Setup.** Workflow, fonts script, placeholder site, this plan.
-- [ ] **Phase 1 — Branna v0.1, the Amharic interface (public launch).**
-  - [x] `crates/ui-egui/src/i18n/am.tsv`: every UI string in Amharic (first draft, 2,130 entries);
+- [x] **Phase 1 — Branna v0.1, the Amharic interface (public launch, 2026-10-10).**
+  - [x] `crates/ui-egui/src/i18n/am.tsv`: every UI string in Amharic (first draft, over 2,100 entries);
     coverage tests in `crates/ui-egui/src/branna.rs`.
   - [x] Noto Sans Ethiopic in the interface font stacks, drawn 10% larger (`theme::ETHIOPIC_SCALE`),
     including the web build (`crates/fonts/build.rs` keeps `Ethi` faces on wasm).
@@ -120,7 +122,10 @@ Branna-specific code with a `// Branna:` comment.
   - [x] README, NOTICE, ATTRIBUTION for the fork.
   - [x] Amharic loading screen (`apps/pdfcraft-web/index.html`); the web build leaves the Japanese
     font out (about 4.7 MB).
-  - [ ] Check the built site in a browser in Amharic; then set `PUBLISH_SITE: "true"`.
+  - [x] Check the built site in a browser in Amharic (home, documents, Amharic search and typing,
+    menus, command palette, Preferences, About, print, protect, dark theme); then set
+    `PUBLISH_SITE: "true"`.
+  - [ ] A fluent Amharic speaker reviews `am.tsv` (a first draft; wording fixes are welcome).
 - [ ] **Phase 2 — Amharic inside PDFs.** Today, Amharic typed into form fields is drawn as `?`
   (`crates/forms/src/appearance.rs` falls back to WinAnsi Helvetica) and adding or editing text in
   Amharic fails (`crates/edit/src/text.rs` only has Japanese fallback faces).
