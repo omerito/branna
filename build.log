@@ -1,0 +1,99 @@
+2026-10-10T23:19:51.533528Z  INFO 🚀 Starting trunk 0.21.14
+2026-10-10T23:19:51.533864Z  INFO 📦 starting build
+   Compiling pdfcraft-crypt v0.5.0 (/home/runner/work/branna/branna/crates/crypt)
+   Compiling pdfcraft-filters v0.5.0 (/home/runner/work/branna/branna/crates/filters)
+   Compiling pdfcraft-fonts v0.5.0 (/home/runner/work/branna/branna/crates/fonts)
+   Compiling hayro-jbig2 v0.3.0 (/home/runner/work/branna/branna/vendor/hayro-jbig2)
+   Compiling pdfcraft-cos v0.5.0 (/home/runner/work/branna/branna/crates/cos)
+   Compiling hayro-syntax v0.7.2 (/home/runner/work/branna/branna/vendor/hayro-syntax)
+   Compiling pdfcraft-model v0.5.0 (/home/runner/work/branna/branna/crates/model)
+   Compiling pdfcraft-content v0.5.0 (/home/runner/work/branna/branna/crates/content)
+   Compiling pdfcraft-annot v0.5.0 (/home/runner/work/branna/branna/crates/annot)
+   Compiling pdfcraft-forms v0.5.0 (/home/runner/work/branna/branna/crates/forms)
+   Compiling hayro-interpret v0.7.0 (/home/runner/work/branna/branna/vendor/hayro-interpret)
+   Compiling lopdf v0.45.0 (/home/runner/work/branna/branna/vendor/lopdf)
+   Compiling hayro v0.7.1 (/home/runner/work/branna/branna/vendor/hayro)
+   Compiling pdfcraft-edit v0.5.0 (/home/runner/work/branna/branna/crates/edit)
+   Compiling pdfcraft-sign v0.5.0 (/home/runner/work/branna/branna/crates/sign)
+   Compiling pdfcraft-render v0.5.0 (/home/runner/work/branna/branna/crates/render)
+warning: method `byte_capacity` is never used
+  --> crates/render/src/pixels.rs:29:19
+   |
+12 | impl Pixels {
+   | ----------- method in this implementation
+...
+29 |     pub(crate) fn byte_capacity(&self) -> usize {
+   |                   ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `record_request` is never used
+   --> crates/render/src/raster.rs:228:8
+    |
+227 | impl AtomicRenderStats {
+    | ---------------------- method in this implementation
+228 |     fn record_request(&self, req: RenderRequest) {
+    |        ^^^^^^^^^^^^^^
+
+warning: field `stuck` is never read
+   --> crates/render/src/raster.rs:498:5
+    |
+490 | struct Shared {
+    |        ------ field in this struct
+...
+498 |     stuck: Mutex<std::collections::HashSet<RequestFailureKey>>,
+    |     ^^^^^
+
+warning: fields `results_tx`, `bytes`, and `config` are never read
+   --> crates/render/src/raster.rs:670:5
+    |
+666 | pub struct RenderPool {
+    |            ---------- fields in this struct
+...
+670 |     results_tx: Arc<WorkQueue>,
+    |     ^^^^^^^^^^
+671 |     bytes: Arc<Vec<u8>>,
+    |     ^^^^^
+672 |     config: RenderConfig,
+    |     ^^^^^^
+
+   Compiling egui-wgpu v0.36.2 (/home/runner/work/branna/branna/vendor/egui-wgpu)
+   Compiling pdfcraft-redact v0.5.0 (/home/runner/work/branna/branna/crates/redact)
+   Compiling pdfcraft-ocr v0.5.0 (/home/runner/work/branna/branna/crates/ocr)
+warning: `pdfcraft-render` (lib) generated 4 warnings
+   Compiling pdfcraft-ui-egui v0.5.0 (/home/runner/work/branna/branna/crates/ui-egui)
+   Compiling pdfcraft-js v0.5.0 (/home/runner/work/branna/branna/crates/js)
+   Compiling pdfcraft-xfdf v0.5.0 (/home/runner/work/branna/branna/crates/xfdf)
+   Compiling pdfcraft-measure v0.5.0 (/home/runner/work/branna/branna/crates/measure)
+   Compiling pdfcraft-optimize v0.5.0 (/home/runner/work/branna/branna/crates/optimize)
+   Compiling pdfcraft-a11y v0.5.0 (/home/runner/work/branna/branna/crates/a11y)
+   Compiling pdfcraft-print v0.5.0 (/home/runner/work/branna/branna/crates/print)
+   Compiling pdfcraft-organize v0.5.0 (/home/runner/work/branna/branna/crates/organize)
+   Compiling pdfcraft-preflight v0.5.0 (/home/runner/work/branna/branna/crates/preflight)
+   Compiling pdfcraft-create v0.5.0 (/home/runner/work/branna/branna/crates/create)
+   Compiling pdfcraft-xfa v0.5.0 (/home/runner/work/branna/branna/crates/xfa)
+   Compiling pdfcraft-export v0.5.0 (/home/runner/work/branna/branna/crates/export)
+   Compiling pdfcraft-compare v0.5.0 (/home/runner/work/branna/branna/crates/compare)
+   Compiling pdfcraft-engine v0.5.0 (/home/runner/work/branna/branna/crates/engine)
+   Compiling eframe v0.36.2
+   Compiling pdfcraft-platform v0.5.0 (/home/runner/work/branna/branna/crates/platform)
+warning: variant `Done` is never constructed
+  --> crates/ui-egui/src/updates.rs:56:5
+   |
+51 | pub(crate) enum Check {
+   |                 ----- variant in this enum
+...
+56 |     Done(Result<Release, String>),
+   |     ^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `pdfcraft-ui-egui` (lib) generated 1 warning
+   Compiling pdfcraft-web v0.5.0 (/home/runner/work/branna/branna/apps/pdfcraft-web)
+    Finished `release` profile [optimized] target(s) in 2m 06s
+2026-10-10T23:22:02.910033Z  INFO downloading wasm-bindgen version="0.2.129"
+2026-10-10T23:22:03.457745Z  INFO installing wasm-bindgen
+2026-10-10T23:22:10.267045Z  INFO downloading wasm-opt version="version_123"
+2026-10-10T23:22:10.863762Z  INFO installing wasm-opt
+2026-10-10T23:23:33.704299Z  INFO applying new distribution
+2026-10-10T23:23:33.704618Z  INFO ✅ success
