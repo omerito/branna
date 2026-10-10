@@ -163,7 +163,7 @@ mod tests {
     /// Amharic is the default and plural rules follow CLDR `am` (0 and 1 singular).
     #[test]
     fn amharic_is_registered_with_its_plural_rule() {
-        assert!(super::AMHARIC_BY_DEFAULT);
+        const { assert!(super::AMHARIC_BY_DEFAULT) };
         assert_eq!(crate::i18n::lang_from_tag("am_ET.UTF-8"), Some(am()));
         assert_eq!(crate::i18n::lang_from_tag("am"), Some(am()));
         assert_eq!(am().name(), "አማርኛ");
