@@ -125,6 +125,9 @@ Branna-specific code with a `// Branna:` comment.
   - [x] Check the built site in a browser in Amharic (home, documents, Amharic search and typing,
     menus, command palette, Preferences, About, print, protect, dark theme); then set
     `PUBLISH_SITE: "true"`.
+  - [x] Integrate `phase-1` into `main` and verify the public deployment. The
+    [release workflow](https://github.com/omerito/branna/actions/runs/38087535832) passed;
+    the live Amharic app opened and rendered a synthetic two-page PDF and navigated to page 2.
   - [ ] A fluent Amharic speaker reviews `am.tsv` (a first draft; wording fixes are welcome).
 - [ ] **Phase 2 — Amharic inside PDFs.** Today, Amharic typed into form fields is drawn as `?`
   (`crates/forms/src/appearance.rs` falls back to WinAnsi Helvetica) and adding or editing text in
