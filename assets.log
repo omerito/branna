@@ -1,0 +1,5 @@
+   Compiling lopdf v0.45.0 (/home/runner/work/branna/branna/vendor/lopdf)
+   Compiling xtask v0.1.0 (/home/runner/work/branna/branna/xtask)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 26.62s
+     Running `target/debug/xtask assets`
+assets: ok (258 repository assets, 6 bundled by dependencies, 22 fetched at build time)
