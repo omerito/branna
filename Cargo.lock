@@ -3681,6 +3681,7 @@ dependencies = [
  "icu_properties",
  "idna",
  "image",
+ "js-sys",
  "pdfcraft-a11y",
  "pdfcraft-annot",
  "pdfcraft-compare",

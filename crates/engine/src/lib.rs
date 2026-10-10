@@ -1762,8 +1762,9 @@ fn comment_list(doc: &pdfcraft_cos::Document) -> Vec<pdfcraft_render::Annotation
 fn local_utc_offset() -> i64 {
     #[cfg(not(target_arch = "wasm32"))]
     return i64::from(chrono::Local::now().offset().local_minus_utc());
+    // Branna: the browser's time zone (getTimezoneOffset is UTC minus local time, in minutes).
     #[cfg(target_arch = "wasm32")]
-    return 0;
+    return (js_sys::Date::new_0().get_timezone_offset() as i64).clamp(-1440, 1440) * -60;
 }
 
 /// (year, month, day) from a PDF date `D:YYYYMMDD…`.
@@ -2042,8 +2043,9 @@ impl Session {
         }
         #[cfg(not(target_arch = "wasm32"))]
         return std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).ok().map(|d| d.as_secs() as i64);
+        // Branna: the browser's clock, so dates on the web aren't 1970 (`as` saturates; NaN is 0).
         #[cfg(target_arch = "wasm32")]
-        return None;
+        return Some((js_sys::Date::now() / 1000.0) as i64);
     }
 
     /// Today's date in local time: (year, month, day). With an injected clock (tests) the clock
